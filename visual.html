@@ -3,48 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Visual Studies | Synthia</title>
+<title>Visual - Synthia</title>
 
 <style>
 body {
   margin: 0;
   background: #000;
-  color: white;
+  color: #fff;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 30px 40px;
+  letter-spacing: 3px;
 }
 
-.container {
-  padding: 100px 12%;
-}
-
-h1 {
-  font-weight: 300;
-  font-size: 52px;
-  letter-spacing: 2px;
-}
-
-p {
-  font-size: 20px;
-  opacity: 0.8;
-  line-height: 1.8;
-  max-width: 650px;
-}
-
-img {
-  width: 100%;
-  margin-top: 30px;
-  filter: contrast(1.1);
-}
-
-a {
+header a {
   color: white;
   text-decoration: none;
+  opacity: 0.7;
+}
+
+/* HERO */
+.hero {
+  padding: 120px 10% 60px;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  margin: 0;
+}
+
+.hero p {
+  max-width: 600px;
+  opacity: 0.7;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 10%;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.section h2 {
+  font-weight: 300;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.section p {
+  opacity: 0.7;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* COLOR BLOCKS */
+.palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.color {
+  height: 120px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* abstract colors */
+.c1 { background: #0a0a0a; }
+.c2 { background: #1a1a1a; }
+.c3 { background: #3a2a3f; }
+.c4 { background: #111827; }
+.c5 { background: #2b1b17; }
+
+/* CONCEPT GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.card {
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 20px;
+}
+
+.card h3 {
+  font-weight: 300;
+}
+
+.card p {
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+/* BACK */
+.back {
+  padding: 40px 10%;
+}
+
+.back a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.6;
 }
 </style>
 </head>
@@ -52,18 +121,56 @@ a {
 <body>
 
 <header>
-  <a href="index.html">← Back</a>
-  <div>SYNTHIA</div>
-  <div></div>
+  <div>VISUAL STUDIES</div>
+  <a href="index.html">Home</a>
 </header>
 
-<div class="container">
-  <h1>Visual Studies</h1>
-  <p>Exploration of color, texture, composition, and visual identity.</p>
+<section class="hero">
+  <h1>Visual Laboratory</h1>
+  <p>
+    A space for experimentation in color, texture, mood, and visual identity.
+    This is where aesthetics are tested, broken, and rebuilt.
+  </p>
+</section>
 
-  <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-  <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05">
+<section class="section">
+  <h2>Color Research</h2>
+  <p>
+    Exploring emotional impact of muted tones, deep blacks, and desaturated cinematic palettes.
+  </p>
+
+  <div class="palette">
+    <div class="color c1"></div>
+    <div class="color c2"></div>
+    <div class="color c3"></div>
+    <div class="color c4"></div>
+    <div class="color c5"></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Visual Concepts</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Static Emotion</h3>
+      <p>Studying how still frames can express psychological tension.</p>
+    </div>
+
+    <div class="card">
+      <h3>Broken Symmetry</h3>
+      <p>Intentional imbalance in composition to create discomfort and intrigue.</p>
+    </div>
+
+    <div class="card">
+      <h3>Light Decay</h3>
+      <p>Exploring fading light as metaphor for memory and identity loss.</p>
+    </div>
+  </div>
+</section>
+
+<div class="back">
+  <a href="index.html">← Return to Synthia</a>
 </div>
 
 </body>
