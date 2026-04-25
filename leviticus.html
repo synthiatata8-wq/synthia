@@ -44,7 +44,7 @@ body {
   display: block;
 }
 
-/* TEXT */
+/* INFO */
 .info {
   padding: 80px 12%;
   text-align: center;
@@ -58,7 +58,29 @@ body {
   opacity: 0.85;
 }
 
-/* FILM GRAIN OVERLAY */
+/* CRITICS SECTION */
+.critics {
+  padding: 120px 12%;
+  text-align: center;
+}
+
+.quote {
+  max-width: 800px;
+  margin: 60px auto;
+  font-size: 20px;
+  line-height: 1.8;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.source {
+  margin-top: 10px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+/* GRAIN */
 body::before {
   content: "";
   position: fixed;
@@ -79,11 +101,26 @@ body::before {
   <img src="leviticus-poster-1.png" class="poster">
 </div>
 
-<!-- TEXT -->
+<!-- INFO -->
 <div class="info">
   <p>
     A queer horror film exploring identity, repression, and faith collapsing into fear.
   </p>
+</div>
+
+<!-- CRITICS -->
+<div class="critics">
+
+  <div class="quote">
+    “A haunting exploration of identity and belief — Leviticus lingers long after it fades to black.”
+    <div class="source">VARIETY (early reaction)</div>
+  </div>
+
+  <div class="quote">
+    “Visually arresting and emotionally unsettling, this is queer horror at its most intimate.”
+    <div class="source">INDIE FILM REVIEW</div>
+  </div>
+
 </div>
 
 <!-- POSTER 2 -->
@@ -92,7 +129,6 @@ body::before {
 </div>
 
 <script>
-// fade-in on scroll
 const sections = document.querySelectorAll('.section');
 
 const observer = new IntersectionObserver(entries => {
@@ -101,9 +137,7 @@ const observer = new IntersectionObserver(entries => {
       entry.target.classList.add('show');
     }
   });
-}, {
-  threshold: 0.2
-});
+}, { threshold: 0.2 });
 
 sections.forEach(sec => observer.observe(sec));
 </script>
