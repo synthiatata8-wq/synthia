@@ -13,60 +13,65 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
+/* TOP BAR */
+.topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 25px 40px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 40px;
+  z-index: 100;
 }
+
+.menu, .search {
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.menu { justify-self: start; }
+.search { justify-self: end; }
 
 .logo {
+  text-align: center;
   letter-spacing: 4px;
   font-weight: 300;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 14px;
-  opacity: 0.75;
-}
-
-nav a:hover {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 /* HERO */
 .hero {
-  padding: 80px 10% 60px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 6vw, 6rem);
+  font-size: clamp(3rem, 7vw, 6rem);
   font-weight: 300;
   margin: 0;
-  letter-spacing: 6px;
+  letter-spacing: 8px;
 }
 
 .hero p {
-  max-width: 700px;
+  max-width: 600px;
+  margin-top: 20px;
   opacity: 0.7;
   line-height: 1.6;
-  margin-top: 20px;
-}
-
-/* SECTION TITLE */
-.section-title {
-  padding: 40px 10% 10px;
-  font-size: 14px;
-  letter-spacing: 2px;
-  opacity: 0.6;
 }
 
 /* GRID */
+.section-title {
+  padding: 40px 10% 10px;
+  opacity: 0.6;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -88,7 +93,6 @@ nav a:hover {
 .card h3 {
   margin: 0 0 10px;
   font-weight: 300;
-  letter-spacing: 2px;
 }
 
 .card p {
@@ -97,99 +101,139 @@ nav a:hover {
   line-height: 1.5;
 }
 
-/* FOOTER */
-footer {
-  padding: 40px 10%;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  opacity: 0.6;
-  font-size: 13px;
+/* PANELS */
+.panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.96);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.panel a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 10px;
+  opacity: 0.8;
+}
+
+/* SEARCH */
+.search-box {
+  width: 80%;
+  padding: 15px;
+  font-size: 16px;
+  background: black;
+  border: 1px solid #333;
+  color: white;
+}
+
+.results {
+  margin-top: 20px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* GLOW */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%);
+  pointer-events: none;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="menu" onclick="toggleMenu()">☰</div>
   <div class="logo">SYNTHIA</div>
-  <nav>
-    <a href="film.html">Film & TV</a>
-    <a href="fashion.html">Fashion</a>
-    <a href="culture.html">Culture</a>
-    <a href="about.html">About</a>
-    <a href="team.html">Team</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <div class="search" onclick="toggleSearch()">⌕</div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>SYNTHIA STUDIO</h1>
+  <h1>STUDIO</h1>
   <p>
     A creative studio exploring film, fashion, music, and contemporary culture through
-    editorial storytelling and visual experimentation.
+    editorial storytelling and visual systems.
   </p>
 </section>
 
-<!-- FEATURED WORK -->
-<div class="section-title">FEATURED PROJECTS</div>
+<!-- FEATURED -->
+<div class="section-title">FEATURED WORK</div>
 
 <section class="grid">
 
   <div class="card">
     <h3>Leviticus</h3>
-    <p>A queer horror film exploring identity, faith, and distortion of self within psychological space.</p>
+    <p>Queer horror film exploring identity, faith, and psychological distortion.</p>
   </div>
 
   <div class="card">
     <h3>Backdoors</h3>
-    <p>Upcoming A24-inspired psychological film project focusing on secrecy and emotional collapse.</p>
+    <p>Upcoming psychological film project inspired by A24-style storytelling.</p>
   </div>
 
   <div class="card">
-    <h3>Fashion Editorials</h3>
-    <p>High-fashion visual campaigns and conceptual magazine-style editorials.</p>
+    <h3>Fashion Division</h3>
+    <p>Editorial campaigns, fragrance concepts, and visual fashion narratives.</p>
   </div>
 
   <div class="card">
     <h3>Met Gala Concept</h3>
-    <p>A curated cultural event concept exploring identity, performance, and fashion mythology.</p>
+    <p>Curated cultural event exploring fashion, identity, and performance.</p>
   </div>
 
 </section>
 
-<!-- DIVISIONS -->
-<div class="section-title">DIVISIONS</div>
+<!-- MENU -->
+<div class="panel" id="menuPanel">
+  <a href="#" onclick="toggleMenu()">Close ✕</a>
+  <a href="film.html">Film & TV</a>
+  <a href="fashion.html">Fashion</a>
+  <a href="culture.html">Culture</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
 
-<section class="grid">
+<!-- SEARCH -->
+<div class="panel" id="searchPanel">
+  <input class="search-box" type="text" placeholder="Search SYNTHIA..." onkeyup="searchSite()" id="searchInput">
+  <div class="results" id="results"></div>
+  <p onclick="toggleSearch()" style="cursor:pointer; margin-top:20px;">Close ✕</p>
+</div>
 
-  <div class="card">
-    <h3>Film & TV</h3>
-    <p>Original cinematic projects including narrative films and experimental visuals.</p>
-  </div>
+<script>
+function toggleMenu() {
+  const m = document.getElementById("menuPanel");
+  m.style.display = m.style.display === "flex" ? "none" : "flex";
+}
 
-  <div class="card">
-    <h3>Fashion</h3>
-    <p>Editorial campaigns, runway concepts, and fragrance visual storytelling.</p>
-  </div>
+function toggleSearch() {
+  const s = document.getElementById("searchPanel");
+  s.style.display = s.style.display === "flex" ? "none" : "flex";
+}
 
-  <div class="card">
-    <h3>Culture</h3>
-    <p>Pop culture reinterpretations and conceptual visual essays.</p>
-  </div>
+function searchSite() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const results = document.getElementById("results");
 
-  <div class="card">
-    <h3>Events</h3>
-    <p>Curated cultural events including the SYNTHIA Met Gala concept.</p>
-  </div>
+  const pages = ["Leviticus", "Backdoors", "Fashion", "Culture", "Met Gala"];
 
-</section>
+  const filtered = pages.filter(p => p.toLowerCase().includes(input));
 
-<!-- FOOTER -->
-<footer>
-  © 2026 SYNTHIA Studio — A Creative Media & Editorial Platform
-</footer>
+  results.innerHTML = filtered.length
+    ? filtered.map(i => `<p>${i}</p>`).join("")
+    : "<p>No results</p>";
+}
+</script>
 
 </body>
 </html>
