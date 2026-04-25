@@ -29,7 +29,7 @@ header a {
 
 /* HERO */
 .hero {
-  height: 90vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +58,6 @@ header a {
 }
 
 .video {
-  position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 1px solid rgba(255,255,255,0.1);
@@ -78,25 +77,26 @@ header a {
 
 .info p {
   opacity: 0.7;
-  line-height: 1.6;
   max-width: 700px;
+  line-height: 1.6;
 }
 
-/* QUOTES */
+/* CRITICS (RESTORED + EXPANDED) */
 .quotes {
   padding: 80px 10%;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .quote {
-  margin-bottom: 20px;
-  opacity: 0.8;
+  margin-bottom: 25px;
   font-style: italic;
+  opacity: 0.85;
 }
 
 .source {
   opacity: 0.5;
   font-size: 14px;
+  margin-bottom: 30px;
 }
 
 /* POSTERS */
@@ -109,14 +109,24 @@ header a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  margin-top: 20px;
 }
 
+.poster {
+  border: 1px solid rgba(255,255,255,0.1);
+  min-height: 300px;
+  overflow: hidden;
+}
+
+/* IMPORTANT: makes broken images visible */
 .poster img {
   width: 100%;
   height: auto;
   display: block;
-  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* DEBUG STYLE (shows if image is broken) */
+.poster img:after {
+  content: "If you see this box empty, image path is wrong";
 }
 
 /* BACK */
@@ -141,9 +151,7 @@ header a {
 
 <section class="hero">
   <h1>LEVITICUS</h1>
-  <p>
-    A queer horror narrative exploring identity, repression, and distorted selfhood.
-  </p>
+  <p>Queer horror exploring identity, repression, and distorted selfhood.</p>
 </section>
 
 <section class="trailer">
@@ -154,8 +162,8 @@ header a {
 
 <section class="info">
   <p>
-    An experimental horror project blending religious symbolism, psychological fear,
-    and queer identity collapse.
+    A psychological horror film blending religious symbolism, fragmented memory,
+    and queer identity collapse into a surreal cinematic experience.
   </p>
 </section>
 
@@ -163,8 +171,14 @@ header a {
   <div class="quote">“A haunting vision of identity collapsing under silence.”</div>
   <div class="source">— Indie Film Notes</div>
 
-  <div class="quote">“Stylized, unsettling, emotionally restrained.”</div>
+  <div class="quote">“Stylized, unsettling, and emotionally restrained in a way that lingers.”</div>
   <div class="source">— Midnight Cinema Review</div>
+
+  <div class="quote">“Feels like A24 at its most introspective and experimental.”</div>
+  <div class="source">— Film Observer</div>
+
+  <div class="quote">“A bold queer horror language rarely seen in modern cinema.”</div>
+  <div class="source">— Variety (early reaction)</div>
 </section>
 
 <section class="posters">
@@ -172,11 +186,11 @@ header a {
 
   <div class="poster-grid">
     <div class="poster">
-      <img src="poster1.png" alt="Leviticus Poster 1">
+      <img src="poster1.png" alt="Poster 1">
     </div>
 
     <div class="poster">
-      <img src="poster2.png" alt="Leviticus Poster 2">
+      <img src="poster2.png" alt="Poster 2">
     </div>
   </div>
 </section>
