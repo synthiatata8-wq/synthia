@@ -11,9 +11,10 @@ body {
   background: #000;
   color: white;
   font-family: "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-/* BACK LINK */
+/* BACK */
 .back {
   position: fixed;
   top: 20px;
@@ -25,22 +26,25 @@ body {
   opacity: 0.7;
 }
 
-.back:hover {
-  opacity: 1;
+/* POSTERS */
+.section {
+  margin-bottom: 100px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease;
 }
 
-/* POSTERS */
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .poster {
   width: 100%;
   display: block;
 }
 
-/* spacing between posters */
-.section {
-  margin-bottom: 80px;
-}
-
-/* TEXT SECTION (MINIMAL ONLY) */
+/* TEXT */
 .info {
   padding: 80px 12%;
   text-align: center;
@@ -54,12 +58,13 @@ body {
   opacity: 0.85;
 }
 
-/* subtle cinematic feel */
+/* FILM GRAIN OVERLAY */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.04), transparent 60%);
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
   pointer-events: none;
 }
 </style>
@@ -74,7 +79,7 @@ body::before {
   <img src="leviticus-poster-1.png" class="poster">
 </div>
 
-<!-- INFO -->
+<!-- TEXT -->
 <div class="info">
   <p>
     A queer horror film exploring identity, repression, and faith collapsing into fear.
@@ -85,6 +90,23 @@ body::before {
 <div class="section">
   <img src="leviticus-poster-2.png" class="poster">
 </div>
+
+<script>
+// fade-in on scroll
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+sections.forEach(sec => observer.observe(sec));
+</script>
 
 </body>
 </html>
