@@ -3,183 +3,193 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Synthia</title>
+<title>SYNTHIA Studio</title>
 
 <style>
 body {
   margin: 0;
   background: #000;
-  color: white;
+  color: #fff;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* TOP BAR */
-.topbar {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 25px 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-
-.menu, .search {
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.menu { justify-self: start; }
-.search { justify-self: end; }
 
 .logo {
-  text-align: center;
   letter-spacing: 4px;
   font-weight: 300;
 }
 
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
 /* HERO */
 .hero {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 10%;
+  padding: 80px 10% 60px;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 300;
+  margin: 0;
+  letter-spacing: 6px;
 }
 
 .hero p {
+  max-width: 700px;
   opacity: 0.7;
-  max-width: 400px;
-  line-height: 1.5;
+  line-height: 1.6;
+  margin-top: 20px;
 }
 
-.hero a {
-  margin-top: 20px;
-  color: white;
-  text-decoration: none;
-  opacity: 0.8;
+/* SECTION TITLE */
+.section-title {
+  padding: 40px 10% 10px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.6;
 }
 
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  padding: 80px 10%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 10% 60px;
 }
 
-.grid h2 {
+.card {
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.card h3 {
+  margin: 0 0 10px;
   font-weight: 300;
+  letter-spacing: 2px;
 }
 
-.grid p {
-  opacity: 0.7;
+.card p {
+  opacity: 0.6;
+  font-size: 14px;
   line-height: 1.5;
 }
 
-/* PANELS */
-.panel {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.95);
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.panel a {
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  margin: 10px;
-}
-
-/* SEARCH */
-.search-box {
-  width: 80%;
-  padding: 15px;
-  font-size: 18px;
-  background: black;
-  border: 1px solid #333;
-  color: white;
-}
-
-.results {
-  margin-top: 20px;
-  text-align: center;
-}
-
-/* GLOW */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%),
-              radial-gradient(circle at bottom, rgba(232,66,122,0.08), transparent 60%);
-  pointer-events: none;
+/* FOOTER */
+footer {
+  padding: 40px 10%;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  opacity: 0.6;
+  font-size: 13px;
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<header class="topbar">
-  <div class="menu" onclick="toggleMenu()">☰</div>
+<!-- HEADER -->
+<header>
   <div class="logo">SYNTHIA</div>
-  <div class="search" onclick="toggleSearch()">⌕</div>
+  <nav>
+    <a href="film.html">Film & TV</a>
+    <a href="fashion.html">Fashion</a>
+    <a href="culture.html">Culture</a>
+    <a href="about.html">About</a>
+    <a href="team.html">Team</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <p>Film • Fashion • Aesthetic Archive</p>
-  <a href="leviticus.html">Explore Leviticus →</a>
+  <h1>SYNTHIA STUDIO</h1>
+  <p>
+    A creative studio exploring film, fashion, music, and contemporary culture through
+    editorial storytelling and visual experimentation.
+  </p>
 </section>
 
-<!-- GRID -->
+<!-- FEATURED WORK -->
+<div class="section-title">FEATURED PROJECTS</div>
+
 <section class="grid">
-  <div><h2>Editorial</h2><p>Fashion-inspired storytelling.</p></div>
-  <div><h2>Film Archive</h2><p>Cinematic moods and references.</p></div>
-  <div><h2>Visual Studies</h2><p>Color and composition exploration.</p></div>
+
+  <div class="card">
+    <h3>Leviticus</h3>
+    <p>A queer horror film exploring identity, faith, and distortion of self within psychological space.</p>
+  </div>
+
+  <div class="card">
+    <h3>Backdoors</h3>
+    <p>Upcoming A24-inspired psychological film project focusing on secrecy and emotional collapse.</p>
+  </div>
+
+  <div class="card">
+    <h3>Fashion Editorials</h3>
+    <p>High-fashion visual campaigns and conceptual magazine-style editorials.</p>
+  </div>
+
+  <div class="card">
+    <h3>Met Gala Concept</h3>
+    <p>A curated cultural event concept exploring identity, performance, and fashion mythology.</p>
+  </div>
+
 </section>
 
-<!-- MENU (FIXED: Leviticus REMOVED) -->
-<div class="panel" id="menuPanel">
-  <a href="#" onclick="toggleMenu()">Close ✕</a>
-  <a href="index.html">Home</a>
-</div>
+<!-- DIVISIONS -->
+<div class="section-title">DIVISIONS</div>
 
-<!-- SEARCH -->
-<div class="panel" id="searchPanel">
-  <input class="search-box" type="text" placeholder="Search..." onkeyup="searchSite()" id="searchInput">
-  <div class="results" id="results"></div>
-  <p onclick="toggleSearch()" style="cursor:pointer;">Close ✕</p>
-</div>
+<section class="grid">
 
-<script>
-function toggleMenu() {
-  const menu = document.getElementById("menuPanel");
-  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-}
+  <div class="card">
+    <h3>Film & TV</h3>
+    <p>Original cinematic projects including narrative films and experimental visuals.</p>
+  </div>
 
-function toggleSearch() {
-  const search = document.getElementById("searchPanel");
-  search.style.display = search.style.display === "flex" ? "none" : "flex";
-}
+  <div class="card">
+    <h3>Fashion</h3>
+    <p>Editorial campaigns, runway concepts, and fragrance visual storytelling.</p>
+  </div>
 
-function searchSite() {
-  const input = document.getElementById("searchInput").value.toLowerCase();
-  const results = document.getElementById("results");
+  <div class="card">
+    <h3>Culture</h3>
+    <p>Pop culture reinterpretations and conceptual visual essays.</p>
+  </div>
 
-  const pages = ["Home", "Leviticus", "Editorial", "Film Archive", "Visual Studies"];
+  <div class="card">
+    <h3>Events</h3>
+    <p>Curated cultural events including the SYNTHIA Met Gala concept.</p>
+  </div>
 
-  const filtered = pages.filter(item =>
-    item.toLowerCase().includes(input)
-  );
+</section>
 
-  results.innerHTML = filtered.length
-    ? filtered.map(item => `<p>${item}</p>`).join("")
-    : "<p style='opacity:0.5'>No results</p>";
-}
-</script>
+<!-- FOOTER -->
+<footer>
+  © 2026 SYNTHIA Studio — A Creative Media & Editorial Platform
+</footer>
 
 </body>
 </html>
