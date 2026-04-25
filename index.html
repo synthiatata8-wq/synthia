@@ -13,7 +13,7 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* HEADER (FIXED STABLE LAYOUT) */
+/* HEADER */
 .topbar {
   position: fixed;
   top: 0;
@@ -28,13 +28,24 @@ body {
   box-sizing: border-box;
 }
 
-.menu, .search {
+.menu {
   font-size: 22px;
   cursor: pointer;
-  line-height: 1;
-  flex: 0 0 auto;
   user-select: none;
-  opacity: 0.9;
+}
+
+/* BOLD EDITORIAL SEARCH ICON (SVG STYLE) */
+.search {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  opacity: 0.95;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.search:hover {
+  opacity: 1;
+  transform: scale(1.08);
 }
 
 .logo {
@@ -62,7 +73,7 @@ body {
   opacity: 0.75;
 }
 
-/* SECTION TITLE */
+/* GRID */
 .section-title {
   padding: 40px 10% 10px;
   font-size: 12px;
@@ -70,7 +81,6 @@ body {
   opacity: 0.6;
 }
 
-/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -120,7 +130,7 @@ body {
   opacity: 0.85;
 }
 
-/* SEARCH */
+/* SEARCH INPUT */
 .search-box {
   width: 80%;
   padding: 14px;
@@ -137,7 +147,7 @@ body {
   opacity: 0.7;
 }
 
-/* BACKGROUND EFFECT */
+/* BACKGROUND */
 body::before {
   content: "";
   position: fixed;
@@ -153,8 +163,16 @@ body::before {
 <!-- HEADER -->
 <div class="topbar">
   <div class="menu" onclick="toggleMenu()">☰</div>
+
   <div class="logo">SYNTHIA</div>
-  <div class="search" onclick="toggleSearch()">🔍</div>
+
+  <!-- SVG SEARCH ICON (BOLD EDITORIAL) -->
+  <div class="search" onclick="toggleSearch()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+      <circle cx="11" cy="11" r="7"></circle>
+      <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+    </svg>
+  </div>
 </div>
 
 <!-- HERO -->
