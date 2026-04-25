@@ -81,7 +81,7 @@ header a {
   line-height: 1.6;
 }
 
-/* CRITICS (RESTORED + EXPANDED) */
+/* CRITICS */
 .quotes {
   padding: 80px 10%;
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -96,7 +96,7 @@ header a {
 .source {
   opacity: 0.5;
   font-size: 14px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 /* POSTERS */
@@ -109,24 +109,14 @@ header a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  margin-top: 20px;
 }
 
-.poster {
-  border: 1px solid rgba(255,255,255,0.1);
-  min-height: 300px;
-  overflow: hidden;
-}
-
-/* IMPORTANT: makes broken images visible */
 .poster img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-/* DEBUG STYLE (shows if image is broken) */
-.poster img:after {
-  content: "If you see this box empty, image path is wrong";
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 /* BACK */
@@ -151,7 +141,10 @@ header a {
 
 <section class="hero">
   <h1>LEVITICUS</h1>
-  <p>Queer horror exploring identity, repression, and distorted selfhood.</p>
+  <p>
+    A queer horror narrative exploring identity, repression, and distorted selfhood
+    within systems of fear, faith, and desire.
+  </p>
 </section>
 
 <section class="trailer">
@@ -162,7 +155,7 @@ header a {
 
 <section class="info">
   <p>
-    A psychological horror film blending religious symbolism, fragmented memory,
+    An experimental horror project blending religious symbolism, fragmented memory,
     and queer identity collapse into a surreal cinematic experience.
   </p>
 </section>
@@ -186,11 +179,11 @@ header a {
 
   <div class="poster-grid">
     <div class="poster">
-      <img src="poster1.png" alt="Poster 1">
+      <img src="leviticus-poster-1.png" alt="Leviticus Poster 1">
     </div>
 
     <div class="poster">
-      <img src="poster2.png" alt="Poster 2">
+      <img src="leviticus-poster-2.png" alt="Leviticus Poster 2">
     </div>
   </div>
 </section>
