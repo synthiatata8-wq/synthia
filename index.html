@@ -62,6 +62,7 @@ body {
   letter-spacing: 2px;
 }
 
+/* LINKS */
 .links {
   margin-top: 40px;
   display: flex;
@@ -108,7 +109,7 @@ body {
   text-align: center;
 }
 
-/* BACKGROUND GLOW */
+/* GLOW */
 body::before {
   content: "";
   position: fixed;
@@ -142,14 +143,13 @@ body::before {
   </div>
 </section>
 
-<!-- MENU PANEL -->
+<!-- MENU -->
 <div class="panel" id="menuPanel">
   <a href="#" onclick="toggleMenu()">Close ✕</a>
   <a href="index.html">Home</a>
-  <a href="leviticus.html">Leviticus</a>
 </div>
 
-<!-- SEARCH PANEL -->
+<!-- SEARCH -->
 <div class="panel" id="searchPanel">
   <input class="search-box" type="text" placeholder="Search..." onkeyup="searchSite()" id="searchInput">
   <div class="results" id="results"></div>
