@@ -1,78 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leviticus</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leviticus | Synthia</title>
 
-  <style>
-    body {
-      margin: 0;
-      background: #05040a;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
+<style>
+body {
+  margin: 0;
+  background: #000;
+  color: white;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
 
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
-    }
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1495121605193-b116b5b09a7e') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-    .hero h1 {
-      margin: 0;
-      font-size: 40px;
-      letter-spacing: 4px;
-    }
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 300;
+  letter-spacing: 6px;
+}
 
-    .poster {
-      width: 100%;
-    }
+/* CONTENT */
+.container {
+  padding: 100px 12%;
+}
 
-    .poster img {
-      width: 100%;
-      display: block;
-    }
+.intro {
+  max-width: 700px;
+  font-size: 20px;
+  line-height: 1.8;
+  opacity: 0.85;
+}
 
-    .info {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
+/* IMAGE STORY */
+.story img {
+  width: 100%;
+  margin: 80px 0;
+}
 
-    a {
-      color: white;
-      display: block;
-      text-align: center;
-      padding: 20px;
-      text-decoration: none;
-    }
-  </style>
+/* BACK LINK */
+.back {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  color: white;
+  text-decoration: none;
+  z-index: 10;
+  font-size: 14px;
+}
+
+/* SUBTLE GLOW */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%);
+  pointer-events: none;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>LEVITICUS</h1>
-  </div>
+<a href="index.html" class="back">← Home</a>
 
-  <!-- POSTERS -->
-  <div class="poster">
-    <img src="leviticus-poster-1.png" alt="Poster 1">
-  </div>
+<!-- HERO -->
+<section class="hero">
+  <h1>LEVITICUS</h1>
+</section>
 
-  <div class="poster">
-    <img src="leviticus-poster-2.png" alt="Poster 2">
-  </div>
+<!-- INTRO TEXT -->
+<div class="container">
+  <p class="intro">
+    A study in darkness, form, and quiet intensity. Leviticus explores fashion as mood—
+    where shadow, texture, and presence become the narrative.
+  </p>
+</div>
 
-  <!-- INFO -->
-  <div class="info">
-    In Cinemas • June 19
-  </div>
-
-  <!-- BACK LINK -->
-  <a href="index.html">← Back to Home</a>
+<!-- IMAGE STORY -->
+<div class="story">
+  <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+  <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+</div>
 
 </body>
 </html>
