@@ -38,7 +38,7 @@ letter-spacing:2px;
 /* PAGE */
 .page{
 padding:90px 40px 60px;
-max-width:1000px;
+max-width:900px;
 margin:auto;
 }
 
@@ -46,7 +46,7 @@ margin:auto;
 .trailer{
 width:100%;
 aspect-ratio:16/9;
-margin-bottom:40px;
+margin-bottom:50px;
 }
 
 .trailer iframe{
@@ -56,25 +56,9 @@ border:0;
 border-radius:8px;
 }
 
-/* TITLE */
-h1{
-letter-spacing:6px;
-font-weight:300;
-margin-bottom:20px;
-}
-
-/* DESCRIPTION */
-.desc{
-font-size:13px;
-line-height:1.7;
-opacity:0.8;
-margin-bottom:40px;
-max-width:700px;
-}
-
-/* POSTERS (VERTICAL LAYOUT) */
+/* POSTERS */
 .poster{
-margin-bottom:60px;
+margin-bottom:80px;
 }
 
 .poster img{
@@ -82,11 +66,11 @@ width:100%;
 border-radius:8px;
 }
 
-/* REVIEWS */
-.reviews{
-margin-top:40px;
+/* REVIEWS (STACKED CLEANLY) */
+.review{
+margin-bottom:30px;
 font-size:13px;
-line-height:1.8;
+line-height:1.7;
 opacity:0.85;
 }
 </style>
@@ -101,21 +85,12 @@ opacity:0.85;
 
 <div class="page">
 
-<h1>LEVITICUS</h1>
-
-<!-- TRAILER -->
+<!-- TRAILER (ONLY FOCUS) -->
 <div class="trailer">
 <iframe 
 src="https://www.youtube.com/embed/WXuK0vlFxII" 
 allowfullscreen>
 </iframe>
-</div>
-
-<!-- DESCRIPTION -->
-<div class="desc">
-A cinematic exploration of identity, fragmentation, and silence. 
-LEVITICUS unfolds through emotional restraint and visual storytelling, 
-capturing moments of transition, memory, and internal conflict.
 </div>
 
 <!-- POSTER 1 -->
@@ -129,17 +104,13 @@ capturing moments of transition, memory, and internal conflict.
 </div>
 
 <!-- REVIEWS -->
-<div class="reviews">
+<div class="review">“A striking visual language rooted in emotional restraint.” — The Guardian</div>
 
-“The film presents a striking visual language rooted in emotional restraint.” — The Guardian<br><br>
+<div class="review">“A bold and atmospheric piece of contemporary storytelling.” — Variety</div>
 
-“A bold and atmospheric piece of contemporary visual storytelling.” — Variety<br><br>
+<div class="review">“An ambitious and controlled cinematic work that lingers.” — IndieWire</div>
 
-“An ambitious and visually controlled work that lingers long after viewing.” — IndieWire<br><br>
-
-“A minimalist yet emotionally charged cinematic experience.” — Film Comment
-
-</div>
+<div class="review">“Minimalist, precise, and emotionally charged.” — Film Comment</div>
 
 </div>
 
