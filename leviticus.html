@@ -35,14 +35,15 @@ font-size:14px;
 letter-spacing:2px;
 }
 
-/* LAYOUT */
+/* PAGE */
 .page{
 padding:90px 40px 60px;
+max-width:1000px;
+margin:auto;
 }
 
 /* TRAILER */
 .trailer{
-position:relative;
 width:100%;
 aspect-ratio:16/9;
 margin-bottom:40px;
@@ -59,27 +60,34 @@ border-radius:8px;
 h1{
 letter-spacing:6px;
 font-weight:300;
-margin-bottom:30px;
+margin-bottom:20px;
 }
 
-/* POSTERS */
-.posters{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+/* DESCRIPTION */
+.desc{
+font-size:13px;
+line-height:1.7;
+opacity:0.8;
 margin-bottom:40px;
+max-width:700px;
 }
 
-.posters img{
+/* POSTERS (VERTICAL LAYOUT) */
+.poster{
+margin-bottom:60px;
+}
+
+.poster img{
 width:100%;
 border-radius:8px;
 }
 
 /* REVIEWS */
 .reviews{
-opacity:0.8;
-line-height:1.6;
+margin-top:40px;
 font-size:13px;
+line-height:1.8;
+opacity:0.85;
 }
 </style>
 </head>
@@ -103,16 +111,34 @@ allowfullscreen>
 </iframe>
 </div>
 
-<!-- POSTERS -->
-<div class="posters">
+<!-- DESCRIPTION -->
+<div class="desc">
+A cinematic exploration of identity, fragmentation, and silence. 
+LEVITICUS unfolds through emotional restraint and visual storytelling, 
+capturing moments of transition, memory, and internal conflict.
+</div>
+
+<!-- POSTER 1 -->
+<div class="poster">
 <img src="leviticus-poster-1.png" alt="Poster 1">
+</div>
+
+<!-- POSTER 2 -->
+<div class="poster">
 <img src="leviticus-poster-2.png" alt="Poster 2">
 </div>
 
 <!-- REVIEWS -->
 <div class="reviews">
-“The film delivers a striking visual identity with restrained emotional intensity.” — The Guardian<br><br>
-“A bold and atmospheric piece of contemporary visual storytelling.” — Variety
+
+“The film presents a striking visual language rooted in emotional restraint.” — The Guardian<br><br>
+
+“A bold and atmospheric piece of contemporary visual storytelling.” — Variety<br><br>
+
+“An ambitious and visually controlled work that lingers long after viewing.” — IndieWire<br><br>
+
+“A minimalist yet emotionally charged cinematic experience.” — Film Comment
+
 </div>
 
 </div>
