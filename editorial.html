@@ -3,47 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Editorial | Synthia</title>
+<title>Editorial - Synthia</title>
 
 <style>
 body {
   margin: 0;
   background: #000;
-  color: white;
+  color: #fff;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 30px 40px;
+  letter-spacing: 3px;
 }
 
-.container {
-  padding: 100px 12%;
-}
-
-h1 {
-  font-weight: 300;
-  font-size: 52px;
-  letter-spacing: 2px;
-}
-
-p {
-  font-size: 20px;
-  opacity: 0.8;
-  line-height: 1.8;
-  max-width: 650px;
-}
-
-img {
-  width: 100%;
-  margin-top: 30px;
-}
-
-a {
+header a {
   color: white;
   text-decoration: none;
+  opacity: 0.7;
+}
+
+/* HERO */
+.hero {
+  padding: 120px 10% 60px;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  margin: 0;
+}
+
+.hero p {
+  max-width: 600px;
+  opacity: 0.7;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+/* FEATURE ARTICLE */
+.feature {
+  padding: 60px 10%;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.feature h2 {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.feature p {
+  opacity: 0.7;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 60px 10%;
+}
+
+.card {
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 20px;
+}
+
+.card h3 {
+  font-weight: 300;
+}
+
+.card p {
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+/* BACK */
+.back {
+  padding: 40px 10%;
+}
+
+.back a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.6;
 }
 </style>
 </head>
@@ -51,18 +101,42 @@ a {
 <body>
 
 <header>
-  <a href="index.html">← Back</a>
-  <div>SYNTHIA</div>
-  <div></div>
+  <div>EDITORIAL</div>
+  <a href="index.html">← Home</a>
 </header>
 
-<div class="container">
-  <h1>Editorial</h1>
-  <p>Fashion-focused visual storytelling and curated aesthetics.</p>
+<section class="hero">
+  <h1>Fashion Editorial Archive</h1>
+  <p>A curated collection of visual storytelling, fashion concepts, and aesthetic studies exploring identity, mood, and form.</p>
+</section>
 
-  <img src="https://images.unsplash.com/photo-1495121605193-b116b5b09a7e">
-  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
-  <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+<section class="feature">
+  <h2>Featured Concept: “Silent Runway”</h2>
+  <p>
+    A visual study of fashion in motion — models existing in still environments,
+    where silence replaces sound and clothing becomes narrative.
+  </p>
+</section>
+
+<section class="grid">
+  <div class="card">
+    <h3>Black Aesthetic Study</h3>
+    <p>Exploring shadow, texture, and minimalism in fashion imagery.</p>
+  </div>
+
+  <div class="card">
+    <h3>Urban Editorial Mood</h3>
+    <p>City environments as emotional landscapes for fashion storytelling.</p>
+  </div>
+
+  <div class="card">
+    <h3>Color Theory in Fashion</h3>
+    <p>How palette choices shape narrative tone and identity.</p>
+  </div>
+</section>
+
+<div class="back">
+  <a href="index.html">← Return to Synthia</a>
 </div>
 
 </body>
