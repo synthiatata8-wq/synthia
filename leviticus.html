@@ -13,27 +13,27 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* HEADER (TIGHTER) */
+/* HEADER (CLEAN NAV ONLY) */
 header {
   display: flex;
-  justify-content: space-between;
-  padding: 15px 40px;
-  letter-spacing: 3px;
+  justify-content: flex-end;
+  padding: 20px 40px;
 }
 
 header a {
   color: white;
   text-decoration: none;
   opacity: 0.7;
+  letter-spacing: 2px;
 }
 
-/* HERO (PULLED UP) */
+/* HERO (ONLY TITLE SOURCE) */
 .hero {
   min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 40px 10% 20px;
+  padding: 60px 10% 20px;
 }
 
 .hero h1 {
@@ -50,13 +50,13 @@ header a {
   margin-top: 10px;
 }
 
-/* SECTIONS (CLEAN FLOW) */
+/* SECTIONS */
 section {
   padding: 50px 10%;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* TRAILER */
+/* VIDEO */
 .video {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -101,24 +101,12 @@ section {
   display: block;
   border: 1px solid rgba(255,255,255,0.1);
 }
-
-/* BACK */
-.back {
-  padding: 30px 10%;
-}
-
-.back a {
-  color: white;
-  text-decoration: none;
-  opacity: 0.6;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div>LEVITICUS</div>
   <a href="index.html">Home</a>
 </header>
 
@@ -167,10 +155,6 @@ section {
     </div>
   </div>
 </section>
-
-<div class="back">
-  <a href="index.html">← Home</a>
-</div>
 
 </body>
 </html>
