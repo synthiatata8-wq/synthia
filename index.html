@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Synthia</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
 body {
   margin: 0;
@@ -25,9 +23,8 @@ body {
 
 .logo {
   text-align: center;
-  letter-spacing: 6px;
+  letter-spacing: 4px;
   font-weight: 300;
-  font-family: "Playfair Display", serif;
 }
 
 .menu, .search {
@@ -40,7 +37,7 @@ body {
 
 /* HERO */
 .hero {
-  height: 75vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,53 +45,40 @@ body {
 }
 
 .hero p {
-  opacity: 0.75;
-  max-width: 420px;
-  line-height: 1.6;
+  opacity: 0.7;
+  max-width: 400px;
 }
 
 .hero a {
   margin-top: 20px;
   color: white;
   text-decoration: none;
-  opacity: 0.85;
 }
 
-/* EDITORIAL GRID (UPGRADED) */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 40px;
   padding: 80px 10%;
 }
 
 .card {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s ease;
 }
 
-.card img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-  filter: grayscale(20%) contrast(1.1);
-}
-
-.card:hover img {
-  transform: scale(1.08);
+.card:hover {
+  opacity: 0.6;
 }
 
 .card h2 {
-  font-family: "Playfair Display", serif;
   font-weight: 300;
-  margin: 12px 0 5px;
 }
 
 .card p {
   opacity: 0.7;
-  margin: 0;
 }
 
 /* PANELS */
@@ -117,9 +101,9 @@ body {
 
 .menu-panel a {
   color: white;
-  text-decoration: none;
   font-size: 24px;
   margin: 10px;
+  text-decoration: none;
 }
 
 /* SEARCH */
@@ -127,16 +111,16 @@ body {
   width: 80%;
   padding: 15px;
   font-size: 18px;
-  background: black;
-  border: 1px solid #333;
+}
+
+.results a {
+  display: block;
+  margin: 10px;
   color: white;
+  text-decoration: none;
 }
 
-.results {
-  margin-top: 20px;
-}
-
-/* GLOW */
+/* BACKGROUND GLOW */
 body::before {
   content: "";
   position: fixed;
@@ -158,29 +142,25 @@ body::before {
 
 <section class="hero">
   <p>Film • Fashion • Aesthetic Archive</p>
-  <a href="leviticus.html">Explore Leviticus →</a>
+  <a href="film.html">Explore Film Archive →</a>
 </section>
 
-<!-- EDITORIAL CARDS -->
 <section class="grid">
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" alt="">
+  <a href="editorial.html" class="card">
     <h2>Editorial</h2>
-    <p>Fashion-inspired visual storytelling.</p>
-  </div>
+    <p>Fashion storytelling and curated aesthetics.</p>
+  </a>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="">
+  <a href="film.html" class="card">
     <h2>Film Archive</h2>
     <p>Cinematic moods and references.</p>
-  </div>
+  </a>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1526481280695-3c687fd5432c" alt="">
+  <a href="visual.html" class="card">
     <h2>Visual Studies</h2>
     <p>Color, texture and composition.</p>
-  </div>
+  </a>
 
 </section>
 
@@ -188,14 +168,16 @@ body::before {
 <div class="menu-panel" id="menuPanel">
   <a href="#" onclick="toggleMenu()">Close ✕</a>
   <a href="index.html">Home</a>
-  <a href="leviticus.html">Leviticus</a>
+  <a href="film.html">Film Archive</a>
+  <a href="editorial.html">Editorial</a>
+  <a href="visual.html">Visual Studies</a>
 </div>
 
 <!-- SEARCH -->
 <div class="search-panel" id="searchPanel">
   <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchSite()">
   <div class="results" id="results"></div>
-  <p onclick="toggleSearch()" style="cursor:pointer;">Close ✕</p>
+  <p onclick="toggleSearch()">Close ✕</p>
 </div>
 
 <script>
@@ -211,15 +193,20 @@ function searchSite() {
   const input = document.getElementById("searchInput").value.toLowerCase();
   const results = document.getElementById("results");
 
-  const pages = ["Home", "Leviticus", "Editorial", "Film Archive", "Visual Studies"];
+  const pages = [
+    { name: "Home", link: "index.html" },
+    { name: "Film Archive", link: "film.html" },
+    { name: "Editorial", link: "editorial.html" },
+    { name: "Visual Studies", link: "visual.html" }
+  ];
 
-  const filtered = pages.filter(item =>
-    item.toLowerCase().includes(input)
+  const filtered = pages.filter(p =>
+    p.name.toLowerCase().includes(input)
   );
 
   results.innerHTML = filtered.length
-    ? filtered.map(item => `<p>${item}</p>`).join("")
-    : "<p style='opacity:0.5'>No results</p>";
+    ? filtered.map(p => `<a href="${p.link}">${p.name}</a>`).join("")
+    : "<p>No results</p>";
 }
 </script>
 
