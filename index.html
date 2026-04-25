@@ -27,17 +27,13 @@
       font-weight: 300;
     }
 
-    .menu {
-      justify-self: start;
-      font-size: 20px;
+    .menu, .search {
       cursor: pointer;
+      font-size: 20px;
     }
 
-    .search {
-      justify-self: end;
-      font-size: 18px;
-      cursor: pointer;
-    }
+    .menu { justify-self: start; }
+    .search { justify-self: end; }
 
     /* HERO */
     .hero {
@@ -51,7 +47,6 @@
     .hero p {
       opacity: 0.7;
       max-width: 400px;
-      line-height: 1.5;
     }
 
     .hero a {
@@ -69,23 +64,48 @@
       padding: 80px 10%;
     }
 
-    .grid h2 {
-      font-weight: 300;
+    /* OVERLAY MENU */
+    .menu-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
-    .grid p {
-      opacity: 0.7;
-      line-height: 1.5;
+    .menu-panel a {
+      color: white;
+      font-size: 24px;
+      margin: 10px;
+      text-decoration: none;
     }
 
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+    /* SEARCH PANEL */
+    .search-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.95);
+      display: none;
+      padding: 40px;
     }
 
-    /* subtle cinematic glow */
+    .search-panel input {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+    }
+
+    .results {
+      margin-top: 20px;
+    }
+
     body::before {
       content: "";
       position: fixed;
@@ -99,11 +119,11 @@
 
 <body>
 
-  <!-- TOP NAV -->
+  <!-- TOP BAR -->
   <header class="topbar">
-    <div class="menu">☰</div>
+    <div class="menu" onclick="toggleMenu()">☰</div>
     <div class="logo">SYNTHIA</div>
-    <div class="search">⌕</div>
+    <div class="search" onclick="toggleSearch()">⌕</div>
   </header>
 
   <!-- HERO -->
@@ -114,21 +134,56 @@
 
   <!-- GRID -->
   <section class="grid">
-    <div>
-      <h2>Editorial</h2>
-      <p>Fashion-inspired visual storytelling.</p>
-    </div>
-
-    <div>
-      <h2>Film Archive</h2>
-      <p>Cinematic moods and visual references.</p>
-    </div>
-
-    <div>
-      <h2>Visual Studies</h2>
-      <p>Color, texture and composition exploration.</p>
-    </div>
+    <div><h2>Editorial</h2><p>Fashion-inspired storytelling.</p></div>
+    <div><h2>Film Archive</h2><p>Cinematic moods and references.</p></div>
+    <div><h2>Visual Studies</h2><p>Color and composition.</p></div>
   </section>
+
+  <!-- MENU PANEL -->
+  <div class="menu-panel" id="menuPanel">
+    <a href="#" onclick="toggleMenu()">Close ✕</a>
+    <a href="index.html">Home</a>
+    <a href="leviticus.html">Leviticus</a>
+  </div>
+
+  <!-- SEARCH PANEL -->
+  <div class="search-panel" id="searchPanel">
+    <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchSite()">
+    <div class="results" id="results"></div>
+    <p onclick="toggleSearch()" style="cursor:pointer;">Close ✕</p>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuPanel");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+
+    function toggleSearch() {
+      const search = document.getElementById("searchPanel");
+      search.style.display = search.style.display === "block" ? "none" : "block";
+    }
+
+    function searchSite() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const results = document.getElementById("results");
+
+      const pages = [
+        "Home",
+        "Leviticus",
+        "Editorial",
+        "Film Archive",
+        "Visual Studies"
+      ];
+
+      const filtered = pages.filter(item =>
+        item.toLowerCase().includes(input)
+      );
+
+      results.innerHTML = filtered.map(item => `<p>${item}</p>`).join("");
+    }
+  </script>
 
 </body>
 </html>
