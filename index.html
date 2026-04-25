@@ -1,181 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Synthia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synthia</title>
 
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-    }
+<style>
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
 
-    /* TOP BAR */
-    .topbar {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      padding: 20px 40px;
-    }
+/* TOP BAR */
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 20px 40px;
+}
 
-    .logo {
-      text-align: center;
-      letter-spacing: 4px;
-      font-weight: 300;
-    }
+.logo {
+  text-align: center;
+  letter-spacing: 4px;
+  font-weight: 300;
+}
 
-    .menu, .search {
-      cursor: pointer;
-      font-size: 20px;
-    }
+.menu, .search {
+  cursor: pointer;
+  font-size: 20px;
+}
 
-    .menu { justify-self: start; }
-    .search { justify-self: end; }
+.menu { justify-self: start; }
+.search { justify-self: end; }
 
-    /* HERO */
-    .hero {
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 10%;
-    }
+/* HERO */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+}
 
-    .hero p {
-      opacity: 0.7;
-      max-width: 400px;
-      line-height: 1.5;
-    }
+.hero p {
+  opacity: 0.7;
+  max-width: 400px;
+  line-height: 1.5;
+}
 
-    .hero a {
-      margin-top: 20px;
-      color: white;
-      text-decoration: none;
-      opacity: 0.8;
-    }
+.hero a {
+  margin-top: 20px;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
 
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      padding: 80px 10%;
-    }
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 80px 10%;
+}
 
-    .grid h2 {
-      font-weight: 300;
-    }
+.grid h2 {
+  font-weight: 300;
+}
 
-    .grid p {
-      opacity: 0.7;
-      line-height: 1.5;
-    }
+.grid p {
+  opacity: 0.7;
+  line-height: 1.5;
+}
 
-    /* MENU PANEL */
-    .menu-panel,
-    .search-panel {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.95);
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-    }
+/* PANELS (SMOOTH) */
+.menu-panel,
+.search-panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.96);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
 
-    .menu-panel a {
-      color: white;
-      text-decoration: none;
-      font-size: 24px;
-      margin: 10px;
-    }
+.menu-panel.active,
+.search-panel.active {
+  display: flex;
+  opacity: 1;
+}
 
-    .search-panel input {
-      width: 80%;
-      padding: 15px;
-      font-size: 18px;
-    }
+.menu-panel a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 10px;
+}
 
-    .results {
-      margin-top: 20px;
-    }
+/* SEARCH */
+.search-panel input {
+  width: 80%;
+  padding: 15px;
+  font-size: 18px;
+  background: black;
+  border: 1px solid #333;
+  color: white;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%),
-                  radial-gradient(circle at bottom, rgba(232,66,122,0.08), transparent 60%);
-      pointer-events: none;
-    }
-  </style>
+.results {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* BACKGROUND GLOW */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%),
+              radial-gradient(circle at bottom, rgba(232,66,122,0.08), transparent 60%);
+  pointer-events: none;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <div class="menu" onclick="toggleMenu()">☰</div>
-    <div class="logo">SYNTHIA</div>
-    <div class="search" onclick="toggleSearch()">⌕</div>
-  </header>
+<header class="topbar">
+  <div class="menu" onclick="toggleMenu()">☰</div>
+  <div class="logo">SYNTHIA</div>
+  <div class="search" onclick="toggleSearch()">⌕</div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <p>Film • Fashion • Aesthetic Archive</p>
-    <a href="leviticus.html">Explore Leviticus →</a>
-  </section>
+<section class="hero">
+  <p>Film • Fashion • Aesthetic Archive</p>
+  <a href="leviticus.html">Explore Leviticus →</a>
+</section>
 
-  <!-- GRID -->
-  <section class="grid">
-    <div><h2>Editorial</h2><p>Fashion-inspired storytelling.</p></div>
-    <div><h2>Film Archive</h2><p>Cinematic moods and references.</p></div>
-    <div><h2>Visual Studies</h2><p>Color and composition exploration.</p></div>
-  </section>
+<section class="grid">
+  <div><h2>Editorial</h2><p>Fashion-inspired storytelling.</p></div>
+  <div><h2>Film Archive</h2><p>Cinematic moods and references.</p></div>
+  <div><h2>Visual Studies</h2><p>Color and composition exploration.</p></div>
+</section>
 
-  <!-- MENU -->
-  <div class="menu-panel" id="menuPanel">
-    <a href="#" onclick="toggleMenu()">Close ✕</a>
-    <a href="index.html">Home</a>
-    <a href="leviticus.html">Leviticus</a>
-  </div>
+<!-- MENU -->
+<div class="menu-panel" id="menuPanel">
+  <a href="#" onclick="toggleMenu()">Close ✕</a>
+  <a href="index.html">Home</a>
+  <a href="leviticus.html">Leviticus</a>
+</div>
 
-  <!-- SEARCH -->
-  <div class="search-panel" id="searchPanel">
-    <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchSite()">
-    <div class="results" id="results"></div>
-    <p onclick="toggleSearch()" style="cursor:pointer;">Close ✕</p>
-  </div>
+<!-- SEARCH -->
+<div class="search-panel" id="searchPanel">
+  <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchSite()">
+  <div class="results" id="results"></div>
+  <p onclick="toggleSearch()" style="cursor:pointer;">Close ✕</p>
+</div>
 
-  <!-- JAVASCRIPT -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menuPanel");
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    }
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menuPanel");
+  menu.classList.toggle("active");
+}
 
-    function toggleSearch() {
-      const search = document.getElementById("searchPanel");
-      search.style.display = search.style.display === "flex" ? "none" : "flex";
-    }
+function toggleSearch() {
+  const search = document.getElementById("searchPanel");
+  search.classList.toggle("active");
+}
 
-    function searchSite() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const results = document.getElementById("results");
+function searchSite() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const results = document.getElementById("results");
 
-      const pages = ["Home", "Leviticus", "Editorial", "Film Archive", "Visual Studies"];
+  const pages = ["Home", "Leviticus", "Editorial", "Film Archive", "Visual Studies"];
 
-      const filtered = pages.filter(item =>
-        item.toLowerCase().includes(input)
-      );
+  const filtered = pages.filter(item =>
+    item.toLowerCase().includes(input)
+  );
 
-      results.innerHTML = filtered.map(item => `<p>${item}</p>`).join("");
-    }
-  </script>
+  results.innerHTML = filtered.length
+    ? filtered.map(item => `<p>${item}</p>`).join("")
+    : "<p style='opacity:0.5'>No results</p>";
+}
+</script>
 
 </body>
 </html>
