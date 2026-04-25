@@ -22,56 +22,44 @@ body {
   text-decoration: none;
   font-size: 14px;
   z-index: 10;
-}
-
-/* HERO */
-.hero {
-  height: 100vh;
-  background: url("leviticus-poster-1.png") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: clamp(3rem, 8vw, 6rem);
-  letter-spacing: 10px;
-  font-weight: 300;
-}
-
-/* CONTENT */
-.container {
-  padding: 100px 12%;
-  text-align: center;
-}
-
-.tagline {
   opacity: 0.7;
-  letter-spacing: 2px;
-  margin-top: 10px;
 }
 
-.description {
+.back:hover {
+  opacity: 1;
+}
+
+/* POSTERS */
+.poster {
+  width: 100%;
+  display: block;
+}
+
+/* spacing between posters */
+.section {
+  margin-bottom: 80px;
+}
+
+/* TEXT SECTION (MINIMAL ONLY) */
+.info {
+  padding: 80px 12%;
+  text-align: center;
+}
+
+.info p {
   max-width: 700px;
-  margin: 40px auto;
+  margin: auto;
   font-size: 18px;
   line-height: 1.8;
   opacity: 0.85;
 }
 
-/* SECOND POSTER */
-.poster {
-  width: 100%;
-  margin-top: 80px;
-}
-
-/* GLOW */
+/* subtle cinematic feel */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%);
+  background: radial-gradient(circle at top, rgba(255,255,255,0.04), transparent 60%);
   pointer-events: none;
 }
 </style>
@@ -81,22 +69,20 @@ body::before {
 
 <a href="index.html" class="back">← Home</a>
 
-<!-- HERO POSTER -->
-<section class="hero">
-  <h1>LEVITICUS</h1>
-</section>
+<!-- POSTER 1 -->
+<div class="section">
+  <img src="leviticus-poster-1.png" class="poster">
+</div>
 
 <!-- INFO -->
-<div class="container">
-  <div class="tagline">A Queer Horror Film</div>
-
-  <p class="description">
-    In the silence of faith and fear, something begins to unravel.
-    Leviticus is an upcoming queer horror exploring identity, repression,
-    and the darkness that lingers beneath devotion.
+<div class="info">
+  <p>
+    A queer horror film exploring identity, repression, and faith collapsing into fear.
   </p>
+</div>
 
-  <!-- SECOND POSTER -->
+<!-- POSTER 2 -->
+<div class="section">
   <img src="leviticus-poster-2.png" class="poster">
 </div>
 
