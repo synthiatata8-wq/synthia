@@ -3,114 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Film Archive - Synthia</title>
+<title>Film | SYNTHIA</title>
 
 <style>
-body {
-  margin: 0;
-  background: #000;
-  color: white;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
-/* HEADER */
-header {
-  padding: 30px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  letter-spacing: 3px;
+body{
+background:#000;
+color:#fff;
 }
 
-header a {
-  color: white;
-  text-decoration: none;
-  opacity: 0.8;
+/* SIMPLE NAV */
+.nav{
+position:fixed;
+top:0;
+width:100%;
+background:#000;
+padding:20px 30px;
+z-index:10;
 }
 
-/* HERO */
-.hero {
-  padding: 120px 10% 60px;
+.nav a{
+color:#fff;
+text-decoration:none;
+font-size:14px;
+letter-spacing:2px;
 }
 
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 300;
-  margin: 0;
+/* CONTENT */
+.content{
+padding:100px 40px;
 }
 
-.hero p {
-  opacity: 0.7;
-  max-width: 600px;
-  line-height: 1.6;
+h1{
+letter-spacing:6px;
+font-weight:300;
+margin-bottom:40px;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 60px 10%;
+a{
+display:block;
+color:#fff;
+text-decoration:none;
+margin:20px 0;
+opacity:0.8;
 }
 
-.card {
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 20px;
-}
-
-.card h2 {
-  font-weight: 300;
-}
-
-.card p {
-  opacity: 0.7;
-  line-height: 1.5;
-}
-
-/* BACK LINK */
-.back {
-  padding: 40px 10%;
-}
-
-.back a {
-  color: white;
-  text-decoration: none;
-  opacity: 0.6;
+a:hover{
+opacity:1;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div>FILM ARCHIVE</div>
-  <a href="index.html">← Back Home</a>
-</header>
+<!-- NAV -->
+<div class="nav">
+<a href="index.html">← Home</a>
+</div>
 
-<section class="hero">
-  <h1>Cinematic Works</h1>
-  <p>A collection of film inspirations, moods, and visual references shaping the world of Synthia.</p>
-</section>
+<!-- CONTENT -->
+<div class="content">
 
-<section class="grid">
-  <div class="card">
-    <h2>Leviticus</h2>
-    <p>Upcoming queer horror film exploring identity and fear.</p>
-  </div>
+<h1>FILM</h1>
 
-  <div class="card">
-    <h2>Archive Study I</h2>
-    <p>Dark cinematic tone exploration.</p>
-  </div>
+<a href="leviticus.html">LEVITICUS — Feature Film</a>
+<a href="#">BACKDOORS — Coming Soon</a>
+<a href="visual.html">VISUAL STUDIES</a>
 
-  <div class="card">
-    <h2>Visual Notes</h2>
-    <p>Experimental film concepts and lighting studies.</p>
-  </div>
-</section>
-
-<div class="back">
-  <a href="index.html">← Return to Synthia</a>
 </div>
 
 </body>
