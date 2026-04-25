@@ -16,10 +16,11 @@
 body {
   background: #000;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* =========================
-   HEADER (REAL NAV BAR)
+   HEADER
 ========================= */
 header {
   position: fixed;
@@ -32,45 +33,118 @@ header {
   z-index: 100;
 }
 
-/* LEFT MENU */
 .menu {
   justify-self: start;
   font-size: 18px;
   cursor: pointer;
   opacity: 0.85;
-  transition: 0.3s;
 }
 
-.menu:hover {
-  opacity: 1;
-}
-
-/* CENTER LOGO */
 .logo {
   justify-self: center;
   font-size: 18px;
   letter-spacing: 6px;
-  font-weight: 400;
 }
 
-/* RIGHT SEARCH BUTTON (NOT EMOJI) */
+/* CLEAN SEARCH ICON (NO CIRCLE) */
 .search {
   justify-self: end;
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(255,255,255,0.4);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 18px;
   cursor: pointer;
-  transition: 0.3s;
   opacity: 0.85;
 }
 
-.search:hover {
+.search:hover,
+.menu:hover {
   opacity: 1;
-  border-color: rgba(255,255,255,0.8);
+}
+
+/* =========================
+   OVERLAY MENU
+========================= */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: 0.5s ease;
+  z-index: 200;
+}
+
+.overlay.active {
+  transform: translateY(0);
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 28px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.overlay a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 26px;
+  margin: 15px 0;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   SEARCH OVERLAY
+========================= */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.97);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+  transform: translateY(-100%);
+  transition: 0.5s ease;
+  z-index: 300;
+}
+
+.search-overlay.active {
+  transform: translateY(0);
+}
+
+.search-box {
+  width: 80%;
+  max-width: 500px;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  padding: 12px;
+  outline: none;
+}
+
+/* RESULTS */
+.results {
+  width: 80%;
+  max-width: 500px;
+  margin-top: 30px;
+}
+
+.result-item {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px;
+  opacity: 0.8;
 }
 
 /* =========================
@@ -81,12 +155,8 @@ header {
   width: 100%;
   background: url("hero.jpg") center/cover no-repeat;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* DARK OVERLAY */
 .hero::before {
   content: "";
   position: absolute;
@@ -94,7 +164,6 @@ header {
   background: rgba(0,0,0,0.45);
 }
 
-/* SUBTLE INTRO (NOT CENTER CLUTTER) */
 .hero-intro {
   position: absolute;
   bottom: 60px;
@@ -103,12 +172,9 @@ header {
   font-size: 13px;
   line-height: 1.6;
   opacity: 0.75;
-  z-index: 2;
 }
 
-/* =========================
-   FEATURE SECTION
-========================= */
+/* FEATURES */
 .features {
   padding: 80px 40px;
   background: #0a0a0a;
@@ -126,25 +192,17 @@ header {
   border-radius: 8px;
 }
 
-.card h3 {
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 12px;
-  opacity: 0.7;
-  line-height: 1.5;
-}
-
 /* FOOTER */
 footer {
   text-align: center;
   padding: 40px;
   font-size: 12px;
   opacity: 0.6;
-  background: #000;
+}
+
+/* HIDE SCROLL WHEN OVERLAYS OPEN */
+.no-scroll {
+  overflow: hidden;
 }
 </style>
 </head>
@@ -153,10 +211,35 @@ footer {
 
 <!-- HEADER -->
 <header>
-  <div class="menu">☰</div>
+  <div class="menu" onclick="openMenu()">☰</div>
   <div class="logo">SYNTHIA</div>
-  <div class="search">⌕</div>
+  <div class="search" onclick="openSearch()">⌕</div>
 </header>
+
+<!-- MENU OVERLAY -->
+<div class="overlay" id="overlay">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Film</a>
+  <a href="#">Fashion</a>
+  <a href="#">Culture</a>
+  <a href="#">Contact</a>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="close-btn" onclick="closeSearch()">✕</div>
+
+  <input class="search-box" id="searchInput" placeholder="Search SYNTHIA..." oninput="filterResults()">
+
+  <div class="results" id="results">
+    <div class="result-item">Leviticus — Film Project</div>
+    <div class="result-item">Backdoors — Visual Narrative</div>
+    <div class="result-item">Fashion Division</div>
+    <div class="result-item">Culture Events</div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -168,31 +251,52 @@ footer {
 <!-- FEATURES -->
 <section class="features">
   <div class="grid">
-    <div class="card">
-      <h3>LEVITICUS</h3>
-      <p>Cinematic narrative exploring identity and transformation.</p>
-    </div>
-
-    <div class="card">
-      <h3>BACKDOORS</h3>
-      <p>Visual storytelling focused on hidden worlds and duality.</p>
-    </div>
-
-    <div class="card">
-      <h3>FASHION</h3>
-      <p>Editorial campaigns and luxury visual direction.</p>
-    </div>
-
-    <div class="card">
-      <h3>CULTURE</h3>
-      <p>Curated events and conceptual experiences.</p>
-    </div>
+    <div class="card"><h3>LEVITICUS</h3></div>
+    <div class="card"><h3>BACKDOORS</h3></div>
+    <div class="card"><h3>FASHION</h3></div>
+    <div class="card"><h3>CULTURE</h3></div>
   </div>
 </section>
 
 <footer>
   © 2026 SYNTHIA STUDIO
 </footer>
+
+<script>
+function openMenu() {
+  document.getElementById("overlay").classList.add("active");
+  document.body.classList.add("no-scroll");
+}
+
+function closeMenu() {
+  document.getElementById("overlay").classList.remove("active");
+  document.body.classList.remove("no-scroll");
+}
+
+function openSearch() {
+  document.getElementById("searchOverlay").classList.add("active");
+  document.body.classList.add("no-scroll");
+}
+
+function closeSearch() {
+  document.getElementById("searchOverlay").classList.remove("active");
+  document.body.classList.remove("no-scroll");
+}
+
+/* SIMPLE FILTER */
+function filterResults() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let items = document.querySelectorAll(".result-item");
+
+  items.forEach(item => {
+    if (item.textContent.toLowerCase().includes(input)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+</script>
 
 </body>
 </html>
