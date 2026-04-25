@@ -13,11 +13,11 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* HEADER */
+/* HEADER (TIGHTER) */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 15px 40px;
   letter-spacing: 3px;
 }
 
@@ -27,13 +27,13 @@ header a {
   opacity: 0.7;
 }
 
-/* HERO (FIXED SPACING) */
+/* HERO (PULLED UP) */
 .hero {
-  min-height: 70vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 60px 10%;
+  justify-content: flex-start;
+  padding: 40px 10% 20px;
 }
 
 .hero h1 {
@@ -47,12 +47,12 @@ header a {
   max-width: 600px;
   opacity: 0.7;
   line-height: 1.6;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
-/* SECTIONS (TIGHTER SPACING) */
+/* SECTIONS (CLEAN FLOW) */
 section {
-  padding: 60px 10%;
+  padding: 50px 10%;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -78,7 +78,7 @@ section {
 
 /* QUOTES */
 .quote {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-style: italic;
   opacity: 0.85;
 }
