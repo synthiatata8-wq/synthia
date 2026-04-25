@@ -6,59 +6,56 @@
 <title>SYNTHIA</title>
 
 <style>
-body {
+/* RESET */
+* {
   margin: 0;
-  background: #000;
-  color: #fff;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* HEADER */
-.topbar {
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* NAVIGATION */
+nav {
   position: fixed;
   top: 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 22px;
-  z-index: 1000;
-  background: rgba(0,0,0,0.35);
+  justify-content: center;
+  gap: 35px;
+  padding: 20px 0;
+  z-index: 10;
+  background: rgba(0,0,0,0.2);
   backdrop-filter: blur(10px);
-  box-sizing: border-box;
 }
 
-.menu {
-  font-size: 22px;
-  cursor: pointer;
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
-.logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  letter-spacing: 4px;
-  font-weight: 300;
-  font-size: 14px;
+nav a:hover {
+  opacity: 1;
 }
 
-.search {
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
-}
-
-/* HERO */
+/* HERO SECTION */
 .hero {
   height: 100vh;
+  width: 100%;
+  background: url("hero.jpg") center/cover no-repeat;
   position: relative;
   display: flex;
-  align-items: flex-end; /* pushes content downward */
-  padding: 0 10% 80px;   /* left + bottom spacing */
-
-  background-image: url("hero.jpg");
-  background-size: cover;
-  background-position: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* DARK OVERLAY */
@@ -67,186 +64,138 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.85),
-    rgba(0,0,0,0.3),
-    rgba(0,0,0,0.2)
+    to bottom,
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.75)
   );
 }
 
-/* HERO TEXT (LEFT EDITORIAL) */
+/* HERO CONTENT */
 .hero-content {
   position: relative;
-  max-width: 420px;
   z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 70px;
+  letter-spacing: 10px;
+  font-weight: 300;
 }
 
 .hero-content p {
-  font-size: 16px;
-  line-height: 1.7;
+  margin-top: 20px;
+  font-size: 18px;
   opacity: 0.85;
+  letter-spacing: 1px;
 }
 
-/* FEATURED */
+/* FEATURE SECTION */
+.features {
+  padding: 80px 40px;
+  background: #0a0a0a;
+}
+
 .section-title {
-  padding: 50px 10% 10px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  opacity: 0.6;
+  text-align: center;
+  font-size: 28px;
+  letter-spacing: 4px;
+  margin-bottom: 50px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-  padding: 20px 10% 60px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
 }
 
 .card {
-  border: 1px solid rgba(255,255,255,0.12);
-  padding: 18px;
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #151515;
 }
 
 .card h3 {
-  margin: 0 0 8px;
-  font-weight: 300;
+  margin-bottom: 10px;
+  font-size: 16px;
+  letter-spacing: 2px;
 }
 
 .card p {
   font-size: 13px;
-  opacity: 0.65;
+  opacity: 0.7;
   line-height: 1.5;
 }
 
-/* PANELS */
-.panel {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.96);
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.panel a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  margin: 12px;
-}
-
-/* SEARCH */
-.search-box {
-  width: 80%;
-  padding: 14px;
-  background: black;
-  border: 1px solid #333;
-  color: white;
-}
-
-.results {
-  margin-top: 20px;
-  opacity: 0.7;
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+  background: #000;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="topbar">
-  <div class="menu" onclick="toggleMenu()">☰</div>
-
-  <div class="logo">SYNTHIA</div>
-
-  <div class="search" onclick="toggleSearch()">
-    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-      <circle cx="11" cy="11" r="7"></circle>
-      <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
-    </svg>
-  </div>
-</div>
+<!-- NAVIGATION -->
+<nav>
+  <a href="#">HOME</a>
+  <a href="#">ABOUT</a>
+  <a href="#">FILM</a>
+  <a href="#">FASHION</a>
+  <a href="#">CULTURE</a>
+  <a href="#">CONTACT</a>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <p>
-      A creative studio exploring film, fashion, music, and contemporary culture
-      through editorial storytelling and visual systems.
-    </p>
+    <h1>SYNTHIA</h1>
+    <p>A contemporary studio shaping film, fashion, and cultural storytelling.</p>
   </div>
 </section>
 
-<!-- FEATURED -->
-<div class="section-title">FEATURED WORK</div>
+<!-- FEATURED SECTION -->
+<section class="features">
+  <div class="section-title">FEATURED PROJECTS</div>
 
-<section class="grid">
+  <div class="grid">
+    <div class="card">
+      <h3>LEVITICUS</h3>
+      <p>A cinematic film exploring identity, silence, and transformation.</p>
+    </div>
 
-  <div class="card">
-    <h3>Leviticus</h3>
-    <p>Queer horror film exploring identity, faith, and psychological distortion.</p>
+    <div class="card">
+      <h3>BACKDOORS</h3>
+      <p>An upcoming visual narrative centered on hidden worlds and duality.</p>
+    </div>
+
+    <div class="card">
+      <h3>FASHION DIVISION</h3>
+      <p>Editorial campaigns and luxury visual storytelling.</p>
+    </div>
+
+    <div class="card">
+      <h3>CULTURE EVENTS</h3>
+      <p>Curated experiences including SYNTHIA’s conceptual Met Gala.</p>
+    </div>
   </div>
-
-  <div class="card">
-    <h3>Backdoors</h3>
-    <p>Upcoming psychological film project inspired by experimental cinema.</p>
-  </div>
-
-  <div class="card">
-    <h3>Fashion Division</h3>
-    <p>Editorial campaigns, fragrance concepts, and visual fashion narratives.</p>
-  </div>
-
-  <div class="card">
-    <h3>Met Gala Concept</h3>
-    <p>Curated cultural event exploring identity, performance, and fashion mythology.</p>
-  </div>
-
 </section>
 
-<!-- MENU -->
-<div class="panel" id="menuPanel">
-  <a href="#" onclick="toggleMenu()">Close ✕</a>
-  <a href="film.html">Film & TV</a>
-  <a href="fashion.html">Fashion</a>
-  <a href="culture.html">Culture</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<!-- SEARCH -->
-<div class="panel" id="searchPanel">
-  <input class="search-box" type="text" placeholder="Search SYNTHIA..." onkeyup="searchSite()" id="searchInput">
-  <div class="results" id="results"></div>
-  <p onclick="toggleSearch()" style="cursor:pointer; margin-top:20px;">Close ✕</p>
-</div>
-
-<script>
-function toggleMenu() {
-  const m = document.getElementById("menuPanel");
-  m.style.display = m.style.display === "flex" ? "none" : "flex";
-}
-
-function toggleSearch() {
-  const s = document.getElementById("searchPanel");
-  s.style.display = s.style.display === "flex" ? "none" : "flex";
-}
-
-function searchSite() {
-  const input = document.getElementById("searchInput").value.toLowerCase();
-  const results = document.getElementById("results");
-
-  const pages = ["Leviticus", "Backdoors", "Fashion", "Culture", "Met Gala"];
-
-  const filtered = pages.filter(p => p.toLowerCase().includes(input));
-
-  results.innerHTML = filtered.length
-    ? filtered.map(i => `<p>${i}</p>`).join("")
-    : "<p>No results</p>";
-}
-</script>
+<!-- FOOTER -->
+<footer>
+  © 2026 SYNTHIA STUDIO — ALL RIGHTS RESERVED
+</footer>
 
 </body>
 </html>
