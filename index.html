@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Synthia</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
@@ -23,8 +25,9 @@ body {
 
 .logo {
   text-align: center;
-  letter-spacing: 4px;
+  letter-spacing: 6px;
   font-weight: 300;
+  font-family: "Playfair Display", serif;
 }
 
 .menu, .search {
@@ -37,7 +40,7 @@ body {
 
 /* HERO */
 .hero {
-  height: 80vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,36 +48,56 @@ body {
 }
 
 .hero p {
-  opacity: 0.7;
-  max-width: 400px;
-  line-height: 1.5;
+  opacity: 0.75;
+  max-width: 420px;
+  line-height: 1.6;
 }
 
 .hero a {
   margin-top: 20px;
   color: white;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
-/* GRID */
+/* EDITORIAL GRID (UPGRADED) */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 30px;
   padding: 80px 10%;
 }
 
-.grid h2 {
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  filter: grayscale(20%) contrast(1.1);
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+.card h2 {
+  font-family: "Playfair Display", serif;
   font-weight: 300;
+  margin: 12px 0 5px;
 }
 
-.grid p {
+.card p {
   opacity: 0.7;
-  line-height: 1.5;
+  margin: 0;
 }
 
-/* PANELS (SMOOTH) */
+/* PANELS */
 .menu-panel,
 .search-panel {
   position: fixed;
@@ -85,14 +108,11 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 10;
-  opacity: 0;
-  transition: opacity 0.25s ease;
 }
 
 .menu-panel.active,
 .search-panel.active {
   display: flex;
-  opacity: 1;
 }
 
 .menu-panel a {
@@ -114,10 +134,9 @@ body {
 
 .results {
   margin-top: 20px;
-  text-align: center;
 }
 
-/* BACKGROUND GLOW */
+/* GLOW */
 body::before {
   content: "";
   position: fixed;
@@ -142,10 +161,27 @@ body::before {
   <a href="leviticus.html">Explore Leviticus →</a>
 </section>
 
+<!-- EDITORIAL CARDS -->
 <section class="grid">
-  <div><h2>Editorial</h2><p>Fashion-inspired storytelling.</p></div>
-  <div><h2>Film Archive</h2><p>Cinematic moods and references.</p></div>
-  <div><h2>Visual Studies</h2><p>Color and composition exploration.</p></div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" alt="">
+    <h2>Editorial</h2>
+    <p>Fashion-inspired visual storytelling.</p>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="">
+    <h2>Film Archive</h2>
+    <p>Cinematic moods and references.</p>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1526481280695-3c687fd5432c" alt="">
+    <h2>Visual Studies</h2>
+    <p>Color, texture and composition.</p>
+  </div>
+
 </section>
 
 <!-- MENU -->
@@ -164,13 +200,11 @@ body::before {
 
 <script>
 function toggleMenu() {
-  const menu = document.getElementById("menuPanel");
-  menu.classList.toggle("active");
+  document.getElementById("menuPanel").classList.toggle("active");
 }
 
 function toggleSearch() {
-  const search = document.getElementById("searchPanel");
-  search.classList.toggle("active");
+  document.getElementById("searchPanel").classList.toggle("active");
 }
 
 function searchSite() {
