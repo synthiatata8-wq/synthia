@@ -13,7 +13,42 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* HEADER */
+/* HERO COLLAGE */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10%;
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.3), rgba(0,0,0,0.85));
+}
+
+/* HERO TEXT */
+.hero-content {
+  position: relative;
+  text-align: left;
+  max-width: 650px;
+  z-index: 2;
+}
+
+.hero-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+/* TOP BAR */
 .topbar {
   position: fixed;
   top: 0;
@@ -23,29 +58,14 @@ body {
   align-items: center;
   padding: 18px 22px;
   z-index: 1000;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.4);
   backdrop-filter: blur(10px);
-  box-sizing: border-box;
 }
 
-.menu {
+.menu, .search {
   font-size: 22px;
   cursor: pointer;
   user-select: none;
-}
-
-/* BOLD EDITORIAL SEARCH ICON (SVG STYLE) */
-.search {
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
-  opacity: 0.95;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.search:hover {
-  opacity: 1;
-  transform: scale(1.08);
 }
 
 .logo {
@@ -57,25 +77,9 @@ body {
   font-size: 14px;
 }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 10%;
-}
-
-.hero p {
-  max-width: 650px;
-  font-size: 16px;
-  line-height: 1.7;
-  opacity: 0.75;
-}
-
-/* GRID */
+/* GRID SECTION */
 .section-title {
-  padding: 40px 10% 10px;
+  padding: 50px 10% 10px;
   font-size: 12px;
   letter-spacing: 2px;
   opacity: 0.6;
@@ -110,7 +114,7 @@ body {
   line-height: 1.5;
 }
 
-/* PANELS */
+/* OVERLAYS */
 .panel {
   position: fixed;
   inset: 0;
@@ -130,7 +134,7 @@ body {
   opacity: 0.85;
 }
 
-/* SEARCH INPUT */
+/* SEARCH */
 .search-box {
   width: 80%;
   padding: 14px;
@@ -146,15 +150,6 @@ body {
   text-align: center;
   opacity: 0.7;
 }
-
-/* BACKGROUND */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%);
-  pointer-events: none;
-}
 </style>
 </head>
 
@@ -163,24 +158,23 @@ body::before {
 <!-- HEADER -->
 <div class="topbar">
   <div class="menu" onclick="toggleMenu()">☰</div>
-
   <div class="logo">SYNTHIA</div>
-
-  <!-- SVG SEARCH ICON (BOLD EDITORIAL) -->
   <div class="search" onclick="toggleSearch()">
-    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="white" stroke-width="2">
       <circle cx="11" cy="11" r="7"></circle>
       <line x1="16.65" y1="16.65" x2="21" y2="21"></line>
     </svg>
   </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO COLLAGE -->
 <section class="hero">
-  <p>
-    A creative studio exploring film, fashion, music, and contemporary culture
-    through editorial storytelling and visual systems.
-  </p>
+  <div class="hero-content">
+    <p>
+      A creative studio exploring film, fashion, music, and contemporary culture
+      through editorial storytelling and visual systems.
+    </p>
+  </div>
 </section>
 
 <!-- FEATURED -->
