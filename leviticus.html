@@ -13,10 +13,21 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* HERO SECTION */
+/* BACK LINK */
+.back {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  z-index: 10;
+}
+
+/* HERO POSTER */
 .hero {
   height: 100vh;
-  background: url('https://images.unsplash.com/photo-1495121605193-b116b5b09a7e') center/cover no-repeat;
+  background: url("leviticus-poster-1.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,40 +36,37 @@ body {
 
 .hero h1 {
   font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 10px;
   font-weight: 300;
-  letter-spacing: 6px;
 }
 
-/* CONTENT */
+/* INFO */
 .container {
   padding: 100px 12%;
+  text-align: center;
 }
 
-.intro {
+.tagline {
+  opacity: 0.7;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+.description {
   max-width: 700px;
-  font-size: 20px;
+  margin: 40px auto;
+  font-size: 18px;
   line-height: 1.8;
   opacity: 0.85;
 }
 
-/* IMAGE STORY */
-.story img {
+/* SECOND POSTER */
+.poster {
   width: 100%;
-  margin: 80px 0;
+  margin-top: 80px;
 }
 
-/* BACK LINK */
-.back {
-  position: fixed;
-  top: 20px;
-  left: 30px;
-  color: white;
-  text-decoration: none;
-  z-index: 10;
-  font-size: 14px;
-}
-
-/* SUBTLE GLOW */
+/* GLOW */
 body::before {
   content: "";
   position: fixed;
@@ -73,24 +81,23 @@ body::before {
 
 <a href="index.html" class="back">← Home</a>
 
-<!-- HERO -->
+<!-- HERO POSTER -->
 <section class="hero">
   <h1>LEVITICUS</h1>
 </section>
 
-<!-- INTRO TEXT -->
+<!-- INFO -->
 <div class="container">
-  <p class="intro">
-    A study in darkness, form, and quiet intensity. Leviticus explores fashion as mood—
-    where shadow, texture, and presence become the narrative.
-  </p>
-</div>
+  <div class="tagline">A Queer Horror Film</div>
 
-<!-- IMAGE STORY -->
-<div class="story">
-  <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
-  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
-  <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+  <p class="description">
+    In the silence of faith and fear, something begins to unravel.
+    Leviticus is an upcoming queer horror exploring identity, repression,
+    and the darkness that lingers beneath devotion.
+  </p>
+
+  <!-- SECOND POSTER -->
+  <img src="leviticus-poster-2.jpg" class="poster">
 </div>
 
 </body>
