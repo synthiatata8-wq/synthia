@@ -47,6 +47,7 @@
     .hero p {
       opacity: 0.7;
       max-width: 400px;
+      line-height: 1.5;
     }
 
     .hero a {
@@ -64,40 +65,37 @@
       padding: 80px 10%;
     }
 
-    /* OVERLAY MENU */
-    .menu-panel {
+    .grid h2 {
+      font-weight: 300;
+    }
+
+    .grid p {
+      opacity: 0.7;
+      line-height: 1.5;
+    }
+
+    /* MENU PANEL */
+    .menu-panel,
+    .search-panel {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: rgba(0,0,0,0.95);
       display: none;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      z-index: 10;
     }
 
     .menu-panel a {
       color: white;
+      text-decoration: none;
       font-size: 24px;
       margin: 10px;
-      text-decoration: none;
-    }
-
-    /* SEARCH PANEL */
-    .search-panel {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.95);
-      display: none;
-      padding: 40px;
     }
 
     .search-panel input {
-      width: 100%;
+      width: 80%;
       padding: 15px;
       font-size: 18px;
     }
@@ -136,17 +134,17 @@
   <section class="grid">
     <div><h2>Editorial</h2><p>Fashion-inspired storytelling.</p></div>
     <div><h2>Film Archive</h2><p>Cinematic moods and references.</p></div>
-    <div><h2>Visual Studies</h2><p>Color and composition.</p></div>
+    <div><h2>Visual Studies</h2><p>Color and composition exploration.</p></div>
   </section>
 
-  <!-- MENU PANEL -->
+  <!-- MENU -->
   <div class="menu-panel" id="menuPanel">
     <a href="#" onclick="toggleMenu()">Close ✕</a>
     <a href="index.html">Home</a>
     <a href="leviticus.html">Leviticus</a>
   </div>
 
-  <!-- SEARCH PANEL -->
+  <!-- SEARCH -->
   <div class="search-panel" id="searchPanel">
     <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchSite()">
     <div class="results" id="results"></div>
@@ -162,20 +160,14 @@
 
     function toggleSearch() {
       const search = document.getElementById("searchPanel");
-      search.style.display = search.style.display === "block" ? "none" : "block";
+      search.style.display = search.style.display === "flex" ? "none" : "flex";
     }
 
     function searchSite() {
       const input = document.getElementById("searchInput").value.toLowerCase();
       const results = document.getElementById("results");
 
-      const pages = [
-        "Home",
-        "Leviticus",
-        "Editorial",
-        "Film Archive",
-        "Visual Studies"
-      ];
+      const pages = ["Home", "Leviticus", "Editorial", "Film Archive", "Visual Studies"];
 
       const filtered = pages.filter(item =>
         item.toLowerCase().includes(input)
