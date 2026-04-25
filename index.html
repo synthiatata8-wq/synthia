@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SYNTHIA Studio</title>
+<title>SYNTHIA</title>
 
 <style>
 body {
@@ -21,14 +21,17 @@ body {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 20px 40px;
-  z-index: 100;
+  padding: 18px 25px;
+  z-index: 1000;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
 }
 
 .menu, .search {
   cursor: pointer;
-  font-size: 20px;
-  opacity: 0.8;
+  font-size: 22px;
+  opacity: 0.9;
+  user-select: none;
 }
 
 .menu { justify-self: start; }
@@ -38,7 +41,7 @@ body {
   text-align: center;
   letter-spacing: 4px;
   font-weight: 300;
-  opacity: 0.9;
+  font-size: 14px;
 }
 
 /* HERO */
@@ -50,58 +53,53 @@ body {
   padding: 0 10%;
 }
 
-.hero h1 {
-  font-size: clamp(3rem, 7vw, 6rem);
-  font-weight: 300;
-  margin: 0;
-  letter-spacing: 8px;
+.hero p {
+  max-width: 650px;
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.75;
 }
 
-.hero p {
-  max-width: 600px;
-  margin-top: 20px;
-  opacity: 0.7;
-  line-height: 1.6;
+/* SECTION */
+.section-title {
+  padding: 40px 10% 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.6;
 }
 
 /* GRID */
-.section-title {
-  padding: 40px 10% 10px;
-  opacity: 0.6;
-  font-size: 13px;
-  letter-spacing: 2px;
-}
-
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
   padding: 20px 10% 60px;
 }
 
 .card {
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 20px;
-  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 18px;
+  transition: 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.35);
 }
 
 .card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-weight: 300;
+  letter-spacing: 1px;
 }
 
 .card p {
-  opacity: 0.6;
-  font-size: 14px;
+  font-size: 13px;
+  opacity: 0.65;
   line-height: 1.5;
 }
 
-/* PANELS */
+/* OVERLAY PANELS */
 .panel {
   position: fixed;
   inset: 0;
@@ -110,25 +108,26 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 200;
+  z-index: 2000;
 }
 
 .panel a {
   color: white;
   text-decoration: none;
-  font-size: 20px;
-  margin: 10px;
-  opacity: 0.8;
+  font-size: 18px;
+  margin: 12px;
+  opacity: 0.85;
 }
 
-/* SEARCH */
+/* SEARCH INPUT */
 .search-box {
   width: 80%;
-  padding: 15px;
-  font-size: 16px;
+  padding: 14px;
+  font-size: 15px;
   background: black;
   border: 1px solid #333;
   color: white;
+  outline: none;
 }
 
 .results {
@@ -137,7 +136,7 @@ body {
   opacity: 0.7;
 }
 
-/* GLOW */
+/* subtle background glow */
 body::before {
   content: "";
   position: fixed;
@@ -157,12 +156,11 @@ body::before {
   <div class="search" onclick="toggleSearch()">⌕</div>
 </div>
 
-<!-- HERO -->
+<!-- HERO (CLEAN — NO BIG TITLE) -->
 <section class="hero">
-  <h1>STUDIO</h1>
   <p>
-    A creative studio exploring film, fashion, music, and contemporary culture through
-    editorial storytelling and visual systems.
+    A creative studio exploring film, fashion, music, and contemporary culture
+    through editorial storytelling and visual systems.
   </p>
 </section>
 
@@ -178,7 +176,7 @@ body::before {
 
   <div class="card">
     <h3>Backdoors</h3>
-    <p>Upcoming psychological film project inspired by A24-style storytelling.</p>
+    <p>Upcoming psychological film project inspired by experimental cinema.</p>
   </div>
 
   <div class="card">
@@ -188,7 +186,7 @@ body::before {
 
   <div class="card">
     <h3>Met Gala Concept</h3>
-    <p>Curated cultural event exploring fashion, identity, and performance.</p>
+    <p>Curated cultural event exploring identity, performance, and fashion mythology.</p>
   </div>
 
 </section>
@@ -212,13 +210,13 @@ body::before {
 
 <script>
 function toggleMenu() {
-  const m = document.getElementById("menuPanel");
-  m.style.display = m.style.display === "flex" ? "none" : "flex";
+  const menu = document.getElementById("menuPanel");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 }
 
 function toggleSearch() {
-  const s = document.getElementById("searchPanel");
-  s.style.display = s.style.display === "flex" ? "none" : "flex";
+  const search = document.getElementById("searchPanel");
+  search.style.display = search.style.display === "flex" ? "none" : "flex";
 }
 
 function searchSite() {
