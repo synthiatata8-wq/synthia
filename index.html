@@ -13,40 +13,6 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 10%;
-
-  /* IMPORTANT: replace hero.jpg with your file */
-  background-image: url("hero.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.3), rgba(0,0,0,0.85));
-}
-
-.hero-content {
-  position: relative;
-  max-width: 650px;
-  z-index: 2;
-}
-
-.hero-content p {
-  font-size: 16px;
-  line-height: 1.7;
-  opacity: 0.8;
-}
-
 /* HEADER */
 .topbar {
   position: fixed;
@@ -57,7 +23,7 @@ body {
   align-items: center;
   padding: 18px 22px;
   z-index: 1000;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.35);
   backdrop-filter: blur(10px);
   box-sizing: border-box;
 }
@@ -65,14 +31,6 @@ body {
 .menu {
   font-size: 22px;
   cursor: pointer;
-  user-select: none;
-}
-
-.search {
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
-  opacity: 0.95;
 }
 
 .logo {
@@ -84,7 +42,52 @@ body {
   font-size: 14px;
 }
 
-/* SECTIONS */
+.search {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* pushes content downward */
+  padding: 0 10% 80px;   /* left + bottom spacing */
+
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* DARK OVERLAY */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.2)
+  );
+}
+
+/* HERO TEXT (LEFT EDITORIAL) */
+.hero-content {
+  position: relative;
+  max-width: 420px;
+  z-index: 2;
+}
+
+.hero-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* FEATURED */
 .section-title {
   padding: 50px 10% 10px;
   font-size: 12px;
@@ -115,7 +118,7 @@ body {
   line-height: 1.5;
 }
 
-/* OVERLAYS */
+/* PANELS */
 .panel {
   position: fixed;
   inset: 0;
@@ -134,7 +137,7 @@ body {
   margin: 12px;
 }
 
-/* SEARCH BOX */
+/* SEARCH */
 .search-box {
   width: 80%;
   padding: 14px;
@@ -158,7 +161,6 @@ body {
 
   <div class="logo">SYNTHIA</div>
 
-  <!-- SVG SEARCH ICON -->
   <div class="search" onclick="toggleSearch()">
     <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
       <circle cx="11" cy="11" r="7"></circle>
