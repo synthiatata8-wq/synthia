@@ -10,273 +10,207 @@ body{
 margin:0;
 background:#0b0b0b;
 color:#fff;
-font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
--webkit-font-smoothing:antialiased;
+font-family:Helvetica, Arial, sans-serif;
 }
 
-/* HEADER */
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
+/* TOP BAR */
+.topbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 25px;
-background:#0b0b0b;
-z-index:1000;
-box-sizing:border-box;
+padding:18px 20px;
+border-bottom:1px solid #222;
+position:relative;
 }
 
 .logo{
 position:absolute;
 left:50%;
 transform:translateX(-50%);
-letter-spacing:10px;
+letter-spacing:6px;
 font-size:13px;
-font-weight:300;
+opacity:0.85;
 }
 
 /* ICONS */
 .icon{
+font-size:18px;
 cursor:pointer;
-display:flex;
-align-items:center;
-}
-
-/* SUBTOPICS */
-.subnav{
-margin-top:70px;
-display:flex;
-gap:22px;
-padding:12px 20px;
-overflow-x:auto;
-white-space:nowrap;
-scrollbar-width:none;
-}
-
-.subnav::-webkit-scrollbar{
-display:none;
-}
-
-.subnav a{
-color:#fff;
-text-decoration:none;
-font-size:11px;
-letter-spacing:1.5px;
-text-transform:uppercase;
-font-weight:300;
-opacity:0.75;
-flex-shrink:0;
-}
-
-/* HERO */
-.press{
-max-width:900px;
-margin:40px auto;
-padding:0 20px;
-}
-
-.press img{
-width:100%;
-border-radius:6px;
-}
-
-.press p{
-margin-top:10px;
-font-size:14px;
-line-height:1.7;
-font-family:Georgia, serif;
-opacity:0.9;
-}
-
-/* CTA */
-.cta{
-max-width:900px;
-margin:20px auto 60px;
-padding:0 20px;
-}
-
-.cta a{
-color:#fff;
-text-decoration:none;
-font-family:Georgia, serif;
-font-size:20px;
+opacity:0.8;
 }
 
 /* MENU */
 .menu{
 position:fixed;
 top:0;
-left:0;
-width:100%;
+left:-100%;
+width:80%;
 height:100%;
-background:#000;
-display:none;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:2000;
+background:#0b0b0b;
+padding:40px 20px;
+transition:0.4s;
+z-index:999;
+border-right:1px solid #222;
+}
+
+.menu.active{
+left:0;
 }
 
 .menu a{
-color:#fff;
-text-decoration:none;
-font-size:16px;
-margin:10px;
-letter-spacing:2px;
-font-weight:300;
-}
-
-/* CONTACT (TYPOGRAPHY LINKS) */
-.contact{
-margin-top:40px;
-text-align:center;
-font-size:12px;
-letter-spacing:1.5px;
-line-height:2;
-}
-
-.contact a{
-color:#fff;
-text-decoration:none;
 display:block;
-opacity:0.85;
-transition:0.2s ease;
-}
-
-.contact a:hover{
-opacity:1;
+margin:20px 0;
+color:#fff;
+text-decoration:none;
+font-size:14px;
+letter-spacing:1px;
 }
 
 /* SEARCH */
-.search{
+.search-overlay{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:#000;
+background:#0b0b0b;
 display:none;
 flex-direction:column;
 align-items:center;
-padding-top:120px;
-z-index:2000;
+justify-content:center;
+z-index:1000;
 }
 
-.search input{
+.search-overlay input{
 width:80%;
-padding:14px;
+padding:15px;
 font-size:16px;
-background:transparent;
-border:none;
-border-bottom:1px solid #444;
+background:none;
+border:1px solid #333;
 color:#fff;
 outline:none;
-font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* SUBTOPICS */
+.subtopics{
+display:flex;
+overflow-x:auto;
+gap:15px;
+padding:15px 20px;
+border-bottom:1px solid #222;
+font-size:12px;
+opacity:0.8;
+}
+
+.subtopics div{
+white-space:nowrap;
+}
+
+/* HERO */
+.hero{
+padding:20px;
+}
+
+.hero img{
+width:100%;
+border-radius:4px;
+}
+
+.hero p{
+font-family:Georgia, serif;
+font-size:14px;
+margin-top:15px;
+opacity:0.9;
+}
+
+.readmore{
+display:inline-block;
+margin-top:10px;
+font-size:12px;
 letter-spacing:1px;
+opacity:0.8;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-<div class="icon" onclick="openMenu()">☰</div>
+<!-- TOP BAR -->
+<div class="topbar">
+
+<div class="icon" onclick="toggleMenu()">☰</div>
 
 <div class="logo">SYNTHIA</div>
 
-<div class="icon" onclick="openSearch()">
-<svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="1.5" fill="none">
-<circle cx="11" cy="11" r="7"></circle>
-<line x1="16.65" y1="16.65" x2="21" y2="21"></line>
-</svg>
-</div>
-</header>
+<div class="icon" onclick="openSearch()">⌕</div>
 
-<!-- SUBTOPICS -->
-<div class="subnav">
-<a href="#">FILM</a>
-<a href="#">FASHION</a>
-<a href="#">CULTURE</a>
-<a href="#">EVENTS</a>
-<a href="#">CELEBRITY</a>
-<a href="#">CAMPAIGNS</a>
-<a href="#">BEAUTY</a>
-<a href="#">FRAGRANCE</a>
-<a href="#">RUNWAY</a>
-<a href="#">EDITORIALS</a>
-</div>
-
-<!-- HERO -->
-<div class="press">
-<img src="leviticus-cover.jpg" alt="Press Tour">
-
-<p style="font-size:10px;letter-spacing:2.5px;opacity:0.45;text-transform:uppercase;margin:10px 0 6px;">
-Film
-</p>
-
-<p>
-Stacey Clausen and Joe Bird during a press tour for *Leviticus*, captured within a constructed moment where image and intention begin to blur.
-</p>
-
-<p>
-What begins as documentation becomes something less certain.
-</p>
-</div>
-
-<!-- CTA -->
-<div class="cta">
-<a href="leviticus.html">Continue Reading →</a>
 </div>
 
 <!-- MENU -->
 <div class="menu" id="menu">
-<a href="#">FILM</a>
-<a href="#">FASHION</a>
-<a href="#">CULTURE</a>
-<a href="#">EVENTS</a>
-<a href="#">CELEBRITY</a>
-<a href="#">CAMPAIGNS</a>
-<a href="#">BEAUTY</a>
-<a href="#">FRAGRANCE</a>
-<a href="#">RUNWAY</a>
-<a href="#">EDITORIALS</a>
-<a href="#">CONTACT</a>
+<a href="#">Film</a>
+<a href="#">Fashion</a>
+<a href="#">Culture</a>
+<a href="#">Events</a>
+<a href="#">Celebrity</a>
+<a href="about.html">About</a>
 
-<!-- CONTACT LINKS -->
-<div class="contact">
+<!-- CONTACT ICONS -->
+<div style="margin-top:40px; display:flex; gap:15px;">
 
-<a href="https://www.tiktok.com/@synthia_tata?_r=1&_t=ZS-95fRfm6xQ1Y" target="_blank">TikTok</a>
-
-<a href="https://www.instagram.com/tatasynthia?igsh=YmFhZTNiMGZha3Bn" target="_blank">Instagram</a>
-
-<a href="https://x.com/SynthiaTata" target="_blank">X (Twitter)</a>
-
-<a href="https://www.facebook.com/profile.php?id=61584934509127" target="_blank">Facebook</a>
-
-<a href="mailto:synthiatata8@gmail.com">Email</a>
+<a href="https://www.instagram.com/tatasynthia?igsh=YmFhZTNiMGZha3Bn" target="_blank">IG</a>
+<a href="https://x.com/SynthiaTata" target="_blank">X</a>
+<a href="https://www.facebook.com/profile.php?id=61584934509127" target="_blank">FB</a>
+<a href="https://www.tiktok.com/@synthia_tata?_r=1&_t=ZS-95fRfm6xQ1Y" target="_blank">TT</a>
+<a href="mailto:synthiatata8@gmail.com">MAIL</a>
 
 </div>
-
-<br>
-<a href="#" onclick="closeMenu()">CLOSE</a>
 </div>
 
 <!-- SEARCH -->
-<div class="search" id="search">
+<div class="search-overlay" id="search">
 <input type="text" placeholder="Search SYNTHIA...">
-<br>
-<a href="#" onclick="closeSearch()" style="color:#fff; opacity:0.6;">CLOSE</a>
+</div>
+
+<!-- SUBTOPICS -->
+<div class="subtopics">
+<div>Film</div>
+<div>Fashion</div>
+<div>Culture</div>
+<div>Events</div>
+<div>Celebrity</div>
+<div>Campaigns</div>
+<div>Beauty</div>
+<div>Fragrance</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+
+<img src="leviticus-cover.jpg" alt="Leviticus Press Tour">
+
+<p>
+Stacey Clausen and Joe Bird in a press tour moment for *Leviticus*, a controlled public image before the narrative unfolds.
+</p>
+
+<a class="readmore" href="leviticus.html">CONTINUE READING →</a>
+
 </div>
 
 <script>
-function openMenu(){ document.getElementById("menu").style.display="flex"; }
-function closeMenu(){ document.getElementById("menu").style.display="none"; }
-function openSearch(){ document.getElementById("search").style.display="flex"; }
-function closeSearch(){ document.getElementById("search").style.display="none"; }
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+function openSearch(){
+document.getElementById("search").style.display="flex";
+}
+
+document.getElementById("search").addEventListener("click", function(e){
+if(e.target === this){
+this.style.display="none";
+}
+});
 </script>
 
 </body>
