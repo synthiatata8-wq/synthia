@@ -10,118 +10,59 @@ body{
 margin:0;
 background:#0b0b0b;
 color:#fff;
-font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-scroll-behavior:smooth;
+font-family:Helvetica, Arial, sans-serif;
 }
 
-/* BACK BUTTON (FIXED GLOBAL STYLE) */
-.back{
-position:fixed;
-top:18px;
-left:18px;
-font-size:12px;
-letter-spacing:2px;
-color:#fff;
-opacity:0.75;
-text-decoration:none;
-padding:6px 10px;
-border:1px solid rgba(255,255,255,0.2);
-background:rgba(0,0,0,0.35);
-backdrop-filter:blur(6px);
-z-index:1000;
-}
-
-.back:hover{
-opacity:1;
-border-color:rgba(255,255,255,0.4);
-}
-
-/* HEADER */
 header{
-padding:60px 20px 10px;
-text-align:center;
-letter-spacing:3px;
-font-size:13px;
-opacity:0.8;
+padding:18px;
+border-bottom:1px solid #1a1a1a;
 }
 
-/* SECTION */
+.back{
+cursor:pointer;
+font-size:12px;
+}
+
 .section{
-padding:40px 20px;
-border-top:1px solid #1a1a1a;
+padding:20px;
+border-bottom:1px solid #1a1a1a;
+}
+
+img{
+width:100%;
+border-radius:4px;
 }
 
 h2{
 font-size:13px;
-letter-spacing:3px;
-opacity:0.8;
+letter-spacing:2px;
 }
 
-/* IMAGE */
-img{
-width:100%;
-border-radius:4px;
-margin-top:15px;
-}
-
-/* TEXT */
 p{
 font-family:Georgia, serif;
-font-size:15px;
-line-height:1.8;
-opacity:0.9;
-margin-top:12px;
-}
-
-/* DIVIDER */
-.divider{
-height:1px;
-background:#1a1a1a;
-margin:40px 0;
+line-height:1.6;
 }
 </style>
 </head>
 
 <body>
 
-<a class="back" href="index.html">← BACK</a>
+<header>
+<div class="back" onclick="window.location.href='index.html'">← BACK</div>
+</header>
 
-<header>FASHION</header>
-
-<!-- CHANEL DE BLEU -->
+<!-- CHANEL -->
 <div class="section" id="chanel">
-
 <h2>CHANEL DE BLEU — YUTARO GOTO</h2>
-
-<img src="chanel-de-bleu.jpg" alt="Chanel de Bleu">
-
-<p>
-The Chanel de Bleu campaign explores fragrance as atmosphere rather than product. Through controlled natural lighting and restrained composition, the imagery builds a quiet emotional distance.
-</p>
-
-<p>
-It reflects identity through stillness, texture, and cinematic simplicity.
-</p>
-
+<img src="chanel.jpg">
+<p>A cinematic fragrance campaign exploring identity and motion.</p>
 </div>
-
-<div class="divider"></div>
 
 <!-- VOGUE -->
 <div class="section" id="vogue">
-
 <h2>VOGUE — JACOB ELORDI</h2>
-
-<img src="vogue-jacob.jpg" alt="Vogue Jacob Elordi">
-
-<p>
-This Vogue feature presents a minimalist study of modern masculinity through structured editorial framing and reduced visual noise.
-</p>
-
-<p>
-The emphasis is placed on posture, silhouette, and controlled presence.
-</p>
-
+<img src="vogue.jpg">
+<p>A visual study of modern masculinity in high fashion editorial form.</p>
 </div>
 
 </body>
