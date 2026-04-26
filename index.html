@@ -36,7 +36,6 @@ opacity:0.85;
 .icon{
 font-size:14px;
 opacity:0.8;
-cursor:pointer;
 }
 
 /* HERO */
@@ -57,16 +56,6 @@ margin-top:12px;
 opacity:0.9;
 }
 
-.cta{
-display:inline-block;
-margin-top:10px;
-font-size:12px;
-letter-spacing:1px;
-opacity:0.8;
-color:#fff;
-text-decoration:none;
-}
-
 /* SUBTOPICS */
 .subnav{
 display:flex;
@@ -85,7 +74,7 @@ opacity:0.7;
 white-space:nowrap;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section{
 padding:30px 20px;
 border-top:1px solid #1a1a1a;
@@ -97,13 +86,14 @@ letter-spacing:3px;
 opacity:0.8;
 }
 
-/* CARDS */
+/* GRID */
 .grid{
 display:grid;
 gap:20px;
 margin-top:15px;
 }
 
+/* CARD */
 .card{
 cursor:pointer;
 }
@@ -126,23 +116,12 @@ opacity:0.75;
 line-height:1.5;
 }
 
-/* ARTICLE */
-.article{
-margin-top:50px;
-padding-top:40px;
-border-top:1px solid #222;
-}
-
-.article h3{
-font-size:13px;
-letter-spacing:3px;
-}
-
-.article p{
-font-family:Georgia, serif;
-font-size:15px;
-line-height:1.7;
-opacity:0.9;
+/* CTA */
+.cta{
+font-size:11px;
+letter-spacing:2px;
+opacity:0.7;
+margin-top:6px;
 }
 </style>
 </head>
@@ -160,7 +139,6 @@ opacity:0.9;
 <div class="hero">
 <img src="leviticus-cover.jpg">
 <p>A fragmented exploration of identity unfolds through controlled imagery and emotional distance.</p>
-<a class="cta" href="#film">CONTINUE READING →</a>
 </div>
 
 <!-- SUBTOPICS -->
@@ -171,10 +149,10 @@ opacity:0.9;
 <a href="#">EVENTS</a>
 </div>
 
-<!-- FILM -->
+<!-- FILM PREVIEW -->
 <div class="section" id="film">
 <h2>FILM</h2>
-<p>Leviticus feature continues below...</p>
+<p>Leviticus feature preview — click to explore full story in film section.</p>
 </div>
 
 <!-- FASHION PREVIEW -->
@@ -184,42 +162,22 @@ opacity:0.9;
 <div class="grid">
 
 <!-- CHANEL -->
-<div class="card" onclick="document.getElementById('chanel').scrollIntoView({behavior:'smooth'})">
+<div class="card" onclick="window.location.href='fashion.html#chanel'">
 <img src="chanel-de-bleu.jpg">
 <h3>CHANEL DE BLEU — YUTARO GOTO</h3>
 <p>Minimal luxury fragrance campaign exploring identity through atmosphere and restraint.</p>
+<div class="cta">Read story →</div>
 </div>
 
 <!-- VOGUE -->
-<div class="card" onclick="document.getElementById('vogue').scrollIntoView({behavior:'smooth'})">
+<div class="card" onclick="window.location.href='fashion.html#vogue'">
 <img src="vogue-jacob.jpg">
 <h3>VOGUE — JACOB ELORDI</h3>
 <p>High-fashion study of modern celebrity presence through minimal editorial framing.</p>
+<div class="cta">Read story →</div>
 </div>
 
 </div>
-</div>
-
-<!-- FULL STORY 1 -->
-<div class="article" id="chanel">
-<h3>CHANEL DE BLEU</h3>
-<p>
-The Chanel de Bleu campaign featuring Yutaro Goto presents fragrance as atmosphere rather than object. The visual language is restrained, focusing on natural light and controlled composition.
-</p>
-<p>
-It builds identity through silence, distance, and cinematic simplicity.
-</p>
-</div>
-
-<!-- FULL STORY 2 -->
-<div class="article" id="vogue">
-<h3>VOGUE</h3>
-<p>
-The Vogue feature with Jacob Elordi explores modern masculinity through structured minimalism and editorial precision.
-</p>
-<p>
-The imagery focuses on posture, silhouette, and controlled visual presence.
-</p>
 </div>
 
 </body>
