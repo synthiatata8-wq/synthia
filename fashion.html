@@ -34,42 +34,27 @@ font-size:13px;
 opacity:0.85;
 }
 
-a{
-color:#fff;
-text-decoration:none;
-}
-
-/* INTRO */
-.intro{
-padding:25px 20px;
-border-bottom:1px solid #1a1a1a;
-}
-
-.intro h1{
+/* TITLE */
+.title{
+padding:25px 20px 10px;
 font-size:14px;
 letter-spacing:3px;
 opacity:0.8;
-margin:0;
-}
-
-.intro p{
-font-family:Georgia, serif;
-font-size:14px;
-opacity:0.85;
-line-height:1.6;
 }
 
 /* GRID */
 .grid{
 display:grid;
 grid-template-columns:1fr;
-gap:20px;
+gap:25px;
 padding:20px;
 }
 
+/* CARD */
 .card{
 cursor:pointer;
-position:relative;
+border-bottom:1px solid #1a1a1a;
+padding-bottom:20px;
 }
 
 .card img{
@@ -80,8 +65,16 @@ border-radius:4px;
 .card h2{
 font-size:12px;
 letter-spacing:2px;
-margin-top:10px;
-opacity:0.85;
+margin:12px 0 6px;
+opacity:0.9;
+}
+
+.card p{
+font-family:Georgia, serif;
+font-size:14px;
+line-height:1.6;
+opacity:0.75;
+margin:0;
 }
 
 /* ARTICLE */
@@ -93,7 +86,7 @@ border-top:1px solid #1f1f1f;
 .article h3{
 font-size:13px;
 letter-spacing:3px;
-opacity:0.8;
+opacity:0.85;
 }
 
 .article p{
@@ -106,8 +99,8 @@ margin-top:12px;
 
 .tag{
 font-size:11px;
-opacity:0.6;
 letter-spacing:2px;
+opacity:0.6;
 margin-top:5px;
 }
 </style>
@@ -121,56 +114,57 @@ margin-top:5px;
 <a href="index.html">← BACK</a>
 </header>
 
-<!-- INTRO -->
-<div class="intro">
-<h1>FASHION EDITORIALS</h1>
-<p>
-A curated space where campaign imagery and high-fashion storytelling intersect within SYNTHIA’s visual system.
-</p>
-</div>
+<!-- TITLE -->
+<div class="title">FEATURES</div>
 
 <!-- GRID -->
 <div class="grid">
 
-<!-- CARD 1 -->
+<!-- CHANEL DE BLEU -->
 <div class="card" onclick="document.getElementById('chanel').scrollIntoView({behavior:'smooth'})">
-<img src="leviticus-cover.jpg" alt="Chanel de Bleu Campaign">
+<img src="chanel-de-bleu.jpg" alt="Chanel de Bleu">
 <h2>CHANEL DE BLEU — YUTARO GOTO</h2>
+<p>
+A cinematic fragrance campaign exploring stillness, identity, and controlled luxury through outdoor natural light composition.
+</p>
 </div>
 
-<!-- CARD 2 -->
+<!-- VOGUE -->
 <div class="card" onclick="document.getElementById('vogue').scrollIntoView({behavior:'smooth'})">
-<img src="leviticus-poster-1.png" alt="Vogue Editorial">
-<h2>VOGUE EDITORIAL — JACOB ELORDI</h2>
+<img src="vogue-jacob.jpg" alt="Vogue Jacob Elordi">
+<h2>VOGUE — JACOB ELORDI</h2>
+<p>
+A high-fashion editorial study of modern celebrity presence through minimalist styling and structured visual framing.
+</p>
 </div>
 
 </div>
 
 <!-- ARTICLE 1 -->
 <div class="article" id="chanel">
-<h3>CHANEL DE BLEU CAMPAIGN</h3>
-<div class="tag">FASHION / FRAGRANCE VISUAL STUDY</div>
+<h3>CHANEL DE BLEU</h3>
+<div class="tag">FASHION VISUAL STUDY</div>
 
 <p>
-The Chanel de Bleu campaign featuring Yutaro Goto explores restraint, masculinity, and controlled luxury through minimal outdoor composition and cinematic framing.
+The Chanel de Bleu campaign featuring Yutaro Goto presents fragrance as atmosphere rather than object. The imagery focuses on restraint, distance, and natural environments.
 </p>
 
 <p>
-Shot in natural light, the campaign emphasizes atmosphere over product, positioning fragrance as an extension of identity rather than object.
+The visual tone emphasizes elegance through simplicity, allowing posture, lighting, and composition to define the narrative.
 </p>
 </div>
 
 <!-- ARTICLE 2 -->
 <div class="article" id="vogue">
-<h3>VOGUE EDITORIAL — JACOB ELORDI</h3>
-<div class="tag">HIGH FASHION / MAGAZINE FEATURE</div>
+<h3>VOGUE</h3>
+<div class="tag">HIGH FASHION FEATURE</div>
 
 <p>
-The Vogue editorial featuring Jacob Elordi presents a sculpted interpretation of modern celebrity fashion, balancing editorial tension with visual clarity.
+The Vogue feature with Jacob Elordi explores contemporary masculinity through controlled editorial styling and minimalistic composition.
 </p>
 
 <p>
-The imagery leans into high-fashion minimalism, focusing on silhouette, posture, and controlled styling direction.
+The shoot focuses on silhouette and presence, creating a restrained but powerful visual identity.
 </p>
 </div>
 
