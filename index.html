@@ -129,12 +129,20 @@ letter-spacing:2px;
 font-weight:300;
 }
 
+/* CONTACT LABEL */
+.contact-label{
+margin-top:40px;
+font-size:11px;
+letter-spacing:3px;
+opacity:0.5;
+}
+
 /* CONTACT ICONS */
 .contact-icons{
 display:flex;
 gap:18px;
 justify-content:center;
-margin-top:40px;
+margin-top:20px;
 opacity:0.9;
 }
 
@@ -188,12 +196,30 @@ outline:none;
 letter-spacing:1px;
 }
 
+/* SEARCH RESULT */
 .result{
 padding:12px 0;
 border-bottom:1px solid #222;
 cursor:pointer;
 font-size:14px;
 width:80%;
+}
+
+/* CLOSE BUTTON FIX */
+.close-btn{
+font-size:11px;
+letter-spacing:3px;
+opacity:0.6;
+margin-top:20px;
+text-transform:uppercase;
+text-decoration:none;
+-webkit-tap-highlight-color:transparent;
+}
+
+.close-btn:active,
+.close-btn:focus{
+outline:none;
+-webkit-tap-highlight-color:transparent;
 }
 </style>
 </head>
@@ -255,7 +281,8 @@ Stacey Clausen and Joe Bird during a press tour photoshoot for Leviticus — a c
 <a href="#">RUNWAY</a>
 <a href="#">EDITORIALS</a>
 
-<!-- CONTACT ICONS -->
+<div class="contact-label">CONTACT</div>
+
 <div class="contact-icons">
 
 <a href="https://www.instagram.com/tatasynthia?igsh=YmFhZTNiMGZha3Bn" target="_blank">
@@ -280,7 +307,7 @@ Stacey Clausen and Joe Bird during a press tour photoshoot for Leviticus — a c
 
 </div>
 
-<a href="#" onclick="closeMenu()">CLOSE</a>
+<a href="#" class="close-btn" onclick="closeMenu(event)">close</a>
 
 </div>
 
@@ -289,7 +316,7 @@ Stacey Clausen and Joe Bird during a press tour photoshoot for Leviticus — a c
 <input type="text" id="searchInput" placeholder="Search SYNTHIA..." onkeyup="search()">
 <div id="results"></div>
 <br>
-<a href="#" onclick="closeSearch()" style="opacity:0.6;">CLOSE</a>
+<a href="#" class="close-btn" onclick="closeSearch(event)">close</a>
 </div>
 
 <script>
@@ -297,7 +324,8 @@ function openMenu(){
 document.getElementById("menu").style.display="flex";
 }
 
-function closeMenu(){
+function closeMenu(e){
+if(e) e.preventDefault();
 document.getElementById("menu").style.display="none";
 }
 
@@ -305,7 +333,8 @@ function openSearch(){
 document.getElementById("search").style.display="flex";
 }
 
-function closeSearch(){
+function closeSearch(e){
+if(e) e.preventDefault();
 document.getElementById("search").style.display="none";
 }
 
