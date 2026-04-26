@@ -151,7 +151,7 @@ text-decoration:none;
 color:#fff;
 }
 
-/* SEARCH OVERLAY (FIXED) */
+/* SEARCH OVERLAY */
 .search-overlay{
 position:fixed;
 top:0;
@@ -166,7 +166,7 @@ padding-top:120px;
 z-index:1000;
 }
 
-/* FIXED CLOSE BUTTON */
+/* CLOSE BUTTON */
 .search-close{
 position:absolute;
 top:20px;
@@ -176,7 +176,7 @@ opacity:0.6;
 cursor:pointer;
 }
 
-/* INPUT */
+/* INPUT (FIXED TEXT) */
 .search-overlay input{
 width:70%;
 border:none;
@@ -208,7 +208,6 @@ opacity:0.9;
 <div class="icon" onclick="toggleMenu()">☰</div>
 <div class="logo">SYNTHIA</div>
 
-<!-- SEARCH ICON ONLY -->
 <div class="icon" onclick="openSearch()">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 <circle cx="11" cy="11" r="7"></circle>
@@ -245,12 +244,13 @@ opacity:0.9;
 
 </div>
 
-<!-- SEARCH OVERLAY FIXED -->
+<!-- SEARCH -->
 <div class="search-overlay" id="search">
 
 <div class="search-close" onclick="closeSearch()">← Close</div>
 
-<input id="searchInput" type="text" placeholder="Search SYNTHIA..." onkeyup="runSearch()">
+<!-- FIXED LINE -->
+<input id="searchInput" type="text" placeholder="Search..." onkeyup="runSearch()">
 
 <div id="results"></div>
 
@@ -289,19 +289,17 @@ function toggleMenu(){
 document.getElementById("menu").classList.toggle("active");
 }
 
-/* SEARCH OPEN */
 function openSearch(){
 document.getElementById("search").style.display="flex";
 }
 
-/* SEARCH CLOSE */
 function closeSearch(){
 document.getElementById("search").style.display="none";
 document.getElementById("results").innerHTML="";
 document.getElementById("searchInput").value="";
 }
 
-/* SEARCH DATA */
+/* SIMPLE SEARCH DATA */
 const pages = [
 {title:"Leviticus Film Feature", link:"leviticus.html"},
 {title:"Fashion Campaigns", link:"#"},
@@ -310,7 +308,6 @@ const pages = [
 {title:"Events", link:"#"}
 ];
 
-/* LIVE SEARCH */
 function runSearch(){
 let input = document.getElementById("searchInput").value.toLowerCase();
 let results = document.getElementById("results");
