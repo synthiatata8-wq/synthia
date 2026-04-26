@@ -16,11 +16,11 @@ line-height:1.9;
 letter-spacing:0.2px;
 }
 
-/* HEADER */
+/* HEADER (NO BRAND) */
 header{
 padding:18px 22px;
 display:flex;
-justify-content:space-between;
+justify-content:flex-start;
 align-items:center;
 border-bottom:1px solid #1f1f1f;
 position:sticky;
@@ -33,12 +33,6 @@ z-index:1000;
 font-size:12px;
 opacity:0.7;
 cursor:pointer;
-}
-
-.logo{
-letter-spacing:8px;
-font-size:13px;
-opacity:0.75;
 }
 
 /* CONTAINER */
@@ -121,9 +115,9 @@ margin-top:25px;
 
 <body>
 
+<!-- HEADER (CLEAN - NO SYNTHIA) -->
 <header>
 <div class="back" onclick="history.back()">← BACK</div>
-<div class="logo">SYNTHIA</div>
 </header>
 
 <div class="container">
