@@ -11,6 +11,7 @@ margin:0;
 background:#0b0b0b;
 color:#fff;
 font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+-webkit-font-smoothing:antialiased;
 }
 
 /* HEADER */
@@ -29,15 +30,22 @@ z-index:1000;
 .logo{
 letter-spacing:8px;
 font-size:13px;
-opacity:0.8;
+opacity:0.85;
 }
 
+/* ICONS (MAGAZINE STYLE) */
 .icon{
-font-size:16px;
+font-size:14px;
+opacity:0.85;
 cursor:pointer;
+letter-spacing:1px;
 }
 
-/* SUBTOPICS */
+.icon:hover{
+opacity:1;
+}
+
+/* SUBNAV */
 .subnav{
 display:flex;
 overflow-x:auto;
@@ -58,8 +66,7 @@ opacity:0.7;
 /* ABOUT LINK */
 .about-link{
 text-align:center;
-margin-top:18px;
-margin-bottom:10px;
+margin-top:16px;
 }
 
 .about-link a{
@@ -69,10 +76,6 @@ text-transform:uppercase;
 color:#fff;
 opacity:0.75;
 text-decoration:none;
-}
-
-.about-link a:hover{
-opacity:1;
 }
 
 /* HERO */
@@ -99,24 +102,99 @@ margin-top:10px;
 font-size:12px;
 letter-spacing:1px;
 opacity:0.8;
+color:#fff;
+text-decoration:none;
 }
 
-/* MENU (PLACEHOLDER SAFE) */
-.menu{
+/* OVERLAY BASE */
+.overlay{
 display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#0b0b0b;
+z-index:2000;
+padding:20px;
+}
+
+/* CLOSE BUTTON (MAGAZINE STYLE) */
+.close{
+position:absolute;
+top:15px;
+right:20px;
+font-size:18px;
+cursor:pointer;
+opacity:0.8;
+}
+
+/* MENU LINKS */
+.menu-links{
+margin-top:70px;
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+.menu-links a{
+color:#fff;
+text-decoration:none;
+font-size:12px;
+letter-spacing:2px;
+opacity:0.85;
+}
+
+/* CONTACT */
+.contact{
+margin-top:40px;
+border-top:1px solid #1f1f1f;
+padding-top:20px;
+}
+
+.contact-title{
+font-size:11px;
+letter-spacing:2px;
+opacity:0.6;
+margin-bottom:10px;
+}
+
+.contact a{
+display:block;
+color:#fff;
+text-decoration:none;
+font-size:12px;
+opacity:0.8;
+margin-bottom:8px;
+}
+
+/* SEARCH */
+.search-box{
+margin-top:80px;
+}
+
+.search-box input{
+width:100%;
+padding:12px;
+background:none;
+border:1px solid #333;
+color:#fff;
+font-size:14px;
+outline:none;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-<div class="icon">☰</div>
+<div class="icon" onclick="openMenu()">☰</div>
 <div class="logo">SYNTHIA</div>
-<div class="icon">🔍</div>
+<div class="icon" onclick="openSearch()">⌕</div>
 </header>
 
-<!-- SUBTOPICS -->
+<!-- SUBNAV -->
 <div class="subnav">
 <a href="#">FILM</a>
 <a href="#">FASHION</a>
@@ -129,19 +207,75 @@ display:none;
 <a href="#">EDITORIALS</a>
 </div>
 
-<!-- ABOUT LINK (NEW) -->
+<!-- ABOUT -->
 <div class="about-link">
 <a href="about.html">ABOUT SYNTHIA →</a>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-<img src="leviticus-cover.jpg" alt="Leviticus Press Tour">
+<img src="leviticus-cover.jpg" alt="Leviticus">
 <p>
-A fractured exploration of identity and performance unfolds as reality begins to blur between image and intention.
+A fragmented exploration of identity unfolds through controlled imagery and emotional distance.
 </p>
 <a class="cta" href="leviticus.html">CONTINUE READING →</a>
 </div>
+
+<!-- MENU -->
+<div id="menu" class="overlay">
+<div class="close" onclick="closeMenu()">×</div>
+
+<div class="menu-links">
+<a href="#">FILM</a>
+<a href="#">FASHION</a>
+<a href="#">CULTURE</a>
+<a href="#">EVENTS</a>
+<a href="#">CELEBRITY</a>
+<a href="#">CAMPAIGNS</a>
+<a href="#">BEAUTY</a>
+<a href="#">FRAGRANCE</a>
+<a href="#">EDITORIALS</a>
+<a href="about.html">ABOUT</a>
+</div>
+
+<div class="contact">
+<div class="contact-title">CONTACT</div>
+<a href="https://www.instagram.com/tatasynthia" target="_blank">Instagram</a>
+<a href="https://x.com/SynthiaTata" target="_blank">X (Twitter)</a>
+<a href="https://www.facebook.com/profile.php?id=61584934509127" target="_blank">Facebook</a>
+<a href="https://www.tiktok.com/@synthia_tata" target="_blank">TikTok</a>
+<a href="mailto:synthiatata8@gmail.com">Email</a>
+</div>
+</div>
+
+<!-- SEARCH -->
+<div id="search" class="overlay">
+<div class="close" onclick="closeSearch()">×</div>
+
+<div class="search-box">
+<input type="text" placeholder="Search articles...">
+</div>
+</div>
+
+<script>
+function openMenu(){
+document.getElementById("menu").style.display="block";
+document.getElementById("search").style.display="none";
+}
+
+function closeMenu(){
+document.getElementById("menu").style.display="none";
+}
+
+function openSearch(){
+document.getElementById("search").style.display="block";
+document.getElementById("menu").style.display="none";
+}
+
+function closeSearch(){
+document.getElementById("search").style.display="none";
+}
+</script>
 
 </body>
 </html>
