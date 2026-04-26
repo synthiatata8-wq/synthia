@@ -14,6 +14,16 @@ font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 -webkit-font-smoothing:antialiased;
 }
 
+/* GLOBAL TAP FIX (REMOVES RED/PURPLE FLASH) */
+a, button, input{
+-webkit-tap-highlight-color:transparent;
+outline:none;
+}
+
+a:focus, a:active{
+outline:none;
+}
+
 /* HEADER */
 header{
 position:fixed;
@@ -155,6 +165,7 @@ justify-content:center;
 border:1px solid #333;
 border-radius:50%;
 transition:0.25s ease;
+color:#fff;
 }
 
 .contact-icons a:hover{
@@ -213,6 +224,7 @@ opacity:0.6;
 margin-top:20px;
 text-transform:uppercase;
 text-decoration:none;
+color:#fff;
 -webkit-tap-highlight-color:transparent;
 }
 
@@ -220,6 +232,7 @@ text-decoration:none;
 .close-btn:focus{
 outline:none;
 -webkit-tap-highlight-color:transparent;
+color:#fff;
 }
 </style>
 </head>
@@ -313,7 +326,7 @@ Stacey Clausen and Joe Bird during a press tour photoshoot for Leviticus — a c
 
 <!-- SEARCH -->
 <div class="search" id="search">
-<input type="text" id="searchInput" placeholder="Search SYNTHIA..." onkeyup="search()">
+<input type="text" id="searchInput" placeholder="Search" onkeyup="search()">
 <div id="results"></div>
 <br>
 <a href="#" class="close-btn" onclick="closeSearch(event)">close</a>
