@@ -8,20 +8,20 @@
 <style>
 body{
 margin:0;
+font-family:Arial, sans-serif;
 background:#0b0b0b;
 color:#fff;
-font-family:Arial, sans-serif;
 }
 
-/* HEADER */
+/* HERO NAV */
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 30px;
 position:fixed;
 top:0;
 width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 25px;
 background:#0b0b0b;
 z-index:10;
 }
@@ -34,30 +34,31 @@ letter-spacing:6px;
 font-size:14px;
 }
 
-.menu,.search{
+.icon{
 font-size:18px;
 }
 
-/* TOPICS */
-.topics{
-margin-top:80px;
+/* SUB NAV */
+.subnav{
+margin-top:70px;
 display:flex;
-gap:20px;
-padding:15px 30px;
+gap:18px;
+padding:10px 25px;
 overflow-x:auto;
 white-space:nowrap;
 }
 
-.topics a{
+.subnav a{
 color:#fff;
 text-decoration:none;
 font-size:12px;
 opacity:0.7;
+letter-spacing:1px;
 }
 
 /* FEATURE */
 .feature{
-max-width:850px;
+max-width:900px;
 margin:40px auto;
 padding:0 20px;
 }
@@ -71,7 +72,6 @@ display:block;
 .feature img{
 width:100%;
 border-radius:6px;
-display:block;
 }
 
 .feature p{
@@ -80,37 +80,56 @@ font-size:13px;
 opacity:0.85;
 line-height:1.5;
 }
+
+/* FOOTER */
+footer{
+margin-top:60px;
+padding:40px 25px;
+font-size:12px;
+opacity:0.6;
+border-top:1px solid #222;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="menu">☰</div>
+<div class="icon">☰</div>
 <div class="logo">SYNTHIA</div>
-<div class="search">⌕</div>
+<div class="icon">⌕</div>
 </header>
 
-<div class="topics">
-<a href="#">FILM</a>
-<a href="#">FASHION</a>
-<a href="#">VISUAL</a>
-<a href="#">EDITORIAL</a>
+<div class="subnav">
+<a href="film.html">FILM</a>
+<a href="fashion.html">FASHION</a>
+<a href="visual.html">VISUAL</a>
+<a href="editorial.html">EDITORIAL</a>
+<a href="events.html">EVENTS</a>
 </div>
 
+<!-- FEATURED STORY -->
 <div class="feature">
 
 <a href="leviticus.html">
 
-<img src="leviticus-cover.jpg" alt="Leviticus">
+<!-- PRESS TOUR IMAGE (STACEY + JOE) -->
+<img src="leviticus-cover.jpg" alt="Leviticus Press Tour">
 
 <p>
-Leviticus unfolds in the space between performance and possession — where visibility becomes unstable and identity begins to fracture under observation.
+Stacey Clausen and Joe Bird photographed during a fictional press tour for Leviticus — a moment staged between performance and reality, setting the tone for the film’s unraveling narrative.
 </p>
 
 </a>
 
 </div>
+
+<!-- CONTACT -->
+<footer>
+SYNTHIA Magazine<br>
+Nairobi / Global Editorial Desk<br>
+Contact: editor@synthia.com
+</footer>
 
 </body>
 </html>
