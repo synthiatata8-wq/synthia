@@ -14,8 +14,9 @@ font-family:Arial, sans-serif;
 }
 
 body{
-background:#000;
-color:#fff;
+background:#0b0b0b;
+color:#f5f5f5;
+line-height:1.7;
 }
 
 /* NAV */
@@ -23,72 +24,87 @@ color:#fff;
 position:fixed;
 top:0;
 width:100%;
-background:#000;
 padding:20px 30px;
+background:#0b0b0b;
 z-index:10;
 }
 
 .nav a{
 color:#fff;
 text-decoration:none;
-font-size:14px;
+font-size:13px;
 letter-spacing:2px;
+opacity:0.8;
 }
 
-/* PAGE */
-.page{
-padding:90px 40px 60px;
+/* CONTAINER */
+.container{
 max-width:900px;
 margin:auto;
+padding:90px 30px 60px;
+}
+
+/* TEXT */
+.intro{
+font-size:14px;
+opacity:0.9;
+margin-bottom:35px;
+}
+
+/* SECTION LABEL */
+.label{
+font-size:11px;
+letter-spacing:2px;
+opacity:0.6;
+margin-bottom:10px;
 }
 
 /* TRAILER */
 .trailer{
 width:100%;
 aspect-ratio:16/9;
-margin-bottom:50px;
+margin-bottom:35px;
 }
 
 .trailer iframe{
 width:100%;
 height:100%;
 border:0;
-border-radius:8px;
+border-radius:6px;
 }
 
-/* INTRO */
-.intro{
+/* REVIEWS */
+.reviews{
+margin-top:20px;
+margin-bottom:50px;
+}
+
+.review{
 font-size:13px;
-line-height:1.7;
+margin-bottom:18px;
 opacity:0.85;
-margin-bottom:25px;
-max-width:750px;
 }
 
-/* BADGE */
-.badge{
-font-size:13px;
-opacity:0.9;
-margin-bottom:60px;
-letter-spacing:1px;
+/* IMAGES */
+.image-block{
+margin:50px 0;
 }
 
-/* POSTERS */
-.block{
-margin-bottom:70px;
-}
-
-.block img{
+.image-block img{
 width:100%;
 border-radius:8px;
 }
 
-/* REVIEWS */
-.review{
-margin:25px 0;
+/* CONSENSUS */
+.consensus{
 font-size:13px;
-line-height:1.7;
 opacity:0.85;
+margin-top:40px;
+}
+
+/* SPACING DIVIDER */
+.divider{
+height:40px;
 }
 </style>
 </head>
@@ -100,9 +116,18 @@ opacity:0.85;
 <a href="film.html">← Back to Film</a>
 </div>
 
-<div class="page">
+<div class="container">
+
+<!-- CONTINUATION INTRO -->
+<div class="intro">
+Following a post-press encounter between Stacey Clausen and Joe Bird, Leviticus expands into a queer horror narrative where intimacy, perception, and fear begin to collapse into the same space. The film explores desire as something unstable — something that reflects, distorts, and ultimately transforms.
+</div>
+
+<div class="divider"></div>
 
 <!-- TRAILER -->
+<div class="label">WATCH TRAILER</div>
+
 <div class="trailer">
 <iframe 
 src="https://www.youtube.com/embed/WXuK0vlFxII" 
@@ -110,34 +135,44 @@ allowfullscreen>
 </iframe>
 </div>
 
-<!-- INTRO -->
+<div class="divider"></div>
+
+<!-- CRITICS INTRO -->
 <div class="intro">
-A queer horror film about two young men forced into a psychological and physical confrontation with a creature that takes the form of the person they desire most — each other. As reality distorts, desire becomes weaponised, and identity collapses under fear and attraction.
-</div>
-
-<!-- ROTTON TOMATOES BADGE -->
-<div class="badge">
-Certified Fresh — 96%
-</div>
-
-<!-- POSTER 1 -->
-<div class="block">
-<img src="leviticus-poster-1.png" alt="Poster 1">
+Early critical response frames Leviticus as a restrained but emotionally charged work, with particular attention to its visual language and psychological tension.
 </div>
 
 <!-- REVIEWS -->
+<div class="reviews">
+
+<div class="label">CRITICS</div>
+
 <div class="review">“A striking visual language rooted in emotional restraint.” — The Guardian</div>
+
 <div class="review">“A bold and atmospheric piece of contemporary storytelling.” — Variety</div>
 
-<!-- POSTER 2 -->
-<div class="block">
-<img src="leviticus-poster-2.png" alt="Poster 2">
+<div class="review">“Minimalist, precise, and emotionally charged.” — IndieWire</div>
+
+<div class="review">“A haunting exploration of desire and identity.” — Film Comment</div>
+
 </div>
 
-<!-- ROTTON TOMATOES STYLE REVIEW -->
-<div class="review">“A haunting and beautifully controlled horror experience that redefines queer psychological storytelling.” — Rotten Tomatoes Critics Consensus</div>
+<div class="divider"></div>
 
-<div class="review">“An ambitious and controlled cinematic work that lingers.” — IndieWire</div>
+<!-- POSTER 1 -->
+<div class="image-block">
+<img src="leviticus-poster-1.png" alt="Leviticus Poster 1">
+</div>
+
+<!-- POSTER 2 -->
+<div class="image-block">
+<img src="leviticus-poster-2.png" alt="Leviticus Poster 2">
+</div>
+
+<!-- FINAL CONSENSUS -->
+<div class="consensus">
+Rotten Tomatoes Consensus: A haunting and controlled queer horror film that redefines psychological storytelling through intimacy, fear, and perception.
+</div>
 
 </div>
 
