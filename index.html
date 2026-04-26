@@ -63,7 +63,7 @@ color:#fff;
 text-decoration:none;
 }
 
-/* CLOSE */
+/* CLOSE BUTTON */
 .close{
 margin-bottom:30px;
 opacity:0.6;
@@ -113,7 +113,17 @@ outline:none;
 text-align:center;
 }
 
-/* SUBTOPICS */
+/* SEARCH CLOSE */
+.search-close{
+position:absolute;
+top:20px;
+right:20px;
+font-size:12px;
+opacity:0.6;
+cursor:pointer;
+}
+
+/* SUBTOPICS (NO LINE) */
 .subtopics{
 display:flex;
 overflow-x:auto;
@@ -206,7 +216,11 @@ color:#fff;
 
 <!-- SEARCH -->
 <div class="search-overlay" id="search">
+
+<div class="search-close" onclick="closeSearch()">← Close</div>
+
 <input type="text" placeholder="Search">
+
 </div>
 
 <!-- SUBTOPICS -->
@@ -245,9 +259,13 @@ function openSearch(){
 document.getElementById("search").style.display="flex";
 }
 
+function closeSearch(){
+document.getElementById("search").style.display="none";
+}
+
 document.getElementById("search").addEventListener("click", function(e){
 if(e.target === this){
-this.style.display="none";
+closeSearch();
 }
 });
 </script>
