@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYNTHIA</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:#f5f5f5;
+}
+
+/* HEADER */
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 30px;
+background:#0b0b0b;
+z-index:100;
+}
+
+.logo{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+letter-spacing:6px;
+font-size:14px;
+}
+
+.menu,.search{
+font-size:18px;
+opacity:0.8;
+}
+
+/* TOPICS */
+.topics{
+margin-top:80px;
+display:flex;
+overflow-x:auto;
+gap:25px;
+padding:15px 30px;
+white-space:nowrap;
+}
+
+.topics a{
+text-decoration:none;
+color:#fff;
+font-size:12px;
+opacity:0.7;
+letter-spacing:2px;
+}
+
+/* FEATURED */
+.featured{
+padding:40px 30px;
+max-width:900px;
+margin:auto;
+}
+
+/* CLICKABLE CARD */
+.card{
+display:block;
+text-decoration:none;
+color:inherit;
+}
+
+/* IMAGE */
+.card img{
+width:100%;
+border-radius:8px;
+display:block;
+}
+
+/* TEXT */
+.desc{
+margin-top:12px;
+font-size:13px;
+line-height:1.6;
+opacity:0.85;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="menu">☰</div>
+<div class="logo">SYNTHIA</div>
+<div class="search">⌕</div>
+</header>
+
+<div class="topics">
+<a href="film.html">FILM</a>
+<a href="fashion.html">FASHION</a>
+<a href="#">CULTURE</a>
+<a href="#">VISUAL</a>
+<a href="#">ARCHIVE</a>
+</div>
+
+<!-- FEATURED STORY -->
+<div class="featured">
+
+<a class="card" href="leviticus.html">
+
+<img src="leviticus-cover.jpg" alt="Leviticus">
+
+<div class="desc">
+Stacey Clausen and Joe Bird appear in a post-press moment from the Leviticus cycle, captured shortly after their Variety session,
+</div>
+
+</a>
+
+</div>
+
+</body>
+</html>
