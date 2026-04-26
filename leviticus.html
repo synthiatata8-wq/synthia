@@ -3,170 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leviticus — SYNTHIA</title>
+<title>Leviticus | SYNTHIA</title>
 
 <style>
 body{
 margin:0;
 background:#0b0b0b;
 color:#fff;
-font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+font-family:"Georgia", serif;
 -webkit-font-smoothing:antialiased;
-line-height:1.75;
+line-height:1.7;
 }
 
-/* HEADER */
-header{
-padding:20px;
+/* BACK NAV */
+.topbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 25px;
 display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:1px solid #222;
+justify-content:flex-start;
+background:#0b0b0b;
+z-index:1000;
 }
 
-.logo{
-letter-spacing:8px;
-font-size:13px;
-opacity:0.8;
-}
-
-a{
+.topbar a{
 color:#fff;
 text-decoration:none;
+font-size:12px;
+letter-spacing:2px;
+opacity:0.7;
+text-transform:uppercase;
 }
 
 /* CONTAINER */
 .container{
-max-width:900px;
-margin:0 auto;
-padding:30px 20px;
+max-width:850px;
+margin:120px auto 80px;
+padding:0 20px;
 }
 
-/* TITLES */
-h2{
-font-size:14px;
-letter-spacing:2px;
-font-weight:400;
-margin-top:60px;
-opacity:0.8;
-}
-
-/* TEXT */
+/* TYPOGRAPHY SYSTEM */
 p{
-font-family:Georgia, serif;
-font-size:15px;
-opacity:0.9;
-line-height:1.75;
+font-size:16px;
+opacity:0.92;
+margin-bottom:18px;
+}
+
+.emphasis{
+font-size:18px;
+opacity:1;
+}
+
+.small-note{
+font-size:13px;
+opacity:0.65;
+letter-spacing:0.5px;
 }
 
 /* TRAILER */
-.video{
-margin-top:20px;
-width:100%;
-aspect-ratio:16 / 9;
+.trailer-wrap{
+margin:40px 0;
 }
 
-.video iframe{
+.trailer-intro{
+font-size:14px;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:0.6;
+margin-bottom:10px;
+}
+
+iframe{
 width:100%;
-height:100%;
-border:0;
+height:420px;
+border:none;
+border-radius:6px;
+}
+
+/* POSTERS */
+.posters{
+margin:50px 0;
+}
+
+.poster-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-top:15px;
+}
+
+.poster-grid img{
+width:100%;
+border-radius:6px;
 }
 
 /* QUOTES */
 .quote{
-margin:15px 0;
-padding-left:10px;
-border-left:2px solid #444;
-font-size:14px;
+font-style:italic;
 opacity:0.85;
+border-left:2px solid #444;
+padding-left:12px;
+margin:15px 0;
 }
 
-/* POSTERS */
-.posters img{
-width:100%;
-margin-top:15px;
-border-radius:4px;
+/* FINAL LINE */
+.closing{
+margin-top:50px;
+font-size:15px;
+opacity:0.9;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">SYNTHIA</div>
-<a href="index.html">← BACK</a>
-</header>
+<!-- BACK -->
+<div class="topbar">
+<a href="index.html">← Back</a>
+</div>
 
 <div class="container">
 
-<!-- OPENING CONTINUATION -->
-<p>
-Following its fragmented emergence through early screenings, *Leviticus* positions itself as a study of identity, performance, and the instability of image under public perception.
+<p class="emphasis">
+Leviticus unfolds as a psychological drama suspended between identity, control, and emotional disintegration.
 </p>
 
----
-
-<!-- TRAILER -->
-<h2>FILM TRAILER</h2>
-
 <p>
-Before its official release, *Leviticus* gained early attention following its screening at the Sundance Film Festival, where initial reactions began shaping its critical discourse.
+Starring Stacey Clausen and Joe Bird, the film was captured during an extensive press tour shoot that blurred the line between character and performer, creating an intentional ambiguity around what is real and what is constructed.
 </p>
 
-<p><strong>Watch the official trailer below</strong></p>
+<p>
+Premiering at the Sundance Film Festival, the project immediately positioned itself within a conversation about modern psychological cinema, where visual restraint meets emotional volatility.
+</p>
 
-<div class="video">
-<iframe src="https://www.youtube.com/embed/WXuK0vlFxII" allowfullscreen></iframe>
+<p>
+Early critical response has described it as “controlled yet deeply unsettling” — with <i>Variety</i> highlighting its “visual precision and emotional restraint,” while <i>The Guardian</i> noted its “slow collapse into psychological fragmentation.”
+</p>
+
+<p>
+On aggregate platforms, the film holds a <b>96% score on Rotten Tomatoes</b>, based on 46 reviews, signaling strong critical consensus despite its experimental structure.
+</p>
+
+<p>
+Audience-driven platforms such as IMDb and Letterboxd reflect a more divided but engaged reception, often praising its atmosphere and cinematography while debating its narrative ambiguity.
+</p>
+
+<!-- TRAILER (INTEGRATED FLOW) -->
+<div class="trailer-wrap">
+<div class="trailer-intro">Watch trailer here</div>
+
+<iframe 
+src="https://www.youtube.com/embed/WXuK0vlFxII" 
+allowfullscreen>
+</iframe>
 </div>
 
 <p>
-A controlled glimpse into the collapse of image and identity.
+The trailer itself reflects the film’s restrained tone — fragments of dialogue, silence-driven tension, and visual stillness that avoids traditional exposition.
 </p>
-
----
-
-<!-- CRITICAL ACCLAIM -->
-<h2>CRITICAL ACCLAIM</h2>
 
 <p>
-Following its festival debut, *Leviticus* quickly entered critical conversation as one of the most visually striking and divisive films of its cycle.
+Official campaign imagery extends this aesthetic through its poster series, which presents Clausen and Bird in stark, outdoor compositions that resemble press documentation rather than conventional promotional material.
 </p>
 
-<p><strong>Rotten Tomatoes:</strong> Certified Fresh — 96% (based on 46 reviews)</p>
-
-<div class="quote">Variety — “Aesthetically precise and emotionally fragmented.”</div>
-
-<div class="quote">The Guardian — “Unsettling intimacy with strict visual control.”</div>
-
-<div class="quote">IMDb — “Strong performances and narrative ambiguity.”</div>
-
-<div class="quote">Letterboxd — “Hypnotic, slow-burning emotional cinema.”</div>
-
----
-
-<!-- POSTERS -->
-<h2>OFFICIAL POSTER CAMPAIGN</h2>
-
-<p>
-The official posters reflect the film’s tension between constructed image and emotional reality.
-</p>
-
+<!-- POSTERS (INTEGRATED, NOT ISOLATED) -->
 <div class="posters">
+<div class="small-note">Official campaign visuals</div>
+
+<div class="poster-grid">
 <img src="leviticus-poster-1.png" alt="Leviticus Poster 1">
 <img src="leviticus-poster-2.png" alt="Leviticus Poster 2">
 </div>
-
----
-
-<!-- RELEASE -->
-<h2>RELEASE</h2>
+</div>
 
 <p>
-*Leviticus* releases worldwide on <strong>June 19</strong>, arriving in cinemas as one of the season’s most anticipated film features.
+The film’s presence at Sundance further cemented its positioning as a festival-driven psychological study rather than a traditional commercial release.
 </p>
 
-<p>
-Early industry discussion suggests the possibility of a streaming release following its theatrical run.
+<p class="closing">
+Leviticus releases worldwide on <b>June 19</b>, with select territories potentially receiving a streaming rollout following its theatrical run.
 </p>
 
 </div>
