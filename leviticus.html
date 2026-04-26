@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leviticus — SYNTHIA</title>
+<title>SYNTHIA</title>
 
 <style>
 body{
@@ -12,80 +12,174 @@ background:#0b0b0b;
 color:#fff;
 font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 -webkit-font-smoothing:antialiased;
-line-height:1.75;
 }
 
 /* HEADER */
 header{
-padding:20px;
+position:fixed;
+top:0;
+left:0;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-border-bottom:1px solid #222;
+padding:18px 25px;
+background:#0b0b0b;
+z-index:1000;
+box-sizing:border-box;
 }
 
 .logo{
-letter-spacing:8px;
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+letter-spacing:10px;
 font-size:13px;
-opacity:0.8;
+font-weight:300;
 }
 
-a{
+.icon{
+cursor:pointer;
+display:flex;
+align-items:center;
+}
+
+/* SUBTOPICS */
+.subnav{
+margin-top:70px;
+display:flex;
+gap:22px;
+padding:12px 20px;
+overflow-x:auto;
+white-space:nowrap;
+scrollbar-width:none;
+}
+
+.subnav::-webkit-scrollbar{
+display:none;
+}
+
+.subnav a{
+color:#fff;
+text-decoration:none;
+font-size:11px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+opacity:0.75;
+flex-shrink:0;
+}
+
+/* HERO */
+.press{
+max-width:900px;
+margin:40px auto;
+padding:0 20px;
+}
+
+.press img{
+width:100%;
+border-radius:6px;
+}
+
+.press p{
+font-family:Georgia, serif;
+font-size:14px;
+line-height:1.7;
+opacity:0.85;
+}
+
+/* CTA */
+.cta{
+max-width:900px;
+margin:20px auto 60px;
+padding:0 20px;
+}
+
+.cta a{
+font-family:Georgia, serif;
+font-size:20px;
 color:#fff;
 text-decoration:none;
 }
 
-/* CONTAINER */
-.container{
-max-width:900px;
-margin:0 auto;
-padding:30px 20px;
+/* MENU */
+.menu{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:2000;
 }
 
-/* SECTION TITLES */
-h2{
-font-size:14px;
-letter-spacing:2px;
-font-weight:400;
-margin-top:60px;
-opacity:0.8;
-}
-
-/* TEXT */
-p{
-font-family:Georgia, serif;
+.menu a{
+color:#fff;
+text-decoration:none;
+margin:10px;
 font-size:15px;
-line-height:1.75;
+letter-spacing:2px;
+}
+
+/* CONTACT SECTION */
+.contact-title{
+margin-top:30px;
+font-size:11px;
+letter-spacing:3px;
+opacity:0.6;
+}
+
+/* SOCIAL ICONS */
+.social{
+margin-top:15px;
+display:flex;
+gap:18px;
+justify-content:center;
+align-items:center;
+}
+
+.social a svg{
+width:18px;
+height:18px;
+fill:white;
 opacity:0.9;
 }
 
-/* TRAILER (FIXED) */
-.video{
-margin-top:20px;
-width:100%;
-aspect-ratio:16 / 9;
-}
-
-.video iframe{
+/* SEARCH */
+.search{
+position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
-border:0;
+background:#000;
+display:none;
+flex-direction:column;
+padding-top:120px;
+align-items:center;
+z-index:2000;
 }
 
-/* QUOTES */
-.quote{
-margin:15px 0;
-padding-left:10px;
-border-left:2px solid #444;
+.search input{
+width:80%;
+padding:14px;
+border:none;
+border-bottom:1px solid #444;
+background:transparent;
+color:#fff;
+outline:none;
+}
+
+.result{
+width:80%;
+padding:12px 0;
+border-bottom:1px solid #222;
+cursor:pointer;
 font-size:14px;
-opacity:0.85;
-}
-
-/* POSTERS */
-.posters img{
-width:100%;
-margin-top:15px;
-border-radius:4px;
 }
 </style>
 </head>
@@ -93,83 +187,113 @@ border-radius:4px;
 <body>
 
 <header>
+<div onclick="openMenu()">☰</div>
 <div class="logo">SYNTHIA</div>
-<a href="index.html">← BACK</a>
+
+<div onclick="openSearch()">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="16" y1="16" x2="21" y2="21"></line>
+</svg>
+</div>
 </header>
 
-<div class="container">
-
-<!-- OPENING CONTINUATION -->
-<p>
-Following its fragmented emergence through early screenings, *Leviticus* positions itself as a study of identity, performance, and the instability of image under public perception.
-</p>
-
----
-
-<!-- TRAILER -->
-<h2>FILM TRAILER</h2>
-
-<p>
-Before its official release, *Leviticus* gained early attention following its screening at the Sundance Film Festival, where initial reactions began shaping its critical discourse.
-</p>
-
-<p><strong>Watch the official trailer below</strong></p>
-
-<div class="video">
-<iframe src="https://www.youtube.com/embed/WXuK0vlFxII" allowfullscreen></iframe>
+<!-- SUBTOPICS -->
+<div class="subnav">
+<a>FILM</a><a>FASHION</a><a>CULTURE</a><a>EVENTS</a><a>CELEBRITY</a>
+<a>CAMPAIGNS</a><a>BEAUTY</a><a>FRAGRANCE</a><a>RUNWAY</a><a>EDITORIALS</a>
 </div>
 
-<p>
-A controlled glimpse into the collapse of image and identity.
-</p>
-
----
-
-<!-- CRITICAL ACCLAIM -->
-<h2>CRITICAL ACCLAIM</h2>
-
-<p>
-Following its festival debut, *Leviticus* quickly entered critical conversation as one of the most visually striking and divisive films of its cycle.
-</p>
-
-<p><strong>Rotten Tomatoes:</strong> Certified Fresh — 96% (based on 46 reviews)</p>
-
-<div class="quote">Variety — “Aesthetically precise and emotionally fragmented, it resists easy interpretation.”</div>
-
-<div class="quote">The Guardian — “Unsettling intimacy paired with strict visual control.”</div>
-
-<div class="quote">IMDb — “Anchored by strong performances and narrative ambiguity.”</div>
-
-<div class="quote">Letterboxd — “Hypnotic, slow-burning cinema with lasting emotional residue.”</div>
-
----
-
-<!-- POSTERS -->
-<h2>OFFICIAL POSTER CAMPAIGN</h2>
-
-<p>
-The official posters reflect the film’s central tension — constructed image versus emotional reality.
-</p>
-
-<div class="posters">
-<img src="leviticus-poster-1.png" alt="Leviticus Poster 1">
-<img src="leviticus-poster-2.png" alt="Leviticus Poster 2">
+<!-- HERO -->
+<div class="press">
+<img src="leviticus-cover.jpg">
+<p>Stacey Clausen and Joe Bird during a press tour photoshoot for Leviticus.</p>
 </div>
 
----
+<div class="cta">
+<a href="leviticus.html">Continue Reading →</a>
+</div>
 
-<!-- RELEASE -->
-<h2>RELEASE</h2>
+<!-- MENU -->
+<div class="menu" id="menu">
+<a href="#">FILM</a>
+<a href="#">FASHION</a>
+<a href="#">CULTURE</a>
+<a href="#">EVENTS</a>
+<a href="#">CELEBRITY</a>
+<a href="#">CAMPAIGNS</a>
+<a href="#">BEAUTY</a>
+<a href="#">FRAGRANCE</a>
+<a href="#">RUNWAY</a>
+<a href="#">EDITORIALS</a>
 
-<p>
-*Leviticus* releases worldwide on <strong>June 19</strong>, arriving in cinemas as one of the season’s most anticipated film features.
-</p>
+<div class="contact-title">CONTACT</div>
 
-<p>
-Early industry discussion suggests the possibility of a streaming release following its theatrical run.
-</p>
+<div class="social">
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/tatasynthia?igsh=YmFhZTNiMGZha3Bn" target="_blank">
+<svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm10 2H7a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3zm-5 4a5 5 0 110 10 5 5 0 010-10zm6-1a1 1 0 110 2 1 1 0 010-2z"/></svg>
+</a>
+
+<!-- X -->
+<a href="https://x.com/SynthiaTata" target="_blank">
+<svg viewBox="0 0 24 24"><path d="M18 2h3l-7 8 8 12h-6l-5-7-6 7H2l8-9L2 2h6l4 6 6-6z"/></svg>
+</a>
+
+<!-- Facebook -->
+<a href="https://www.facebook.com/profile.php?id=61584934509127" target="_blank">
+<svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11 10v-7H8v-3h3V9.5C11 7 12.5 5 15 5h2v3h-2c-1 0-1 .5-1 1.5V12h3l-1 3h-2v7a10 10 0 008-10z"/></svg>
+</a>
+
+<!-- TikTok -->
+<a href="https://www.tiktok.com/@synthia_tata?_r=1&_t=ZS-95fRfm6xQ1Y" target="_blank">
+<svg viewBox="0 0 24 24"><path d="M12 2h3a5 5 0 005 5v3a7 7 0 01-5-2v6a6 6 0 11-6-6v3a3 3 0 103 3V2z"/></svg>
+</a>
+
+<!-- Email -->
+<a href="mailto:synthiatata8@gmail.com">
+<svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6h16l-8 5z"/></svg>
+</a>
 
 </div>
+
+<br>
+<a onclick="closeMenu()">CLOSE</a>
+</div>
+
+<!-- SEARCH -->
+<div class="search" id="search">
+<input id="searchInput" onkeyup="search()" placeholder="Search SYNTHIA...">
+<div id="results"></div>
+</div>
+
+<script>
+function openMenu(){document.getElementById("menu").style.display="flex";}
+function closeMenu(){document.getElementById("menu").style.display="none";}
+function openSearch(){document.getElementById("search").style.display="flex";}
+function closeSearch(){document.getElementById("search").style.display="none";}
+
+const data=[
+{title:"Leviticus",link:"leviticus.html"},
+{title:"Fashion Campaigns",link:"#"}
+];
+
+function search(){
+let v=document.getElementById("searchInput").value.toLowerCase();
+let r=document.getElementById("results");
+r.innerHTML="";
+data.forEach(i=>{
+if(i.title.toLowerCase().includes(v)){
+let d=document.createElement("div");
+d.className="result";
+d.innerText=i.title;
+d.onclick=()=>location=i.link;
+r.appendChild(d);
+}
+});
+}
+</script>
 
 </body>
 </html>
