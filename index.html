@@ -38,7 +38,6 @@ font-size:13px;
 font-weight:300;
 }
 
-/* ICONS */
 .icon{
 cursor:pointer;
 display:flex;
@@ -56,9 +55,7 @@ white-space:nowrap;
 scrollbar-width:none;
 }
 
-.subnav::-webkit-scrollbar{
-display:none;
-}
+.subnav::-webkit-scrollbar{display:none;}
 
 .subnav a{
 color:#fff;
@@ -66,12 +63,11 @@ text-decoration:none;
 font-size:11px;
 letter-spacing:1.5px;
 text-transform:uppercase;
-font-weight:300;
-flex-shrink:0;
 opacity:0.75;
+flex-shrink:0;
 }
 
-/* HERO IMAGE */
+/* HERO */
 .press{
 max-width:900px;
 margin:40px auto;
@@ -84,11 +80,10 @@ border-radius:6px;
 }
 
 .press p{
-margin-top:10px;
-font-size:14px;
-line-height:1.6;
-opacity:0.85;
 font-family:Georgia, serif;
+font-size:14px;
+line-height:1.7;
+opacity:0.85;
 }
 
 /* CTA */
@@ -99,11 +94,10 @@ padding:0 20px;
 }
 
 .cta a{
-color:#fff;
-text-decoration:none;
 font-family:Georgia, serif;
 font-size:20px;
-letter-spacing:0.5px;
+color:#fff;
+text-decoration:none;
 }
 
 /* MENU */
@@ -124,10 +118,23 @@ z-index:2000;
 .menu a{
 color:#fff;
 text-decoration:none;
-font-size:16px;
 margin:10px;
+font-size:15px;
 letter-spacing:2px;
-font-weight:300;
+}
+
+/* SOCIAL ICONS */
+.social{
+margin-top:40px;
+display:flex;
+gap:18px;
+justify-content:center;
+}
+
+.social a svg{
+width:18px;
+height:18px;
+fill:white;
 }
 
 /* SEARCH */
@@ -140,73 +147,57 @@ height:100%;
 background:#000;
 display:none;
 flex-direction:column;
-align-items:center;
 padding-top:120px;
+align-items:center;
 z-index:2000;
 }
 
 .search input{
 width:80%;
 padding:14px;
-font-size:16px;
-background:transparent;
 border:none;
 border-bottom:1px solid #444;
+background:transparent;
 color:#fff;
 outline:none;
-font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-letter-spacing:1px;
 }
 
 .result{
+width:80%;
 padding:12px 0;
 border-bottom:1px solid #222;
 cursor:pointer;
 font-size:14px;
-width:80%;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-<div class="icon" onclick="openMenu()">☰</div>
-
+<div onclick="openMenu()">☰</div>
 <div class="logo">SYNTHIA</div>
 
-<div class="icon" onclick="openSearch()">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<div onclick="openSearch()">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
 <circle cx="11" cy="11" r="7"></circle>
-<line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+<line x1="16" y1="16" x2="21" y2="21"></line>
 </svg>
 </div>
 </header>
 
 <!-- SUBTOPICS -->
 <div class="subnav">
-<a href="#">FILM</a>
-<a href="#">FASHION</a>
-<a href="#">CULTURE</a>
-<a href="#">EVENTS</a>
-<a href="#">CELEBRITY</a>
-<a href="#">CAMPAIGNS</a>
-<a href="#">BEAUTY</a>
-<a href="#">FRAGRANCE</a>
-<a href="#">RUNWAY</a>
-<a href="#">EDITORIALS</a>
+<a>FILM</a><a>FASHION</a><a>CULTURE</a><a>EVENTS</a><a>CELEBRITY</a>
+<a>CAMPAIGNS</a><a>BEAUTY</a><a>FRAGRANCE</a><a>RUNWAY</a><a>EDITORIALS</a>
 </div>
 
 <!-- HERO -->
 <div class="press">
-<img src="leviticus-cover.jpg" alt="Press Tour">
-<p>
-Stacey Clausen and Joe Bird during a press tour photoshoot for Leviticus — a constructed moment between performance and identity.
-</p>
+<img src="leviticus-cover.jpg">
+<p>Stacey Clausen and Joe Bird during a press tour photoshoot for Leviticus.</p>
 </div>
 
-<!-- CTA -->
 <div class="cta">
 <a href="leviticus.html">Continue Reading →</a>
 </div>
@@ -223,62 +214,51 @@ Stacey Clausen and Joe Bird during a press tour photoshoot for Leviticus — a c
 <a href="#">FRAGRANCE</a>
 <a href="#">RUNWAY</a>
 <a href="#">EDITORIALS</a>
-<a href="#">CONTACT</a>
+
+<!-- SOCIAL ICONS -->
+<div class="social">
+<a href="https://www.instagram.com/tatasynthia?igsh=YmFhZTNiMGZha3Bn"></a>
+<a href="https://x.com/SynthiaTata"></a>
+<a href="https://www.facebook.com/profile.php?id=61584934509127"></a>
+<a href="https://www.tiktok.com/@synthia_tata?_r=1&_t=ZS-95fRfm6xQ1Y"></a>
+<a href="mailto:synthiatata8@gmail.com"></a>
+</div>
+
 <br>
-<a href="#" onclick="closeMenu()">CLOSE</a>
+<a onclick="closeMenu()">CLOSE</a>
 </div>
 
 <!-- SEARCH -->
 <div class="search" id="search">
-<input type="text" id="searchInput" placeholder="Search SYNTHIA..." onkeyup="search()">
+<input id="searchInput" onkeyup="search()" placeholder="Search SYNTHIA...">
 <div id="results"></div>
-<br>
-<a href="#" onclick="closeSearch()" style="color:#fff; opacity:0.6;">CLOSE</a>
 </div>
 
 <script>
+function openMenu(){document.getElementById("menu").style.display="flex";}
+function closeMenu(){document.getElementById("menu").style.display="none";}
+function openSearch(){document.getElementById("search").style.display="flex";}
+function closeSearch(){document.getElementById("search").style.display="none";}
 
-/* MENU */
-function openMenu(){
-document.getElementById("menu").style.display="flex";
-}
-function closeMenu(){
-document.getElementById("menu").style.display="none";
-}
-
-/* SEARCH */
-function openSearch(){
-document.getElementById("search").style.display="flex";
-}
-function closeSearch(){
-document.getElementById("search").style.display="none";
-}
-
-/* SEARCH DATA */
-const data = [
-{title:"Leviticus — Film Feature", link:"leviticus.html"},
-{title:"Chanel de Bleu Campaign — Yutaro Goto", link:"#"},
-{title:"Fashion Campaigns", link:"#"},
-{title:"Celebrity Press Moments", link:"#"}
+const data=[
+{title:"Leviticus",link:"leviticus.html"},
+{title:"Fashion Campaigns",link:"#"}
 ];
 
-/* SEARCH FUNCTION */
 function search(){
-let input = document.getElementById("searchInput").value.toLowerCase();
-let results = document.getElementById("results");
-results.innerHTML = "";
-
-data.forEach(item=>{
-if(item.title.toLowerCase().includes(input)){
-let div = document.createElement("div");
-div.className = "result";
-div.innerText = item.title;
-div.onclick = ()=> window.location = item.link;
-results.appendChild(div);
+let v=document.getElementById("searchInput").value.toLowerCase();
+let r=document.getElementById("results");
+r.innerHTML="";
+data.forEach(i=>{
+if(i.title.toLowerCase().includes(v)){
+let d=document.createElement("div");
+d.className="result";
+d.innerText=i.title;
+d.onclick=()=>location=i.link;
+r.appendChild(d);
 }
 });
 }
-
 </script>
 
 </body>
