@@ -57,6 +57,7 @@ overflow-x:auto;
 white-space:nowrap;
 scrollbar-width:none;
 }
+
 .subnav::-webkit-scrollbar{display:none;}
 
 .subnav a{
@@ -66,7 +67,6 @@ font-size:11px;
 letter-spacing:1.5px;
 text-transform:uppercase;
 opacity:0.75;
-flex-shrink:0;
 }
 
 /* HERO */
@@ -127,6 +127,27 @@ margin:10px;
 letter-spacing:2px;
 }
 
+/* CONTACT */
+.contact-title{
+margin-top:40px;
+font-size:11px;
+letter-spacing:3px;
+opacity:0.5;
+}
+
+.contact-icons{
+display:flex;
+gap:18px;
+margin-top:20px;
+}
+
+.contact-icons a{
+color:#fff;
+text-decoration:none;
+font-size:14px;
+opacity:0.8;
+}
+
 /* SEARCH */
 .search{
 position:fixed;
@@ -153,19 +174,13 @@ color:#fff;
 outline:none;
 }
 
-.result{
-padding:12px 0;
-border-bottom:1px solid #222;
-width:80%;
-cursor:pointer;
-}
-
 .close-btn{
-margin-top:20px;
+margin-top:30px;
 font-size:12px;
 letter-spacing:2px;
 opacity:0.6;
 text-transform:uppercase;
+cursor:pointer;
 }
 </style>
 </head>
@@ -174,7 +189,6 @@ text-transform:uppercase;
 
 <header>
 <div class="icon" onclick="openMenu()">☰</div>
-
 <div class="logo">SYNTHIA</div>
 
 <div class="icon" onclick="openSearch()">
@@ -185,6 +199,7 @@ text-transform:uppercase;
 </div>
 </header>
 
+<!-- SUBTOPICS -->
 <div class="subnav">
 <a href="#">FILM</a>
 <a href="#">FASHION</a>
@@ -195,6 +210,7 @@ text-transform:uppercase;
 <a href="#">FRAGRANCE</a>
 </div>
 
+<!-- HERO -->
 <div class="press">
 <img src="leviticus-cover.jpg">
 <p>
@@ -208,6 +224,7 @@ Captured during an orchestrated press tour for Leviticus, Stacey Clausen and Joe
 
 <!-- MENU -->
 <div class="menu" id="menu">
+
 <a href="#">FILM</a>
 <a href="#">FASHION</a>
 <a href="#">CULTURE</a>
@@ -216,13 +233,23 @@ Captured during an orchestrated press tour for Leviticus, Stacey Clausen and Joe
 <a href="#">BEAUTY</a>
 <a href="#">FRAGRANCE</a>
 
-<div onclick="closeMenu()" class="close-btn">close</div>
+<div class="contact-title">CONTACT</div>
+
+<div class="contact-icons">
+<a href="mailto:synthiatata8@gmail.com">Email</a>
+<a href="https://www.instagram.com/tatasynthia?igsh=YmFhZTNiMGZha3Bn">Instagram</a>
+<a href="https://x.com/SynthiaTata">X</a>
+<a href="https://www.facebook.com/profile.php?id=61584934509127">Facebook</a>
+<a href="https://www.tiktok.com/@synthia_tata?_r=1&_t=ZS-95fRfm6xQ1Y">TikTok</a>
+</div>
+
+<div class="close-btn" onclick="closeMenu()">close</div>
 </div>
 
 <!-- SEARCH -->
 <div class="search" id="search">
-<input type="text" id="searchInput" placeholder="Search">
-<div onclick="closeSearch()" class="close-btn">close</div>
+<input type="text" placeholder="Search">
+<div class="close-btn" onclick="closeSearch()">close</div>
 </div>
 
 <script>
