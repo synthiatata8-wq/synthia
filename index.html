@@ -10,7 +10,8 @@ body{
 margin:0;
 background:#0b0b0b;
 color:#fff;
-font-family:Arial, sans-serif;
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+-webkit-font-smoothing:antialiased;
 }
 
 /* HEADER */
@@ -32,19 +33,23 @@ box-sizing:border-box;
 position:absolute;
 left:50%;
 transform:translateX(-50%);
-letter-spacing:6px;
-font-size:14px;
+letter-spacing:10px;
+font-size:13px;
+font-weight:300;
 }
 
+/* ICONS */
 .icon{
 cursor:pointer;
+display:flex;
+align-items:center;
 }
 
 /* SUBTOPICS */
 .subnav{
 margin-top:70px;
 display:flex;
-gap:20px;
+gap:22px;
 padding:12px 20px;
 overflow-x:auto;
 white-space:nowrap;
@@ -58,10 +63,12 @@ display:none;
 .subnav a{
 color:#fff;
 text-decoration:none;
-font-size:12px;
-opacity:0.75;
-letter-spacing:1px;
+font-size:11px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+font-weight:300;
 flex-shrink:0;
+opacity:0.75;
 }
 
 /* HERO IMAGE */
@@ -78,9 +85,10 @@ border-radius:6px;
 
 .press p{
 margin-top:10px;
-font-size:13px;
+font-size:14px;
+line-height:1.6;
 opacity:0.85;
-line-height:1.5;
+font-family:Georgia, serif;
 }
 
 /* CTA */
@@ -94,7 +102,8 @@ padding:0 20px;
 color:#fff;
 text-decoration:none;
 font-family:Georgia, serif;
-font-size:22px;
+font-size:20px;
+letter-spacing:0.5px;
 }
 
 /* MENU */
@@ -118,6 +127,7 @@ text-decoration:none;
 font-size:16px;
 margin:10px;
 letter-spacing:2px;
+font-weight:300;
 }
 
 /* SEARCH */
@@ -137,9 +147,23 @@ z-index:2000;
 
 .search input{
 width:80%;
-padding:12px;
+padding:14px;
 font-size:16px;
-margin-bottom:20px;
+background:transparent;
+border:none;
+border-bottom:1px solid #444;
+color:#fff;
+outline:none;
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+letter-spacing:1px;
+}
+
+.result{
+padding:12px 0;
+border-bottom:1px solid #222;
+cursor:pointer;
+font-size:14px;
+width:80%;
 }
 </style>
 </head>
@@ -148,9 +172,7 @@ margin-bottom:20px;
 
 <!-- HEADER -->
 <header>
-<div class="icon" onclick="openMenu()">
-☰
-</div>
+<div class="icon" onclick="openMenu()">☰</div>
 
 <div class="logo">SYNTHIA</div>
 
@@ -176,7 +198,7 @@ margin-bottom:20px;
 <a href="#">EDITORIALS</a>
 </div>
 
-<!-- HERO PRESS IMAGE -->
+<!-- HERO -->
 <div class="press">
 <img src="leviticus-cover.jpg" alt="Press Tour">
 <p>
@@ -208,11 +230,15 @@ Stacey Clausen and Joe Bird during a press tour photoshoot for Leviticus — a c
 
 <!-- SEARCH -->
 <div class="search" id="search">
-<input type="text" placeholder="Search SYNTHIA...">
-<a href="#" onclick="closeSearch()" style="color:white;">CLOSE</a>
+<input type="text" id="searchInput" placeholder="Search SYNTHIA..." onkeyup="search()">
+<div id="results"></div>
+<br>
+<a href="#" onclick="closeSearch()" style="color:#fff; opacity:0.6;">CLOSE</a>
 </div>
 
 <script>
+
+/* MENU */
 function openMenu(){
 document.getElementById("menu").style.display="flex";
 }
@@ -220,12 +246,39 @@ function closeMenu(){
 document.getElementById("menu").style.display="none";
 }
 
+/* SEARCH */
 function openSearch(){
 document.getElementById("search").style.display="flex";
 }
 function closeSearch(){
 document.getElementById("search").style.display="none";
 }
+
+/* SEARCH DATA */
+const data = [
+{title:"Leviticus — Film Feature", link:"leviticus.html"},
+{title:"Chanel de Bleu Campaign — Yutaro Goto", link:"#"},
+{title:"Fashion Campaigns", link:"#"},
+{title:"Celebrity Press Moments", link:"#"}
+];
+
+/* SEARCH FUNCTION */
+function search(){
+let input = document.getElementById("searchInput").value.toLowerCase();
+let results = document.getElementById("results");
+results.innerHTML = "";
+
+data.forEach(item=>{
+if(item.title.toLowerCase().includes(input)){
+let div = document.createElement("div");
+div.className = "result";
+div.innerText = item.title;
+div.onclick = ()=> window.location = item.link;
+results.appendChild(div);
+}
+});
+}
+
 </script>
 
 </body>
