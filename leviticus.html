@@ -3,217 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leviticus — Feature</title>
+<title>Leviticus — SYNTHIA</title>
 
 <style>
 body{
 margin:0;
-background:#0a0a0a;
+background:#0b0b0b;
 color:#f2f2f2;
-font-family:Helvetica, Arial, sans-serif;
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 -webkit-font-smoothing:antialiased;
-line-height:1.85;
+line-height:1.8;
 }
 
-/* BACK */
+/* HEADER */
+header{
+padding:18px 22px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #1f1f1f;
+position:sticky;
+top:0;
+background:#0b0b0b;
+z-index:1000;
+}
+
+.logo{
+letter-spacing:8px;
+font-size:13px;
+opacity:0.8;
+}
+
 .back{
-position:fixed;
-top:18px;
-left:18px;
 font-size:12px;
 opacity:0.7;
 cursor:pointer;
-z-index:1000;
 }
 
 /* CONTAINER */
 .container{
-max-width:820px;
+max-width:860px;
 margin:0 auto;
-padding:90px 22px 90px;
+padding:40px 20px 90px;
 }
 
-/* TYPOGRAPHY SYSTEM */
+/* TEXT SYSTEM */
 p{
 font-family:Georgia, serif;
-font-size:16.5px;
-margin-top:22px;
+font-size:16px;
+margin-top:20px;
 opacity:0.92;
 }
 
-/* VARIATION SPACING (LUXURY RHYTHM) */
-p + p{
-margin-top:20px;
-}
-
-/* LEAD TEXT */
 .lead{
 font-size:18px;
-line-height:1.95;
-opacity:0.96;
+line-height:1.9;
+opacity:0.95;
 }
 
-/* SOFT TEXT */
-.soft{
-opacity:0.72;
-font-size:15.8px;
-}
-
-/* DIVIDER (SUBTLE MAGAZINE BREAK) */
+/* DIVIDER */
 .divider{
-margin:50px 0;
 height:1px;
-background:linear-gradient(to right, transparent, #1c1c1c, transparent);
+margin:45px 0;
+background:#1a1a1a;
 }
 
-/* TRAILER WRAP (REFINED FRAME) */
+/* SECTION TITLES */
+h2{
+font-size:13px;
+letter-spacing:2px;
+font-weight:400;
+opacity:0.75;
+margin-top:55px;
+}
+
+/* TRAILER */
 .video{
-margin-top:28px;
-border-radius:10px;
+margin-top:20px;
+width:100%;
+aspect-ratio:16/9;
+border-radius:6px;
 overflow:hidden;
-box-shadow:0 20px 60px rgba(0,0,0,0.55);
 }
 
 iframe{
 width:100%;
-height:440px;
-border:none;
+height:100%;
+border:0;
 }
 
 /* CRITICS */
-.critics{
-font-size:15.8px;
-opacity:0.9;
+.quote{
+border-left:2px solid #333;
+padding-left:12px;
+margin:14px 0;
+font-size:14px;
+opacity:0.85;
 }
 
-/* POSTER GRID (REFINED SPACING) */
-.poster-grid{
+/* POSTERS */
+.posters{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:22px;
-margin-top:26px;
+gap:18px;
+margin-top:20px;
 }
 
-.poster-grid img{
+.posters img{
 width:100%;
-border-radius:8px;
-transition:0.4s ease;
-filter:contrast(1.05) brightness(0.95);
-}
-
-.poster-grid img:hover{
-transform:scale(1.02);
-opacity:0.95;
+border-radius:6px;
 }
 
 /* NOTE */
 .note{
 font-size:12px;
-opacity:0.55;
-margin-top:26px;
-letter-spacing:0.3px;
+opacity:0.6;
+margin-top:25px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="back" onclick="history.back()">← Back</div>
+<header>
+<div class="logo">SYNTHIA</div>
+<div class="back" onclick="history.back()">← BACK</div>
+</header>
 
 <div class="container">
 
-<!-- CONTINUATION OPENING -->
-<p class="lead reveal">
-What follows is the slow extension of a controlled image — one that continues to exist beyond its original framing, shifting from documentation into narrative pressure.
-</p>
-
-<p class="soft reveal">
-The moment does not dissolve. It settles, becoming part of a wider visual structure that defines how the film is first perceived.
+<!-- OPENING -->
+<p class="lead">
+What follows is not a linear narrative, but a continuation of an image that refuses to resolve itself — instead existing in fragments of perception, performance, and controlled visibility.
 </p>
 
 <div class="divider"></div>
 
 <!-- SUNDANCE -->
-<p class="reveal">
-Before its wider release, <em>Leviticus</em> was introduced at the Sundance Film Festival, where its restrained visual language immediately positioned it within a quieter strand of contemporary cinema — one defined less by clarity, and more by tension.
+<h2>FESTIVAL CONTEXT</h2>
+
+<p>
+Before its wider release, <em>Leviticus</em> was screened at the Sundance Film Festival, where it entered early critical discussion as a restrained, visually controlled exploration of identity and performance.
 </p>
 
-<p class="soft reveal">
-Its presence at Sundance marked the beginning of its critical trajectory, where interpretation began to outweigh narrative certainty.
+<p>
+Its reception at Sundance positioned the film within a quieter cinematic register — one defined by tension rather than exposition.
 </p>
 
 <div class="divider"></div>
 
 <!-- TRAILER -->
-<p class="reveal">
-The first rupture in that controlled framing arrives through moving image.
+<h2>FILM TRAILER</h2>
+
+<p>
+Before its release, the film’s first moving image introduced audiences to its atmosphere rather than its narrative.
 </p>
 
-<div class="video reveal">
+<p><strong>Watch the official trailer below</strong></p>
+
+<div class="video">
 <iframe src="https://www.youtube.com/embed/WXuK0vlFxII" allowfullscreen></iframe>
 </div>
 
-<p class="soft reveal">
-Rather than functioning as exposition, the trailer establishes atmosphere — fragmented, restrained, and intentionally unresolved.
+<p>
+A controlled fragment of collapse — where identity is never fully fixed.
 </p>
 
 <div class="divider"></div>
 
 <!-- CRITICS -->
-<p class="reveal">
-Critical response begins to form around the film as interpretation rather than consensus.
+<h2>CRITICAL RESPONSE</h2>
+
+<p>
+Following its festival presence, *Leviticus* began to circulate through early critical discourse as a divided yet compelling work.
 </p>
 
-<p class="critics reveal">
-<em>Variety</em> highlights its visual discipline and restraint, while <em>The Guardian</em> frames it through emotional ambiguity and structural minimalism.
-</p>
+<p><strong>Rotten Tomatoes:</strong> Certified Fresh — 96% (based on 46 reviews)</p>
 
-<p class="critics reveal">
-On IMDb and Letterboxd, responses diverge — not in disagreement, but in how differently the film is experienced and internalized.
-</p>
+<div class="quote">Variety — notes its restrained visual precision and emotional fragmentation.</div>
 
-<p class="critics reveal">
-Rotten Tomatoes records a <strong>96% approval rating based on 46 reviews</strong>, reinforcing its early critical strength while preserving interpretive openness.
-</p>
+<div class="quote">The Guardian — highlights its unsettling intimacy and structural minimalism.</div>
+
+<div class="quote">IMDb — audience response centers on performance strength and ambiguity.</div>
+
+<div class="quote">Letterboxd — describes it as hypnotic, slow-burning, and emotionally lingering.</div>
 
 <div class="divider"></div>
 
 <!-- POSTERS -->
-<p class="reveal">
-The official poster collection extends the film’s visual identity into its most distilled form — composed, minimal, and intentionally restrained.
+<h2>POSTER CAMPAIGN</h2>
+
+<p>
+The official posters function as distilled extensions of the film’s visual identity — minimal, controlled, and conceptually restrained.
 </p>
 
-<div class="poster-grid reveal">
+<div class="posters">
 <img src="leviticus-poster-1.png">
 <img src="leviticus-poster-2.png">
 </div>
 
-<p class="note reveal">
-Leviticus releases in theatres worldwide on June 19. A streaming release may follow after its theatrical run.
+<div class="divider"></div>
+
+<!-- RELEASE -->
+<h2>RELEASE</h2>
+
+<p>
+<em>Leviticus</em> releases worldwide on <strong>June 19</strong>, arriving in cinemas as one of the season’s most anticipated film features.
+</p>
+
+<p>
+A streaming release is expected to follow its theatrical run.
+</p>
+
+<p class="note">
+© SYNTHIA — Film Feature Archive
 </p>
 
 </div>
-
-<script>
-// simple scroll reveal (lightweight, no layout risk)
-const items = document.querySelectorAll('.reveal');
-
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.style.opacity = 1;
-entry.style.transform = "translateY(0)";
-}
-});
-},{threshold:0.1});
-
-items.forEach(el=>{
-el.style.opacity = 0;
-el.style.transform = "translateY(10px)";
-el.style.transition = "0.8s ease";
-observer.observe(el);
-});
-</script>
 
 </body>
 </html>
