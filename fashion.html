@@ -11,161 +11,117 @@ margin:0;
 background:#0b0b0b;
 color:#fff;
 font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
--webkit-font-smoothing:antialiased;
 scroll-behavior:smooth;
+}
+
+/* BACK BUTTON (FIXED GLOBAL STYLE) */
+.back{
+position:fixed;
+top:18px;
+left:18px;
+font-size:12px;
+letter-spacing:2px;
+color:#fff;
+opacity:0.75;
+text-decoration:none;
+padding:6px 10px;
+border:1px solid rgba(255,255,255,0.2);
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(6px);
+z-index:1000;
+}
+
+.back:hover{
+opacity:1;
+border-color:rgba(255,255,255,0.4);
 }
 
 /* HEADER */
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 20px;
-border-bottom:1px solid #1f1f1f;
-position:sticky;
-top:0;
-background:#0b0b0b;
-z-index:1000;
-}
-
-.logo{
-letter-spacing:6px;
+padding:60px 20px 10px;
+text-align:center;
+letter-spacing:3px;
 font-size:13px;
-opacity:0.85;
+opacity:0.8;
 }
 
-/* TITLE */
-.title{
-padding:25px 20px 10px;
-font-size:14px;
+/* SECTION */
+.section{
+padding:40px 20px;
+border-top:1px solid #1a1a1a;
+}
+
+h2{
+font-size:13px;
 letter-spacing:3px;
 opacity:0.8;
 }
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:1fr;
-gap:25px;
-padding:20px;
-}
-
-/* CARD */
-.card{
-cursor:pointer;
-border-bottom:1px solid #1a1a1a;
-padding-bottom:20px;
-}
-
-.card img{
+/* IMAGE */
+img{
 width:100%;
 border-radius:4px;
+margin-top:15px;
 }
 
-.card h2{
-font-size:12px;
-letter-spacing:2px;
-margin:12px 0 6px;
-opacity:0.9;
-}
-
-.card p{
-font-family:Georgia, serif;
-font-size:14px;
-line-height:1.6;
-opacity:0.75;
-margin:0;
-}
-
-/* ARTICLE */
-.article{
-padding:40px 20px;
-border-top:1px solid #1f1f1f;
-}
-
-.article h3{
-font-size:13px;
-letter-spacing:3px;
-opacity:0.85;
-}
-
-.article p{
+/* TEXT */
+p{
 font-family:Georgia, serif;
 font-size:15px;
-line-height:1.7;
+line-height:1.8;
 opacity:0.9;
 margin-top:12px;
 }
 
-.tag{
-font-size:11px;
-letter-spacing:2px;
-opacity:0.6;
-margin-top:5px;
+/* DIVIDER */
+.divider{
+height:1px;
+background:#1a1a1a;
+margin:40px 0;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-<div class="logo">FASHION</div>
-<a href="index.html">← BACK</a>
-</header>
+<a class="back" href="index.html">← BACK</a>
 
-<!-- TITLE -->
-<div class="title">FEATURES</div>
-
-<!-- GRID -->
-<div class="grid">
+<header>FASHION</header>
 
 <!-- CHANEL DE BLEU -->
-<div class="card" onclick="document.getElementById('chanel').scrollIntoView({behavior:'smooth'})">
-<img src="chanel-de-bleu.jpg" alt="Chanel de Bleu">
+<div class="section" id="chanel">
+
 <h2>CHANEL DE BLEU — YUTARO GOTO</h2>
+
+<img src="chanel-de-bleu.jpg" alt="Chanel de Bleu">
+
 <p>
-A cinematic fragrance campaign exploring stillness, identity, and controlled luxury through outdoor natural light composition.
+The Chanel de Bleu campaign explores fragrance as atmosphere rather than product. Through controlled natural lighting and restrained composition, the imagery builds a quiet emotional distance.
 </p>
+
+<p>
+It reflects identity through stillness, texture, and cinematic simplicity.
+</p>
+
 </div>
+
+<div class="divider"></div>
 
 <!-- VOGUE -->
-<div class="card" onclick="document.getElementById('vogue').scrollIntoView({behavior:'smooth'})">
-<img src="vogue-jacob.jpg" alt="Vogue Jacob Elordi">
+<div class="section" id="vogue">
+
 <h2>VOGUE — JACOB ELORDI</h2>
-<p>
-A high-fashion editorial study of modern celebrity presence through minimalist styling and structured visual framing.
-</p>
-</div>
 
-</div>
-
-<!-- ARTICLE 1 -->
-<div class="article" id="chanel">
-<h3>CHANEL DE BLEU</h3>
-<div class="tag">FASHION VISUAL STUDY</div>
+<img src="vogue-jacob.jpg" alt="Vogue Jacob Elordi">
 
 <p>
-The Chanel de Bleu campaign featuring Yutaro Goto presents fragrance as atmosphere rather than object. The imagery focuses on restraint, distance, and natural environments.
+This Vogue feature presents a minimalist study of modern masculinity through structured editorial framing and reduced visual noise.
 </p>
 
 <p>
-The visual tone emphasizes elegance through simplicity, allowing posture, lighting, and composition to define the narrative.
-</p>
-</div>
-
-<!-- ARTICLE 2 -->
-<div class="article" id="vogue">
-<h3>VOGUE</h3>
-<div class="tag">HIGH FASHION FEATURE</div>
-
-<p>
-The Vogue feature with Jacob Elordi explores contemporary masculinity through controlled editorial styling and minimalistic composition.
+The emphasis is placed on posture, silhouette, and controlled presence.
 </p>
 
-<p>
-The shoot focuses on silhouette and presence, creating a restrained but powerful visual identity.
-</p>
 </div>
 
 </body>
