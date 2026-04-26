@@ -31,17 +31,16 @@ letter-spacing:6px;
 font-size:13px;
 }
 
-/* ICONS */
 .icon{
 cursor:pointer;
-font-size:14px;
+font-size:16px;
 }
 
 /* SUBNAV */
 .subnav{
 display:flex;
 gap:18px;
-padding:15px 20px;
+padding:14px 20px;
 overflow-x:auto;
 border-bottom:1px solid #1a1a1a;
 }
@@ -51,7 +50,6 @@ color:#fff;
 text-decoration:none;
 font-size:11px;
 opacity:0.7;
-letter-spacing:1px;
 }
 
 /* HERO */
@@ -70,68 +68,60 @@ margin-top:12px;
 line-height:1.6;
 }
 
-/* PREVIEWS */
-.section{
-padding:20px;
-border-top:1px solid #1a1a1a;
-}
-
-.section h2{
-font-size:12px;
-letter-spacing:2px;
-opacity:0.6;
-margin-bottom:10px;
-}
-
-.card{
-margin-bottom:20px;
-}
-
-.card img{
-width:100%;
-border-radius:4px;
-}
-
-.card a{
+.hero a{
 display:inline-block;
-margin-top:6px;
-font-size:12px;
+margin-top:10px;
 color:#fff;
 text-decoration:none;
+font-size:12px;
 opacity:0.8;
 }
 
-/* OVERLAYS */
+/* OVERLAY */
 .overlay{
 display:none;
 position:fixed;
 top:0;left:0;
 width:100%;height:100%;
 background:#0b0b0b;
-padding:20px;
 z-index:2000;
+padding:20px;
 }
 
 .close{
 position:absolute;
 top:15px;
 right:15px;
-font-size:18px;
+font-size:20px;
 cursor:pointer;
 }
 
 /* MENU */
 .menu-links{
-margin-top:70px;
+margin-top:80px;
 display:flex;
 flex-direction:column;
-gap:14px;
+gap:16px;
 }
 
 .menu-links a{
 color:#fff;
 text-decoration:none;
 font-size:12px;
+letter-spacing:1px;
+}
+
+/* SEARCH */
+.search-box{
+margin-top:80px;
+}
+
+.search-box input{
+width:100%;
+padding:12px;
+background:transparent;
+border:1px solid #333;
+color:#fff;
 }
 
 /* FOOTER */
@@ -160,6 +150,7 @@ font-size:12px;
 <div class="icon" onclick="openSearch()">⌕</div>
 </header>
 
+<!-- SUBNAV -->
 <div class="subnav">
 <a href="#">FILM</a>
 <a href="fashion.html">FASHION</a>
@@ -170,34 +161,11 @@ font-size:12px;
 <!-- HERO -->
 <div class="hero">
 <img src="leviticus-cover.jpg">
-<p>Leviticus explores identity through fragmented cinematic storytelling.</p>
-<a href="#">Continue reading →</a>
+<p>Leviticus explores identity through cinematic fragmentation.</p>
+<a href="fashion.html">Continue reading →</a>
 </div>
 
-<!-- FILM -->
-<div class="section">
-<h2>FILM</h2>
-<div class="card">
-<img src="film.jpg">
-<a href="#">Read story →</a>
-</div>
-</div>
-
-<!-- FASHION PREVIEW -->
-<div class="section">
-<h2>FASHION</h2>
-
-<div class="card">
-<img src="chanel.jpg">
-<a href="fashion.html#chanel">Read story →</a>
-</div>
-
-<div class="card">
-<img src="vogue.jpg">
-<a href="fashion.html#vogue">Read story →</a>
-</div>
-</div>
-
+<!-- FOOTER -->
 <footer>
 Based in Nairobi, Kenya<br>
 Covers stories worldwide
@@ -212,26 +180,38 @@ Covers stories worldwide
 <!-- MENU -->
 <div id="menu" class="overlay">
 <div class="close" onclick="closeMenu()">×</div>
+
 <div class="menu-links">
-<a>Film</a>
-<a>Fashion</a>
-<a>Culture</a>
-<a>Events</a>
-<a href="#footer">Contact →</a>
+<a href="#">Film</a>
+<a href="fashion.html">Fashion</a>
+<a href="#">Culture</a>
+<a href="#">Events</a>
+<a>Contact →</a>
 </div>
 </div>
 
 <!-- SEARCH -->
 <div id="search" class="overlay">
 <div class="close" onclick="closeSearch()">×</div>
-<input style="width:100%;padding:10px;margin-top:60px;" placeholder="Search...">
+
+<div class="search-box">
+<input type="text" placeholder="Search...">
+</div>
 </div>
 
 <script>
-function openMenu(){document.getElementById("menu").style.display="block";}
-function closeMenu(){document.getElementById("menu").style.display="none";}
-function openSearch(){document.getElementById("search").style.display="block";}
-function closeSearch(){document.getElementById("search").style.display="none";}
+function openMenu(){
+document.getElementById("menu").style.display="block";
+}
+function closeMenu(){
+document.getElementById("menu").style.display="none";
+}
+function openSearch(){
+document.getElementById("search").style.display="block";
+}
+function closeSearch(){
+document.getElementById("search").style.display="none";
+}
 </script>
 
 </body>
