@@ -8,323 +8,140 @@
 <style>
 body{
 margin:0;
-background:#0a0a0a;
-color:#f2f2f2;
-font-family:Helvetica, Arial, sans-serif;
--webkit-font-smoothing:antialiased;
+background:#0b0b0b;
+color:#fff;
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* TOP BAR */
-.topbar{
+/* HEADER */
+header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 20px;
-position:relative;
-border-bottom:1px solid #151515;
+border-bottom:1px solid #1f1f1f;
+position:sticky;
+top:0;
+background:#0b0b0b;
+z-index:1000;
 }
 
 .logo{
-position:absolute;
-left:50%;
-transform:translateX(-50%);
 letter-spacing:8px;
 font-size:13px;
-font-weight:300;
-opacity:0.9;
+opacity:0.8;
 }
 
 .icon{
+font-size:16px;
 cursor:pointer;
-opacity:0.85;
-display:flex;
-align-items:center;
-}
-
-/* MENU */
-.menu{
-position:fixed;
-top:0;
-left:-100%;
-width:75%;
-height:100%;
-background:#0a0a0a;
-padding:40px 20px;
-transition:0.4s;
-z-index:999;
-}
-
-.menu.active{
-left:0;
-}
-
-.menu a{
-display:block;
-margin:18px 0;
-font-size:14px;
-letter-spacing:1px;
-color:#fff;
-text-decoration:none;
-opacity:0.9;
-}
-
-/* CLOSE MENU */
-.close{
-margin-bottom:30px;
-opacity:0.6;
-cursor:pointer;
-font-size:12px;
-}
-
-/* CONTACT */
-.contact{
-margin-top:40px;
-font-size:12px;
-line-height:2;
-opacity:0.8;
-}
-
-.contact-title{
-font-size:10px;
-letter-spacing:2px;
-opacity:0.5;
-margin-bottom:10px;
-text-transform:uppercase;
 }
 
 /* SUBTOPICS */
-.subtopics{
+.subnav{
 display:flex;
 overflow-x:auto;
 gap:18px;
-padding:14px 20px;
-font-size:11px;
-letter-spacing:1.5px;
-text-transform:uppercase;
-opacity:0.8;
+padding:15px 20px;
+white-space:nowrap;
+border-bottom:1px solid #1a1a1a;
 }
 
-.subtopics a{
-white-space:nowrap;
-text-decoration:none;
+.subnav a{
 color:#fff;
-font-weight:300;
-opacity:0.8;
-flex-shrink:0;
+text-decoration:none;
+font-size:11px;
+letter-spacing:2px;
+opacity:0.7;
+}
+
+/* ABOUT LINK */
+.about-link{
+text-align:center;
+margin-top:18px;
+margin-bottom:10px;
+}
+
+.about-link a{
+font-size:11px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#fff;
+opacity:0.75;
+text-decoration:none;
+}
+
+.about-link a:hover{
+opacity:1;
 }
 
 /* HERO */
 .hero{
-padding:30px 20px;
+padding:20px;
 }
 
 .hero img{
 width:100%;
-border-radius:6px;
-filter:contrast(1.05) brightness(0.95);
-}
-
-.film-tag{
-font-size:10px;
-letter-spacing:3px;
-opacity:0.4;
-margin-top:15px;
-text-transform:uppercase;
+border-radius:4px;
 }
 
 .hero p{
 font-family:Georgia, serif;
 font-size:15px;
-line-height:1.75;
-margin-top:10px;
-opacity:0.92;
-}
-
-.readmore{
-display:inline-block;
+line-height:1.7;
 margin-top:12px;
-font-size:11px;
-letter-spacing:2px;
-text-transform:uppercase;
-opacity:0.85;
-text-decoration:none;
-color:#fff;
-}
-
-/* SEARCH OVERLAY */
-.search-overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#0a0a0a;
-display:none;
-flex-direction:column;
-align-items:center;
-padding-top:120px;
-z-index:1000;
-}
-
-/* CLOSE BUTTON */
-.search-close{
-position:absolute;
-top:20px;
-right:20px;
-font-size:12px;
-opacity:0.6;
-cursor:pointer;
-}
-
-/* INPUT (FIXED TEXT) */
-.search-overlay input{
-width:70%;
-border:none;
-border-bottom:1px solid #333;
-background:none;
-color:#fff;
-font-size:18px;
-padding:10px;
-outline:none;
-text-align:center;
-}
-
-/* RESULTS */
-.result{
-width:70%;
-padding:12px 0;
-border-bottom:1px solid #222;
-cursor:pointer;
-font-size:14px;
 opacity:0.9;
+}
+
+.cta{
+display:inline-block;
+margin-top:10px;
+font-size:12px;
+letter-spacing:1px;
+opacity:0.8;
+}
+
+/* MENU (PLACEHOLDER SAFE) */
+.menu{
+display:none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-<div class="icon" onclick="toggleMenu()">☰</div>
+<header>
+<div class="icon">☰</div>
 <div class="logo">SYNTHIA</div>
-
-<div class="icon" onclick="openSearch()">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-<circle cx="11" cy="11" r="7"></circle>
-<line x1="16.65" y1="16.65" x2="21" y2="21"></line>
-</svg>
-</div>
-</div>
-
-<!-- MENU -->
-<div class="menu" id="menu">
-
-<div class="close" onclick="toggleMenu()">← Close</div>
-
-<a href="#">Film</a>
-<a href="#">Fashion</a>
-<a href="#">Culture</a>
-<a href="#">Events</a>
-<a href="#">Celebrity</a>
-<a href="#">Campaigns</a>
-<a href="#">Beauty</a>
-<a href="#">Fragrance</a>
-<a href="about.html">About</a>
-
-<div class="contact">
-<div class="contact-title">Contact</div>
-
-<a href="https://www.instagram.com/tatasynthia?igsh=YmFhZTNiMGZha3Bn" target="_blank">Instagram</a>
-<a href="https://x.com/SynthiaTata" target="_blank">X</a>
-<a href="https://www.facebook.com/profile.php?id=61584934509127" target="_blank">Facebook</a>
-<a href="https://www.tiktok.com/@synthia_tata?_r=1&_t=ZS-95fRfm6xQ1Y" target="_blank">TikTok</a>
-<a href="mailto:synthiatata8@gmail.com">Email</a>
-
-</div>
-
-</div>
-
-<!-- SEARCH -->
-<div class="search-overlay" id="search">
-
-<div class="search-close" onclick="closeSearch()">← Close</div>
-
-<!-- FIXED LINE -->
-<input id="searchInput" type="text" placeholder="Search..." onkeyup="runSearch()">
-
-<div id="results"></div>
-
-</div>
+<div class="icon">🔍</div>
+</header>
 
 <!-- SUBTOPICS -->
-<div class="subtopics">
-<a href="#">Film</a>
-<a href="#">Fashion</a>
-<a href="#">Culture</a>
-<a href="#">Events</a>
-<a href="#">Celebrity</a>
-<a href="#">Campaigns</a>
-<a href="#">Beauty</a>
-<a href="#">Fragrance</a>
+<div class="subnav">
+<a href="#">FILM</a>
+<a href="#">FASHION</a>
+<a href="#">CULTURE</a>
+<a href="#">EVENTS</a>
+<a href="#">CELEBRITY</a>
+<a href="#">CAMPAIGNS</a>
+<a href="#">BEAUTY</a>
+<a href="#">FRAGRANCE</a>
+<a href="#">EDITORIALS</a>
+</div>
+
+<!-- ABOUT LINK (NEW) -->
+<div class="about-link">
+<a href="about.html">ABOUT SYNTHIA →</a>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-
-<img src="leviticus-cover.jpg" alt="Press Tour">
-
-<div class="film-tag">film</div>
-
+<img src="leviticus-cover.jpg" alt="Leviticus Press Tour">
 <p>
-Stacey Clausen and Joe Bird outdoors during a press tour for <em>Leviticus</em>, forming a controlled public image before the narrative unfolds.
+A fractured exploration of identity and performance unfolds as reality begins to blur between image and intention.
 </p>
-
-<a class="readmore" href="leviticus.html">CONTINUE READING →</a>
-
+<a class="cta" href="leviticus.html">CONTINUE READING →</a>
 </div>
-
-<script>
-
-function toggleMenu(){
-document.getElementById("menu").classList.toggle("active");
-}
-
-function openSearch(){
-document.getElementById("search").style.display="flex";
-}
-
-function closeSearch(){
-document.getElementById("search").style.display="none";
-document.getElementById("results").innerHTML="";
-document.getElementById("searchInput").value="";
-}
-
-/* SIMPLE SEARCH DATA */
-const pages = [
-{title:"Leviticus Film Feature", link:"leviticus.html"},
-{title:"Fashion Campaigns", link:"#"},
-{title:"Celebrity", link:"#"},
-{title:"Culture", link:"#"},
-{title:"Events", link:"#"}
-];
-
-function runSearch(){
-let input = document.getElementById("searchInput").value.toLowerCase();
-let results = document.getElementById("results");
-results.innerHTML = "";
-
-pages.forEach(item=>{
-if(item.title.toLowerCase().includes(input)){
-let div = document.createElement("div");
-div.className = "result";
-div.innerText = item.title;
-div.onclick = ()=> window.location = item.link;
-results.appendChild(div);
-}
-});
-}
-
-</script>
 
 </body>
 </html>
