@@ -34,7 +34,7 @@ background:#0b0b0b;
 .menu,.search{
 font-size:18px;
 cursor:pointer;
-opacity:0.7;
+opacity:0.8;
 }
 
 .logo{
@@ -63,12 +63,7 @@ opacity:0.7;
 letter-spacing:2px;
 }
 
-/* SPACING */
-.spacer{
-height:40px;
-}
-
-/* FEATURED STORY */
+/* FEATURE */
 .featured{
 padding:0 30px;
 max-width:900px;
@@ -87,93 +82,23 @@ border-radius:8px;
 margin-bottom:15px;
 }
 
-.meta{
-font-size:12px;
-letter-spacing:2px;
-opacity:0.7;
-margin-bottom:6px;
-}
-
-.title{
-font-size:20px;
-letter-spacing:3px;
-margin-bottom:10px;
-}
-
+/* CONTINUATION TEXT ONLY */
 .desc{
 font-size:13px;
-line-height:1.6;
 opacity:0.85;
-}
-
-/* MENU */
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-opacity:0;
-visibility:hidden;
-transition:0.4s;
-z-index:200;
-}
-
-.overlay.active{
-opacity:1;
-visibility:visible;
-}
-
-.overlay a{
-color:#fff;
-text-decoration:none;
-font-size:20px;
-margin:15px;
-}
-
-.close{
-position:absolute;
-top:20px;
-right:30px;
-font-size:20px;
-cursor:pointer;
-}
-
-/* SEARCH */
-.search-bar{
-position:fixed;
-top:70px;
-right:30px;
-background:#111;
-padding:10px;
-display:none;
-border-radius:6px;
-}
-
-.search-bar input{
-background:none;
-border:none;
-outline:none;
-color:#fff;
+line-height:1.6;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-<div class="menu" onclick="openMenu()">☰</div>
+<div class="menu">☰</div>
 <div class="logo">SYNTHIA</div>
-<div class="search" onclick="toggleSearch()">⌕</div>
+<div class="search">⌕</div>
 </header>
 
-<!-- TOPICS -->
 <div class="topics">
 <a href="film.html">FILM</a>
 <a href="fashion.html">FASHION</a>
@@ -182,55 +107,21 @@ color:#fff;
 <a href="#">ARCHIVE</a>
 </div>
 
-<div class="spacer"></div>
+<div style="height:40px;"></div>
 
-<!-- FEATURED STORY -->
 <div class="featured">
 
 <a href="leviticus.html">
 
-<img src="leviticus-cover.jpg" alt="Leviticus Cover">
-
-<div class="meta">FILM</div>
-
-<div class="title">LEVITICUS</div>
+<img src="leviticus-cover.jpg" alt="Leviticus">
 
 <div class="desc">
-A queer horror film about desire and identity, where two young men confront a creature that takes the form of what they fear — and want — most.
+Stacey Clausen and Joe Bird appear in a post-press moment from the Leviticus cycle, captured shortly after their Variety session,
 </div>
 
 </a>
 
 </div>
-
-<!-- MENU -->
-<div class="overlay" id="menu">
-<div class="close" onclick="closeMenu()">✕</div>
-<a href="film.html">FILM</a>
-<a href="fashion.html">FASHION</a>
-<a href="#">CULTURE</a>
-<a href="#">TEAM</a>
-</div>
-
-<!-- SEARCH -->
-<div class="search-bar" id="searchBar">
-<input type="text" placeholder="Search...">
-</div>
-
-<script>
-function openMenu(){
-document.getElementById("menu").classList.add("active");
-}
-
-function closeMenu(){
-document.getElementById("menu").classList.remove("active");
-}
-
-function toggleSearch(){
-var bar = document.getElementById("searchBar");
-bar.style.display = (bar.style.display === "block") ? "none" : "block";
-}
-</script>
 
 </body>
 </html>
