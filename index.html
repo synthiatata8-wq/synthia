@@ -11,7 +11,6 @@ margin:0;
 background:#0b0b0b;
 color:#fff;
 font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
--webkit-font-smoothing:antialiased;
 }
 
 /* HEADER */
@@ -35,35 +34,24 @@ left:50%;
 transform:translateX(-50%);
 letter-spacing:10px;
 font-size:13px;
-font-weight:300;
 }
 
-.icon{
-cursor:pointer;
-display:flex;
-align-items:center;
-}
-
-/* SUBTOPICS */
+/* SUBNAV */
 .subnav{
 margin-top:70px;
 display:flex;
-gap:22px;
+gap:20px;
 padding:12px 20px;
 overflow-x:auto;
 white-space:nowrap;
-scrollbar-width:none;
 }
-
-.subnav::-webkit-scrollbar{display:none;}
 
 .subnav a{
 color:#fff;
 text-decoration:none;
 font-size:11px;
-letter-spacing:1.5px;
-text-transform:uppercase;
 opacity:0.75;
+text-transform:uppercase;
 flex-shrink:0;
 }
 
@@ -82,8 +70,8 @@ border-radius:6px;
 .press p{
 font-family:Georgia, serif;
 font-size:14px;
-line-height:1.7;
 opacity:0.85;
+line-height:1.7;
 }
 
 /* CTA */
@@ -123,9 +111,16 @@ font-size:15px;
 letter-spacing:2px;
 }
 
-/* SOCIAL ICONS */
+/* CONTACT */
+.contact-title{
+margin-top:30px;
+font-size:11px;
+letter-spacing:3px;
+opacity:0.6;
+}
+
 .social{
-margin-top:40px;
+margin-top:15px;
 display:flex;
 gap:18px;
 justify-content:center;
@@ -155,25 +150,18 @@ z-index:2000;
 .search input{
 width:80%;
 padding:14px;
+background:transparent;
 border:none;
 border-bottom:1px solid #444;
-background:transparent;
 color:#fff;
 outline:none;
-}
-
-.result{
-width:80%;
-padding:12px 0;
-border-bottom:1px solid #222;
-cursor:pointer;
-font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
 <div onclick="openMenu()">☰</div>
 <div class="logo">SYNTHIA</div>
@@ -189,7 +177,7 @@ font-size:14px;
 <!-- SUBTOPICS -->
 <div class="subnav">
 <a>FILM</a><a>FASHION</a><a>CULTURE</a><a>EVENTS</a><a>CELEBRITY</a>
-<a>CAMPAIGNS</a><a>BEAUTY</a><a>FRAGRANCE</a><a>RUNWAY</a><a>EDITORIALS</a>
+<a>CAMPAIGNS</a><a>BEAUTY</a><a>FRAGRANCE</a>
 </div>
 
 <!-- HERO -->
@@ -198,8 +186,12 @@ font-size:14px;
 <p>Stacey Clausen and Joe Bird during a press tour photoshoot for Leviticus.</p>
 </div>
 
+<!-- SAFE NAVIGATION CTA -->
 <div class="cta">
-<a href="leviticus.html">Continue Reading →</a>
+<a href="leviticus.html"
+onclick="window.location.href='leviticus.html'; return true;">
+Continue Reading →
+</a>
 </div>
 
 <!-- MENU -->
@@ -210,58 +202,53 @@ font-size:14px;
 <a href="#">EVENTS</a>
 <a href="#">CELEBRITY</a>
 <a href="#">CAMPAIGNS</a>
-<a href="#">BEAUTY</a>
-<a href="#">FRAGRANCE</a>
-<a href="#">RUNWAY</a>
-<a href="#">EDITORIALS</a>
 
-<!-- SOCIAL ICONS -->
+<div class="contact-title">CONTACT</div>
+
 <div class="social">
-<a href="https://www.instagram.com/tatasynthia?igsh=YmFhZTNiMGZha3Bn"></a>
-<a href="https://x.com/SynthiaTata"></a>
-<a href="https://www.facebook.com/profile.php?id=61584934509127"></a>
-<a href="https://www.tiktok.com/@synthia_tata?_r=1&_t=ZS-95fRfm6xQ1Y"></a>
-<a href="mailto:synthiatata8@gmail.com"></a>
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/tatasynthia?igsh=YmFhZTNiMGZha3Bn" target="_blank">
+<svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm10 2H7a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3zm-5 4a5 5 0 110 10 5 5 0 010-10zm6-1a1 1 0 110 2 1 1 0 010-2z"/></svg>
+</a>
+
+<!-- X -->
+<a href="https://x.com/SynthiaTata" target="_blank">
+<svg viewBox="0 0 24 24"><path d="M18 2h3l-7 8 8 12h-6l-5-7-6 7H2l8-9L2 2h6l4 6 6-6z"/></svg>
+</a>
+
+<!-- Facebook -->
+<a href="https://www.facebook.com/profile.php?id=61584934509127" target="_blank">
+<svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11 10v-7H8v-3h3V9.5C11 7 12.5 5 15 5h2v3h-2c-1 0-1 .5-1 1.5V12h3l-1 3h-2v7a10 10 0 008-10z"/></svg>
+</a>
+
+<!-- TikTok -->
+<a href="https://www.tiktok.com/@synthia_tata?_r=1&_t=ZS-95fRfm6xQ1Y" target="_blank">
+<svg viewBox="0 0 24 24"><path d="M12 2h3a5 5 0 005 5v3a7 7 0 01-5-2v6a6 6 0 11-6-6v3a3 3 0 103 3V2z"/></svg>
+</a>
+
+<!-- Email -->
+<a href="mailto:synthiatata8@gmail.com">
+<svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6h16l-8 5z"/></svg>
+</a>
+
 </div>
 
-<br>
-<a onclick="closeMenu()">CLOSE</a>
 </div>
 
 <!-- SEARCH -->
 <div class="search" id="search">
-<input id="searchInput" onkeyup="search()" placeholder="Search SYNTHIA...">
-<div id="results"></div>
+<input placeholder="Search SYNTHIA...">
 </div>
 
 <script>
-function openMenu(){document.getElementById("menu").style.display="flex";}
-function closeMenu(){document.getElementById("menu").style.display="none";}
-function openSearch(){document.getElementById("search").style.display="flex";}
-function closeSearch(){document.getElementById("search").style.display="none";}
-
-const data=[
-{title:"Leviticus",link:"leviticus.html"},
-{title:"Fashion Campaigns",link:"#"}
-];
-
-function search(){
-let v=document.getElementById("searchInput").value.toLowerCase();
-let r=document.getElementById("results");
-r.innerHTML="";
-data.forEach(i=>{
-if(i.title.toLowerCase().includes(v)){
-let d=document.createElement("div");
-d.className="result";
-d.innerText=i.title;
-d.onclick=()=>location=i.link;
-r.appendChild(d);
+function openMenu(){
+document.getElementById("menu").style.display="flex";
 }
-});
+function openSearch(){
+document.getElementById("search").style.display="flex";
 }
 </script>
 
 </body>
 </html>
-
-
