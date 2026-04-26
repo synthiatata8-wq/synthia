@@ -14,12 +14,6 @@ font-family:"Georgia", serif;
 -webkit-font-smoothing:antialiased;
 }
 
-a,button,input{
--webkit-tap-highlight-color:transparent;
-outline:none;
-}
-
-/* HEADER */
 header{
 position:fixed;
 top:0;
@@ -40,12 +34,9 @@ left:50%;
 transform:translateX(-50%);
 letter-spacing:10px;
 font-size:13px;
-font-weight:300;
 }
 
-.icon{
-cursor:pointer;
-}
+.icon{cursor:pointer;}
 
 /* NAV */
 .subnav{
@@ -55,7 +46,6 @@ gap:22px;
 padding:12px 20px;
 overflow-x:auto;
 white-space:nowrap;
-scrollbar-width:none;
 }
 
 .subnav::-webkit-scrollbar{display:none;}
@@ -79,7 +69,6 @@ padding:0 20px;
 .press img{
 width:100%;
 border-radius:6px;
-display:block;
 }
 
 .press p{
@@ -104,7 +93,7 @@ opacity:0.85;
 font-style:italic;
 }
 
-/* MENU OVERLAY */
+/* MENU */
 .menu{
 position:fixed;
 inset:0;
@@ -116,7 +105,6 @@ align-items:center;
 z-index:2000;
 }
 
-/* NAV LINKS */
 .menu a{
 color:#fff;
 text-decoration:none;
@@ -133,25 +121,23 @@ letter-spacing:3px;
 opacity:0.5;
 }
 
-/* ICON SOCIALS */
+/* SOCIAL ICONS (FIXED - REAL SVG ICONS) */
 .socials{
 display:flex;
 gap:18px;
 margin-top:18px;
 }
 
-.socials a{
-width:18px;
-height:18px;
-display:inline-block;
+.socials a svg{
+width:20px;
+height:20px;
+fill:#fff;
 opacity:0.85;
+transition:0.2s;
 }
 
-/* simple icon style */
-.socials svg{
-width:18px;
-height:18px;
-fill:white;
+.socials a svg:hover{
+opacity:1;
 }
 
 /* SEARCH */
@@ -192,6 +178,7 @@ text-transform:uppercase;
 <header>
 <div class="icon" onclick="openMenu()">☰</div>
 <div class="logo">SYNTHIA</div>
+
 <div class="icon" onclick="openSearch()">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
 <circle cx="11" cy="11" r="7"></circle>
@@ -211,12 +198,12 @@ text-transform:uppercase;
 <a href="#">FRAGRANCE</a>
 </div>
 
-<!-- HERO (CONTINUATION OF LEVITICUS) -->
+<!-- HERO (FIXED INTRO - NO DUPLICATION ISSUE) -->
 <div class="press">
 <img src="leviticus-cover.jpg">
 
 <p>
-That constructed moment becomes the entry point into Leviticus — a film that does not present itself as narrative first, but as atmosphere, tension, and controlled psychological fragmentation.
+A constructed moment captured during a staged press environment — where image and intention begin to blur, forming the visual language that defines Leviticus.
 </p>
 </div>
 
