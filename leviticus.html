@@ -1,221 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SYNTHIA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leviticus</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
+  <style>
+    body {
+      margin: 0;
+      background: #05040a;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
 
-body{
-background:#0b0b0b;
-color:#f5f5f5;
-}
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-/* HEADER */
-header{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 30px;
-z-index:100;
-background:#0b0b0b;
-}
+    .hero h1 {
+      margin: 0;
+      font-size: 40px;
+      letter-spacing: 4px;
+    }
 
-.menu,.search{
-font-size:18px;
-cursor:pointer;
-opacity:0.8;
-}
+    .poster {
+      width: 100%;
+    }
 
-.logo{
-position:absolute;
-left:50%;
-transform:translateX(-50%);
-letter-spacing:6px;
-font-size:14px;
-}
+    .poster img {
+      width: 100%;
+      display: block;
+    }
 
-/* TOPICS */
-.topics{
-margin-top:80px;
-display:flex;
-overflow-x:auto;
-gap:25px;
-padding:15px 30px;
-white-space:nowrap;
-}
+    .info {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
 
-.topics a{
-text-decoration:none;
-color:#fff;
-font-size:12px;
-opacity:0.7;
-letter-spacing:2px;
-}
-
-/* SPACING */
-.spacer{
-height:35px;
-}
-
-/* FEATURED */
-.featured{
-padding:0 30px;
-max-width:900px;
-margin:auto;
-}
-
-.featured a{
-text-decoration:none;
-color:inherit;
-display:block;
-}
-
-.featured img{
-width:100%;
-border-radius:8px;
-margin-bottom:15px;
-}
-
-/* HOMEPAGE CONTINUATION TEXT */
-.desc{
-font-size:13px;
-opacity:0.85;
-line-height:1.6;
-margin-top:10px;
-}
-
-/* MENU */
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-opacity:0;
-visibility:hidden;
-transition:0.4s;
-z-index:200;
-}
-
-.overlay.active{
-opacity:1;
-visibility:visible;
-}
-
-.overlay a{
-color:#fff;
-text-decoration:none;
-font-size:20px;
-margin:15px;
-}
-
-.close{
-position:absolute;
-top:20px;
-right:30px;
-font-size:20px;
-cursor:pointer;
-}
-
-/* SEARCH */
-.search-bar{
-position:fixed;
-top:70px;
-right:30px;
-background:#111;
-padding:10px;
-border-radius:6px;
-display:none;
-}
-
-.search-bar input{
-background:none;
-border:none;
-outline:none;
-color:#fff;
-}
-</style>
+    a {
+      color: white;
+      display: block;
+      text-align: center;
+      padding: 20px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-<div class="menu" onclick="openMenu()">☰</div>
-<div class="logo">SYNTHIA</div>
-<div class="search" onclick="toggleSearch()">⌕</div>
-</header>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>LEVITICUS</h1>
+  </div>
 
-<!-- TOPICS -->
-<div class="topics">
-<a href="film.html">FILM</a>
-<a href="fashion.html">FASHION</a>
-<a href="#">CULTURE</a>
-<a href="#">VISUAL</a>
-<a href="#">ARCHIVE</a>
-</div>
+  <!-- POSTERS -->
+  <div class="poster">
+    <img src="leviticus-poster-1.png" alt="Poster 1">
+  </div>
 
-<div class="spacer"></div>
+  <div class="poster">
+    <img src="leviticus-poster-2.png" alt="Poster 2">
+  </div>
 
-<!-- FEATURED STORY -->
-<div class="featured">
+  <!-- INFO -->
+  <div class="info">
+    In Cinemas • June 19
+  </div>
 
-<a href="leviticus.html">
-
-<img src="leviticus-cover.jpg" alt="Leviticus Cover">
-
-<div class="desc">
-Stacey Clausen and Joe Bird appear in a post-press moment from the Leviticus cycle, captured shortly after their Variety session,
-</div>
-
-</a>
-
-</div>
-
-<!-- MENU -->
-<div class="overlay" id="menu">
-<div class="close" onclick="closeMenu()">✕</div>
-<a href="film.html">FILM</a>
-<a href="fashion.html">FASHION</a>
-<a href="#">CULTURE</a>
-<a href="#">TEAM</a>
-</div>
-
-<!-- SEARCH -->
-<div class="search-bar" id="searchBar">
-<input type="text" placeholder="Search...">
-</div>
-
-<script>
-function openMenu(){
-document.getElementById("menu").classList.add("active");
-}
-
-function closeMenu(){
-document.getElementById("menu").classList.remove("active");
-}
-
-function toggleSearch(){
-var bar = document.getElementById("searchBar");
-bar.style.display = (bar.style.display === "block") ? "none" : "block";
-}
-</script>
+  <!-- BACK LINK -->
+  <a href="index.html">← Back to Home</a>
 
 </body>
 </html>
