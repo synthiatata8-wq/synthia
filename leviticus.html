@@ -3,179 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leviticus | SYNTHIA</title>
+<title>SYNTHIA</title>
 
 <style>
 body{
 margin:0;
 background:#0b0b0b;
 color:#fff;
-font-family:"Georgia", serif;
-line-height:1.8;
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 -webkit-font-smoothing:antialiased;
 }
 
-.topbar{
+/* HEADER */
+header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:18px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 25px;
 background:#0b0b0b;
 z-index:1000;
+box-sizing:border-box;
 }
 
-.topbar a{
+.logo{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+letter-spacing:10px;
+font-size:13px;
+font-weight:300;
+}
+
+/* ICONS */
+.icon{
+cursor:pointer;
+display:flex;
+align-items:center;
+}
+
+/* SUBTOPICS */
+.subnav{
+margin-top:70px;
+display:flex;
+gap:22px;
+padding:12px 20px;
+overflow-x:auto;
+white-space:nowrap;
+scrollbar-width:none;
+}
+
+.subnav::-webkit-scrollbar{
+display:none;
+}
+
+.subnav a{
 color:#fff;
 text-decoration:none;
-font-size:12px;
-letter-spacing:2px;
-opacity:0.7;
+font-size:11px;
+letter-spacing:1.5px;
 text-transform:uppercase;
+font-weight:300;
+opacity:0.75;
+flex-shrink:0;
 }
 
-.container{
-max-width:850px;
-margin:110px auto 80px;
+/* HERO */
+.press{
+max-width:900px;
+margin:40px auto;
 padding:0 20px;
 }
 
-/* TEXT */
-p{
-font-size:16px;
-opacity:0.92;
-margin-bottom:18px;
-}
-
-.emphasis{
-font-size:18px;
-opacity:1;
-}
-
-/* TRAILER */
-.trailer{
-margin:40px 0;
-}
-
-.trailer-title{
-font-size:11px;
-letter-spacing:2px;
-opacity:0.6;
-text-transform:uppercase;
-margin-bottom:10px;
-}
-
-iframe{
+.press img{
 width:100%;
-height:420px;
-border:none;
 border-radius:6px;
 }
 
-/* POSTERS */
-.poster-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-align-items:end;
-margin:50px 0;
+.press p{
+margin-top:10px;
+font-size:14px;
+line-height:1.7;
+font-family:Georgia, serif;
+opacity:0.9;
 }
 
-.poster-frame{
+/* CTA */
+.cta{
+max-width:900px;
+margin:20px auto 60px;
+padding:0 20px;
+}
+
+.cta a{
+color:#fff;
+text-decoration:none;
+font-family:Georgia, serif;
+font-size:20px;
+}
+
+/* MENU */
+.menu{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:#000;
-border-radius:6px;
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.menu a{
+color:#fff;
+text-decoration:none;
+font-size:16px;
+margin:10px;
+letter-spacing:2px;
+font-weight:300;
+}
+
+/* SOCIAL ICONS */
+.social{
+margin-top:40px;
 display:flex;
-align-items:flex-end;
+gap:18px;
 justify-content:center;
 }
 
-.poster-frame img{
+.social svg{
+width:18px;
+height:18px;
+fill:white;
+opacity:0.9;
+}
+
+/* SEARCH */
+.search{
+position:fixed;
+top:0;
+left:0;
 width:100%;
-height:auto;
-display:block;
-border-radius:6px;
+height:100%;
+background:#000;
+display:none;
+flex-direction:column;
+align-items:center;
+padding-top:120px;
+z-index:2000;
+}
+
+.search input{
+width:80%;
+padding:14px;
+font-size:16px;
+background:transparent;
+border:none;
+border-bottom:1px solid #444;
+color:#fff;
+outline:none;
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+letter-spacing:1px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-<a href="index.html">← Back</a>
+<!-- HEADER -->
+<header>
+<div class="icon" onclick="openMenu()">☰</div>
+
+<div class="logo">SYNTHIA</div>
+
+<div class="icon" onclick="openSearch()">
+<svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="1.5" fill="none">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+</svg>
+</div>
+</header>
+
+<!-- SUBTOPICS -->
+<div class="subnav">
+<a href="#">FILM</a>
+<a href="#">FASHION</a>
+<a href="#">CULTURE</a>
+<a href="#">EVENTS</a>
+<a href="#">CELEBRITY</a>
+<a href="#">CAMPAIGNS</a>
+<a href="#">BEAUTY</a>
+<a href="#">FRAGRANCE</a>
+<a href="#">RUNWAY</a>
+<a href="#">EDITORIALS</a>
 </div>
 
-<div class="container">
-
-<!-- OPENING CONTINUATION (FROM HOMEPAGE) -->
-<p class="emphasis">
-That constructed moment becomes the entry point into Leviticus — a film that does not present itself as narrative first, but as atmosphere, tension, and controlled psychological fragmentation.
+<!-- HERO IMAGE -->
+<div class="press">
+<img src="leviticus-cover.jpg" alt="Press Tour">
+<p>
+Stacey Clausen and Joe Bird during a press tour for *Leviticus*, captured within a constructed moment where image and intention begin to blur.
 </p>
 
 <p>
-Rather than relying on traditional exposition, Leviticus unfolds through restraint. Its emotional language is built from silence, distance, and carefully staged composition, allowing meaning to emerge indirectly rather than explicitly stated.
+What begins as documentation becomes something less certain.
 </p>
-
-<p>
-Starring Stacey Clausen and Joe Bird, the film constructs its identity around performance that never fully settles into certainty — blurring the boundary between character, subject, and image.
-</p>
-
-<p>
-Premiering at the Sundance Film Festival, Leviticus immediately positioned itself within a space of contemporary psychological cinema where form carries equal weight to narrative.
-</p>
-
-<!-- CRITICAL RESPONSE EXPANSION -->
-<p>
-Early critical response has described the film as both controlled and destabilizing.
-</p>
-
-<p>
-<em>Variety</em> noted its “controlled yet deeply unsettling visual precision,” while <em>The Guardian</em> described it as “a slow collapse into emotional fragmentation that resists resolution.”
-</p>
-
-<p>
-Across aggregators, the film holds a <b>96% rating on Rotten Tomatoes</b>, based on 46 reviews — signaling strong critical alignment despite its experimental structure.
-</p>
-
-<p>
-On IMDb and Letterboxd, audience discussion reflects a more divided interpretation, with praise focused on atmosphere, cinematography, and tonal restraint rather than narrative clarity.
-</p>
-
-<!-- TRAILER -->
-<div class="trailer">
-<div class="trailer-title">Watch trailer here</div>
-<iframe src="https://www.youtube.com/embed/WXuK0vlFxII" allowfullscreen></iframe>
 </div>
 
-<p>
-The trailer itself mirrors the film’s philosophy — refusing exposition in favor of fragmented imagery, silence, and emotional suggestion. It functions less as promotion and more as an extension of tone.
-</p>
-
-<!-- POSTERS -->
-<p>
-The official campaign visuals extend this same aesthetic logic. Rather than traditional promotional framing, the imagery behaves like documentation — controlled, distant, and observational.
-</p>
-
-<div class="poster-grid">
-
-<div class="poster-frame">
-<img src="leviticus-poster-1.png" alt="Poster 1">
+<!-- CTA -->
+<div class="cta">
+<a href="leviticus.html">Continue Reading →</a>
 </div>
 
-<div class="poster-frame">
-<img src="leviticus-poster-2.png" alt="Poster 2">
+<!-- MENU -->
+<div class="menu" id="menu">
+<a href="#">FILM</a>
+<a href="#">FASHION</a>
+<a href="#">CULTURE</a>
+<a href="#">EVENTS</a>
+<a href="#">CELEBRITY</a>
+<a href="#">CAMPAIGNS</a>
+<a href="#">BEAUTY</a>
+<a href="#">FRAGRANCE</a>
+<a href="#">RUNWAY</a>
+<a href="#">EDITORIALS</a>
+<a href="#">CONTACT</a>
+
+<!-- SOCIAL ICONS -->
+<div class="social">
+<a href="#"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"/></svg></a>
+
+<a href="mailto:contact@synthia.com"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
 </div>
 
+<br>
+<a href="#" onclick="closeMenu()">CLOSE</a>
 </div>
 
-<p>
-Its premiere at Sundance reinforced its positioning as a festival-driven psychological study, existing closer to cinematic essay than conventional commercial narrative.
-</p>
-
-<p>
-Leviticus releases worldwide on <b>June 19</b>, with select regions expected to follow with streaming availability after its theatrical run.
-</p>
-
+<!-- SEARCH -->
+<div class="search" id="search">
+<input type="text" placeholder="Search SYNTHIA...">
+<br>
+<a href="#" onclick="closeSearch()" style="color:#fff; opacity:0.6;">CLOSE</a>
 </div>
+
+<script>
+function openMenu(){ document.getElementById("menu").style.display="flex"; }
+function closeMenu(){ document.getElementById("menu").style.display="none"; }
+function openSearch(){ document.getElementById("search").style.display="flex"; }
+function closeSearch(){ document.getElementById("search").style.display="none"; }
+</script>
 
 </body>
 </html>
