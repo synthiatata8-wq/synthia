@@ -8,9 +8,10 @@
 <style>
 body{
 margin:0;
-background:#0b0b0b;
-color:#fff;
+background:#0a0a0a;
+color:#f2f2f2;
 font-family:Helvetica, Arial, sans-serif;
+-webkit-font-smoothing:antialiased;
 }
 
 /* TOP BAR */
@@ -20,15 +21,17 @@ justify-content:space-between;
 align-items:center;
 padding:18px 20px;
 position:relative;
+border-bottom:1px solid #151515;
 }
 
 .logo{
 position:absolute;
 left:50%;
 transform:translateX(-50%);
-letter-spacing:6px;
+letter-spacing:8px;
 font-size:13px;
-opacity:0.85;
+font-weight:300;
+opacity:0.9;
 }
 
 .icon{
@@ -44,7 +47,7 @@ top:0;
 left:-100%;
 width:75%;
 height:100%;
-background:#0b0b0b;
+background:#0a0a0a;
 padding:40px 20px;
 transition:0.4s;
 z-index:999;
@@ -61,9 +64,10 @@ font-size:14px;
 letter-spacing:1px;
 color:#fff;
 text-decoration:none;
+opacity:0.9;
 }
 
-/* CLOSE BUTTON */
+/* CLOSE */
 .close{
 margin-bottom:30px;
 opacity:0.6;
@@ -71,12 +75,12 @@ cursor:pointer;
 font-size:12px;
 }
 
-/* CONTACT */
+/* CONTACT ICONS SECTION */
 .contact{
 margin-top:40px;
 font-size:12px;
 line-height:2;
-opacity:0.75;
+opacity:0.8;
 }
 
 .contact-title{
@@ -94,7 +98,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:#0b0b0b;
+background:#0a0a0a;
 display:none;
 align-items:center;
 justify-content:center;
@@ -104,171 +108,6 @@ z-index:1000;
 .search-overlay input{
 width:70%;
 border:none;
-border-bottom:1px solid #444;
+border-bottom:1px solid #333;
 background:none;
-color:#fff;
-font-size:18px;
-padding:10px;
-outline:none;
-text-align:center;
-}
-
-/* SEARCH CLOSE */
-.search-close{
-position:absolute;
-top:20px;
-right:20px;
-font-size:12px;
-opacity:0.6;
-cursor:pointer;
-}
-
-/* SUBTOPICS (NO LINE) */
-.subtopics{
-display:flex;
-overflow-x:auto;
-gap:18px;
-padding:14px 20px;
-font-size:12px;
-opacity:0.75;
-}
-
-.subtopics div{
-white-space:nowrap;
-}
-
-/* HERO */
-.hero{
-padding:20px;
-}
-
-.hero img{
-width:100%;
-border-radius:4px;
-}
-
-/* FILM TAG */
-.film-tag{
-font-size:10px;
-letter-spacing:3px;
-opacity:0.35;
-margin-top:15px;
-text-transform:uppercase;
-}
-
-/* TEXT */
-.hero p{
-font-family:Georgia, serif;
-font-size:14px;
-margin-top:10px;
-opacity:0.9;
-line-height:1.6;
-}
-
-.readmore{
-display:inline-block;
-margin-top:12px;
-font-size:12px;
-letter-spacing:1px;
-opacity:0.8;
-text-decoration:none;
-color:#fff;
-}
-</style>
-</head>
-
-<body>
-
-<!-- TOP BAR -->
-<div class="topbar">
-<div class="icon" onclick="toggleMenu()">☰</div>
-<div class="logo">SYNTHIA</div>
-<div class="icon" onclick="openSearch()">⌕</div>
-</div>
-
-<!-- MENU -->
-<div class="menu" id="menu">
-
-<div class="close" onclick="toggleMenu()">← Close</div>
-
-<a href="#">Film</a>
-<a href="#">Fashion</a>
-<a href="#">Culture</a>
-<a href="#">Events</a>
-<a href="#">Celebrity</a>
-<a href="#">Campaigns</a>
-<a href="#">Beauty</a>
-<a href="#">Fragrance</a>
-<a href="about.html">About</a>
-
-<div class="contact">
-<div class="contact-title">Contact</div>
-
-<a href="https://www.instagram.com/tatasynthia?igsh=YmFhZTNiMGZha3Bn" target="_blank">Instagram</a>
-<a href="https://x.com/SynthiaTata" target="_blank">X (Twitter)</a>
-<a href="https://www.facebook.com/profile.php?id=61584934509127" target="_blank">Facebook</a>
-<a href="https://www.tiktok.com/@synthia_tata?_r=1&_t=ZS-95fRfm6xQ1Y" target="_blank">TikTok</a>
-<a href="mailto:synthiatata8@gmail.com">Email</a>
-
-</div>
-
-</div>
-
-<!-- SEARCH -->
-<div class="search-overlay" id="search">
-
-<div class="search-close" onclick="closeSearch()">← Close</div>
-
-<input type="text" placeholder="Search">
-
-</div>
-
-<!-- SUBTOPICS -->
-<div class="subtopics">
-<div>Film</div>
-<div>Fashion</div>
-<div>Culture</div>
-<div>Events</div>
-<div>Celebrity</div>
-<div>Campaigns</div>
-<div>Beauty</div>
-<div>Fragrance</div>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-
-<img src="leviticus-cover.jpg" alt="Press Tour Image">
-
-<div class="film-tag">film</div>
-
-<p>
-Stacey Clausen and Joe Bird outdoors in a press tour promoting their upcoming film <em>Leviticus</em>, a controlled public image before the narrative unfolds.
-</p>
-
-<a class="readmore" href="leviticus.html">CONTINUE READING →</a>
-
-</div>
-
-<script>
-function toggleMenu(){
-document.getElementById("menu").classList.toggle("active");
-}
-
-function openSearch(){
-document.getElementById("search").style.display="flex";
-}
-
-function closeSearch(){
-document.getElementById("search").style.display="none";
-}
-
-document.getElementById("search").addEventListener("click", function(e){
-if(e.target === this){
-closeSearch();
-}
-});
-</script>
-
-</body>
-</html>
+color:#fff
