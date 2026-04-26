@@ -10,7 +10,7 @@ body{
 margin:0;
 background:#0b0b0b;
 color:#fff;
-font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+font-family:"Helvetica Neue", Arial, sans-serif;
 -webkit-font-smoothing:antialiased;
 }
 
@@ -57,7 +57,6 @@ overflow-x:auto;
 white-space:nowrap;
 scrollbar-width:none;
 }
-
 .subnav::-webkit-scrollbar{display:none;}
 
 .subnav a{
@@ -67,6 +66,7 @@ font-size:11px;
 letter-spacing:1.5px;
 text-transform:uppercase;
 opacity:0.75;
+flex-shrink:0;
 }
 
 /* HERO */
@@ -101,8 +101,71 @@ color:#fff;
 text-decoration:none;
 font-family:Georgia, serif;
 font-size:18px;
-letter-spacing:0.5px;
 opacity:0.85;
+}
+
+/* MENU */
+.menu{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.menu a{
+color:#fff;
+text-decoration:none;
+font-size:16px;
+margin:10px;
+letter-spacing:2px;
+}
+
+/* SEARCH */
+.search{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:none;
+flex-direction:column;
+align-items:center;
+padding-top:120px;
+z-index:2000;
+}
+
+.search input{
+width:80%;
+padding:14px;
+font-size:16px;
+background:transparent;
+border:none;
+border-bottom:1px solid #444;
+color:#fff;
+outline:none;
+}
+
+.result{
+padding:12px 0;
+border-bottom:1px solid #222;
+width:80%;
+cursor:pointer;
+}
+
+.close-btn{
+margin-top:20px;
+font-size:12px;
+letter-spacing:2px;
+opacity:0.6;
+text-transform:uppercase;
 }
 </style>
 </head>
@@ -110,9 +173,16 @@ opacity:0.85;
 <body>
 
 <header>
-<div class="icon">☰</div>
+<div class="icon" onclick="openMenu()">☰</div>
+
 <div class="logo">SYNTHIA</div>
-<div class="icon">🔍</div>
+
+<div class="icon" onclick="openSearch()">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+</svg>
+</div>
 </header>
 
 <div class="subnav">
@@ -126,15 +196,52 @@ opacity:0.85;
 </div>
 
 <div class="press">
-<img src="leviticus-cover.jpg" alt="Leviticus Press Tour">
+<img src="leviticus-cover.jpg">
 <p>
-Captured during an orchestrated press tour for Leviticus, Stacey Clausen and Joe Bird appear in a staged outdoor composition that blurs the boundary between performance and documentation — a constructed moment that does not fully reveal what the film is, but begins to suggest what it might become.
+Captured during an orchestrated press tour for Leviticus, Stacey Clausen and Joe Bird appear in a staged outdoor composition that begins to suggest what the film might become.
 </p>
 </div>
 
 <div class="cta">
 <a href="leviticus.html">Continue Reading →</a>
 </div>
+
+<!-- MENU -->
+<div class="menu" id="menu">
+<a href="#">FILM</a>
+<a href="#">FASHION</a>
+<a href="#">CULTURE</a>
+<a href="#">CELEBRITY</a>
+<a href="#">CAMPAIGNS</a>
+<a href="#">BEAUTY</a>
+<a href="#">FRAGRANCE</a>
+
+<div onclick="closeMenu()" class="close-btn">close</div>
+</div>
+
+<!-- SEARCH -->
+<div class="search" id="search">
+<input type="text" id="searchInput" placeholder="Search">
+<div onclick="closeSearch()" class="close-btn">close</div>
+</div>
+
+<script>
+function openMenu(){
+document.getElementById("menu").style.display="flex";
+}
+
+function closeMenu(){
+document.getElementById("menu").style.display="none";
+}
+
+function openSearch(){
+document.getElementById("search").style.display="flex";
+}
+
+function closeSearch(){
+document.getElementById("search").style.display="none";
+}
+</script>
 
 </body>
 </html>
