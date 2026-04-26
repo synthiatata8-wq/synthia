@@ -3,124 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leviticus | SYNTHIA</title>
+<title>Leviticus — SYNTHIA</title>
 
 <style>
 body{
 margin:0;
 background:#0b0b0b;
 color:#fff;
-font-family:Arial;
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+-webkit-font-smoothing:antialiased;
 line-height:1.6;
 }
 
+/* HEADER */
+header{
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #222;
+}
+
+.logo{
+letter-spacing:8px;
+font-size:13px;
+opacity:0.8;
+}
+
+a{
+color:#fff;
+text-decoration:none;
+}
+
+/* CONTAINER */
 .container{
-max-width:800px;
-margin:auto;
-padding:60px 20px;
+max-width:900px;
+margin:0 auto;
+padding:30px 20px;
 }
 
-/* TYPOGRAPHY */
-h1{
-font-family:Georgia, serif;
-letter-spacing:3px;
-}
-h3{
-font-family:Arial;
-letter-spacing:2px;
-font-size:12px;
-opacity:0.7;
-}
-
-p{
+/* SECTION TITLES */
+h2{
 font-size:14px;
+letter-spacing:2px;
+font-weight:400;
+margin-top:60px;
+opacity:0.8;
+}
+
+/* TEXT */
+p{
+font-family:Georgia, serif;
+font-size:15px;
 opacity:0.9;
 }
 
-img{
-width:100%;
-margin:20px 0;
-border-radius:6px;
+/* TRAILER */
+.video{
+margin-top:20px;
+position:relative;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
 }
 
-/* BACK BUTTON */
-.back{
-position:fixed;
-top:20px;
-left:20px;
-color:#fff;
-text-decoration:none;
-font-size:12px;
-letter-spacing:2px;
-z-index:999;
+.video iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:0;
 }
 
 /* QUOTES */
 .quote{
-border-left:2px solid #444;
-padding-left:10px;
 margin:15px 0;
-font-style:italic;
-opacity:0.8;
+padding-left:10px;
+border-left:2px solid #444;
+font-size:14px;
+opacity:0.85;
+}
+
+/* POSTERS */
+.posters img{
+width:100%;
+margin-top:15px;
+border-radius:4px;
+}
+
+/* BACK LINK */
+.back{
+margin-top:60px;
+display:block;
+font-size:13px;
+opacity:0.7;
 }
 </style>
 </head>
 
 <body>
 
-<a class="back" href="index.html">← BACK</a>
+<header>
+<div class="logo">SYNTHIA</div>
+<a href="index.html">← BACK</a>
+</header>
 
 <div class="container">
 
-<h1>LEVITICUS</h1>
-
+<!-- OPENING CONTINUATION -->
 <p>
-A press cycle appearance between Stacey Clausen and Joe Bird begins to fracture into something unstable — where performance starts to replace identity.
+Following its fragmented emergence through early screenings, *Leviticus* positions itself as a study of identity, performance, and the instability of image under public perception.
 </p>
 
-<p>
-What follows is not a linear narrative, but a shifting interpretation of presence, image, and perception.
-</p>
-
-<!-- PRESS PHOTO -->
-<img src="press-photo.jpg">
+---
 
 <!-- TRAILER -->
-<h3>WATCH TRAILER</h3>
-<iframe width="100%" height="400"
-src="https://www.youtube.com/embed/WXuK0vlFxII"
-frameborder="0" allowfullscreen></iframe>
+<h2>FILM TRAILER</h2>
 
-<!-- CONTINUATION -->
 <p>
-As media attention intensifies, the boundary between public performance and private tension dissolves.
+Before its official release, *Leviticus* gained early attention following its screening at the Sundance Film Festival, where initial reactions began shaping its critical discourse.
 </p>
 
-<!-- CRITICS INTRO -->
-<h3>CRITICAL REACTIONS</h3>
+<p><strong>Watch the official trailer below</strong></p>
 
-<p>Early responses from industry voices begin to frame the film:</p>
+<div class="video">
+<iframe src="https://www.youtube.com/embed/WXuK0vlFxII" allowfullscreen></iframe>
+</div>
 
-<div class="quote">Variety — “A controlled disintegration of identity through performance.”</div>
-<div class="quote">The Guardian — “Quiet, unsettling, and visually precise.”</div>
-<div class="quote">Rotten Tomatoes — “An experimental narrative that resists definition.”</div>
-<div class="quote">IMDb — “Striking visual storytelling with emotional ambiguity.”</div>
-<div class="quote">Letterboxd — “Feels like memory being performed in real time.”</div>
+<p>
+A controlled glimpse into the collapse of image and identity.
+</p>
+
+---
+
+<!-- CRITICAL ACCLAIM -->
+<h2>CRITICAL ACCLAIM</h2>
+
+<p>
+Following its festival debut, *Leviticus* quickly entered critical conversation as one of the most visually striking and divisive films of its cycle.
+</p>
+
+<p><strong>Rotten Tomatoes:</strong> Certified Fresh — 96% (based on 46 reviews)</p>
+
+<div class="quote">Variety — “Aesthetically precise and emotionally fragmented, it resists easy interpretation.”</div>
+
+<div class="quote">The Guardian — “Unsettling intimacy paired with strict visual control.”</div>
+
+<div class="quote">IMDb — “Anchored by strong performances and narrative ambiguity.”</div>
+
+<div class="quote">Letterboxd — “Hypnotic, slow-burning cinema with lasting emotional residue.”</div>
+
+---
 
 <!-- POSTERS -->
-<h3>POSTERS</h3>
+<h2>OFFICIAL POSTER CAMPAIGN</h2>
 
 <p>
-The visual identity of Leviticus is defined through its official campaign materials.
+The official posters reflect the film’s central tension — constructed image versus emotional reality.
 </p>
 
-<img src="leviticus-poster-1.png">
-<img src="leviticus-poster-2.png">
+<div class="posters">
+<img src="leviticus-poster-1.png" alt="Leviticus Poster 1">
+<img src="leviticus-poster-2.png" alt="Leviticus Poster 2">
+</div>
+
+---
+
+<!-- RELEASE -->
+<h2>RELEASE</h2>
 
 <p>
-Release Date: <b>June 19</b><br>
-Theatrical release confirmed. Streaming release may follow.
+*Leviticus* releases worldwide on <strong>June 19</strong>, arriving in cinemas as one of the season’s most anticipated film features.
 </p>
+
+<p>
+Early industry discussion suggests the possibility of a streaming release following its theatrical run.
+</p>
+
+<a class="back" href="index.html">← Return to SYNTHIA</a>
 
 </div>
 
