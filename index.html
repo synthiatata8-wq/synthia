@@ -37,7 +37,6 @@ font-size:14px;
 }
 
 .icon{
-font-size:20px;
 cursor:pointer;
 }
 
@@ -57,14 +56,15 @@ display:none;
 }
 
 .subnav a{
-color:white;
+color:#fff;
 text-decoration:none;
 font-size:12px;
-opacity:0.7;
+opacity:0.75;
 letter-spacing:1px;
+flex-shrink:0;
 }
 
-/* PRESS IMAGE */
+/* HERO IMAGE */
 .press{
 max-width:900px;
 margin:40px auto;
@@ -91,13 +91,13 @@ padding:0 20px;
 }
 
 .cta a{
-color:white;
+color:#fff;
 text-decoration:none;
 font-family:Georgia, serif;
 font-size:22px;
 }
 
-/* MENU OVERLAY */
+/* MENU */
 .menu{
 position:fixed;
 top:0;
@@ -113,32 +113,54 @@ z-index:2000;
 }
 
 .menu a{
-color:white;
+color:#fff;
 text-decoration:none;
-font-size:18px;
+font-size:16px;
 margin:10px;
 letter-spacing:2px;
+}
+
+/* SEARCH */
+.search{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:none;
+flex-direction:column;
+align-items:center;
+padding-top:120px;
+z-index:2000;
+}
+
+.search input{
+width:80%;
+padding:12px;
+font-size:16px;
+margin-bottom:20px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-<div class="icon" onclick="openMenu()">☰</div>
-<div class="logo">SYNTHIA</div>
-<div class="icon">🔍</div>
-</header>
-
-<!-- MENU -->
-<div class="menu" id="menu">
-<a href="#">FILM</a>
-<a href="#">FASHION</a>
-<a href="#">CULTURE</a>
-<a href="#">EVENTS</a>
-<br><br>
-<a href="#" onclick="closeMenu()">CLOSE</a>
+<div class="icon" onclick="openMenu()">
+☰
 </div>
+
+<div class="logo">SYNTHIA</div>
+
+<div class="icon" onclick="openSearch()">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="11" cy="11" r="7"></circle>
+<line x1="16.65" y1="16.65" x2="21" y2="21"></line>
+</svg>
+</div>
+</header>
 
 <!-- SUBTOPICS -->
 <div class="subnav">
@@ -146,28 +168,63 @@ letter-spacing:2px;
 <a href="#">FASHION</a>
 <a href="#">CULTURE</a>
 <a href="#">EVENTS</a>
+<a href="#">CELEBRITY</a>
+<a href="#">CAMPAIGNS</a>
+<a href="#">BEAUTY</a>
+<a href="#">FRAGRANCE</a>
+<a href="#">RUNWAY</a>
+<a href="#">EDITORIALS</a>
 </div>
 
-<!-- PRESS TOUR IMAGE (HOMEPAGE ONLY) -->
+<!-- HERO PRESS IMAGE -->
 <div class="press">
-<img src="leviticus-cover.jpg" alt="Press Tour Photo">
+<img src="leviticus-cover.jpg" alt="Press Tour">
 <p>
-Stacey Clausen and Joe Bird photographed during a press tour moment for Leviticus — a constructed image that begins to fracture under attention.
+Stacey Clausen and Joe Bird during a press tour photoshoot for Leviticus — a constructed moment between performance and identity.
 </p>
 </div>
 
-<!-- CONTINUE READING -->
+<!-- CTA -->
 <div class="cta">
 <a href="leviticus.html">Continue Reading →</a>
+</div>
+
+<!-- MENU -->
+<div class="menu" id="menu">
+<a href="#">FILM</a>
+<a href="#">FASHION</a>
+<a href="#">CULTURE</a>
+<a href="#">EVENTS</a>
+<a href="#">CELEBRITY</a>
+<a href="#">CAMPAIGNS</a>
+<a href="#">BEAUTY</a>
+<a href="#">FRAGRANCE</a>
+<a href="#">RUNWAY</a>
+<a href="#">EDITORIALS</a>
+<a href="#">CONTACT</a>
+<br>
+<a href="#" onclick="closeMenu()">CLOSE</a>
+</div>
+
+<!-- SEARCH -->
+<div class="search" id="search">
+<input type="text" placeholder="Search SYNTHIA...">
+<a href="#" onclick="closeSearch()" style="color:white;">CLOSE</a>
 </div>
 
 <script>
 function openMenu(){
 document.getElementById("menu").style.display="flex";
 }
-
 function closeMenu(){
 document.getElementById("menu").style.display="none";
+}
+
+function openSearch(){
+document.getElementById("search").style.display="flex";
+}
+function closeSearch(){
+document.getElementById("search").style.display="none";
 }
 </script>
 
