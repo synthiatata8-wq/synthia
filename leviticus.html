@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leviticus | SYNTHIA</title>
+<title>SYNTHIA</title>
 
 <style>
 *{
@@ -16,165 +16,206 @@ font-family:Arial, sans-serif;
 body{
 background:#0b0b0b;
 color:#f5f5f5;
-line-height:1.7;
 }
 
-/* NAV */
-.nav{
+/* HEADER */
+header{
 position:fixed;
 top:0;
 width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 padding:20px 30px;
+z-index:100;
 background:#0b0b0b;
-z-index:10;
 }
 
-.nav a{
-color:#fff;
-text-decoration:none;
-font-size:13px;
-letter-spacing:2px;
+.menu,.search{
+font-size:18px;
+cursor:pointer;
 opacity:0.8;
 }
 
-/* CONTAINER */
-.container{
+.logo{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+letter-spacing:6px;
+font-size:14px;
+}
+
+/* TOPICS */
+.topics{
+margin-top:80px;
+display:flex;
+overflow-x:auto;
+gap:25px;
+padding:15px 30px;
+white-space:nowrap;
+}
+
+.topics a{
+text-decoration:none;
+color:#fff;
+font-size:12px;
+opacity:0.7;
+letter-spacing:2px;
+}
+
+/* SPACING */
+.spacer{
+height:35px;
+}
+
+/* FEATURED */
+.featured{
+padding:0 30px;
 max-width:900px;
 margin:auto;
-padding:90px 30px 60px;
 }
 
-/* TEXT */
-.intro{
-font-size:14px;
-opacity:0.9;
-margin-bottom:35px;
+.featured a{
+text-decoration:none;
+color:inherit;
+display:block;
 }
 
-/* SECTION LABEL */
-.label{
-font-size:11px;
-letter-spacing:2px;
-opacity:0.6;
-margin-bottom:10px;
-}
-
-/* TRAILER */
-.trailer{
-width:100%;
-aspect-ratio:16/9;
-margin-bottom:35px;
-}
-
-.trailer iframe{
-width:100%;
-height:100%;
-border:0;
-border-radius:6px;
-}
-
-/* REVIEWS */
-.reviews{
-margin-top:20px;
-margin-bottom:50px;
-}
-
-.review{
-font-size:13px;
-margin-bottom:18px;
-opacity:0.85;
-}
-
-/* IMAGES */
-.image-block{
-margin:50px 0;
-}
-
-.image-block img{
+.featured img{
 width:100%;
 border-radius:8px;
+margin-bottom:15px;
 }
 
-/* CONSENSUS */
-.consensus{
+/* HOMEPAGE CONTINUATION TEXT */
+.desc{
 font-size:13px;
 opacity:0.85;
-margin-top:40px;
+line-height:1.6;
+margin-top:10px;
 }
 
-/* SPACING DIVIDER */
-.divider{
-height:40px;
+/* MENU */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+opacity:0;
+visibility:hidden;
+transition:0.4s;
+z-index:200;
+}
+
+.overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+.overlay a{
+color:#fff;
+text-decoration:none;
+font-size:20px;
+margin:15px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:20px;
+cursor:pointer;
+}
+
+/* SEARCH */
+.search-bar{
+position:fixed;
+top:70px;
+right:30px;
+background:#111;
+padding:10px;
+border-radius:6px;
+display:none;
+}
+
+.search-bar input{
+background:none;
+border:none;
+outline:none;
+color:#fff;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="nav">
-<a href="film.html">← Back to Film</a>
+<!-- HEADER -->
+<header>
+<div class="menu" onclick="openMenu()">☰</div>
+<div class="logo">SYNTHIA</div>
+<div class="search" onclick="toggleSearch()">⌕</div>
+</header>
+
+<!-- TOPICS -->
+<div class="topics">
+<a href="film.html">FILM</a>
+<a href="fashion.html">FASHION</a>
+<a href="#">CULTURE</a>
+<a href="#">VISUAL</a>
+<a href="#">ARCHIVE</a>
 </div>
 
-<div class="container">
+<div class="spacer"></div>
 
-<!-- CONTINUATION INTRO -->
-<div class="intro">
-Following a post-press encounter between Stacey Clausen and Joe Bird, Leviticus expands into a queer horror narrative where intimacy, perception, and fear begin to collapse into the same space. The film explores desire as something unstable — something that reflects, distorts, and ultimately transforms.
+<!-- FEATURED STORY -->
+<div class="featured">
+
+<a href="leviticus.html">
+
+<img src="leviticus-cover.jpg" alt="Leviticus Cover">
+
+<div class="desc">
+Stacey Clausen and Joe Bird appear in a post-press moment from the Leviticus cycle, captured shortly after their Variety session,
 </div>
 
-<div class="divider"></div>
-
-<!-- TRAILER -->
-<div class="label">WATCH TRAILER</div>
-
-<div class="trailer">
-<iframe 
-src="https://www.youtube.com/embed/WXuK0vlFxII" 
-allowfullscreen>
-</iframe>
-</div>
-
-<div class="divider"></div>
-
-<!-- CRITICS INTRO -->
-<div class="intro">
-Early critical response frames Leviticus as a restrained but emotionally charged work, with particular attention to its visual language and psychological tension.
-</div>
-
-<!-- REVIEWS -->
-<div class="reviews">
-
-<div class="label">CRITICS</div>
-
-<div class="review">“A striking visual language rooted in emotional restraint.” — The Guardian</div>
-
-<div class="review">“A bold and atmospheric piece of contemporary storytelling.” — Variety</div>
-
-<div class="review">“Minimalist, precise, and emotionally charged.” — IndieWire</div>
-
-<div class="review">“A haunting exploration of desire and identity.” — Film Comment</div>
+</a>
 
 </div>
 
-<div class="divider"></div>
-
-<!-- POSTER 1 -->
-<div class="image-block">
-<img src="leviticus-poster-1.png" alt="Leviticus Poster 1">
+<!-- MENU -->
+<div class="overlay" id="menu">
+<div class="close" onclick="closeMenu()">✕</div>
+<a href="film.html">FILM</a>
+<a href="fashion.html">FASHION</a>
+<a href="#">CULTURE</a>
+<a href="#">TEAM</a>
 </div>
 
-<!-- POSTER 2 -->
-<div class="image-block">
-<img src="leviticus-poster-2.png" alt="Leviticus Poster 2">
+<!-- SEARCH -->
+<div class="search-bar" id="searchBar">
+<input type="text" placeholder="Search...">
 </div>
 
-<!-- FINAL CONSENSUS -->
-<div class="consensus">
-Rotten Tomatoes Consensus: A haunting and controlled queer horror film that redefines psychological storytelling through intimacy, fear, and perception.
-</div>
+<script>
+function openMenu(){
+document.getElementById("menu").classList.add("active");
+}
 
-</div>
+function closeMenu(){
+document.getElementById("menu").classList.remove("active");
+}
+
+function toggleSearch(){
+var bar = document.getElementById("searchBar");
+bar.style.display = (bar.style.display === "block") ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
