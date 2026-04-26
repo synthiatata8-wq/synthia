@@ -6,29 +6,24 @@
 <title>SYNTHIA</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
-
 body{
+margin:0;
 background:#0b0b0b;
-color:#f5f5f5;
+color:#fff;
+font-family:Arial, sans-serif;
 }
 
 /* HEADER */
 header{
-position:fixed;
-top:0;
-width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 30px;
+position:fixed;
+top:0;
+width:100%;
 background:#0b0b0b;
-z-index:100;
+z-index:10;
 }
 
 .logo{
@@ -41,85 +36,77 @@ font-size:14px;
 
 .menu,.search{
 font-size:18px;
-opacity:0.8;
 }
 
 /* TOPICS */
 .topics{
 margin-top:80px;
 display:flex;
-overflow-x:auto;
-gap:25px;
+gap:20px;
 padding:15px 30px;
+overflow-x:auto;
 white-space:nowrap;
 }
 
 .topics a{
-text-decoration:none;
 color:#fff;
+text-decoration:none;
 font-size:12px;
 opacity:0.7;
-letter-spacing:2px;
 }
 
-/* FEATURE STORY */
-.featured{
-padding:40px 30px;
-max-width:900px;
-margin:auto;
+/* FEATURE */
+.feature{
+max-width:850px;
+margin:40px auto;
+padding:0 20px;
 }
 
-/* CLICKABLE CARD */
-.card{
-display:block;
+.feature a{
 text-decoration:none;
 color:inherit;
-}
-
-/* IMAGE */
-.card img{
-width:100%;
 display:block;
-border-radius:8px;
 }
 
-/* INTRO TEXT */
-.desc{
+.feature img{
+width:100%;
+border-radius:6px;
+display:block;
+}
+
+.feature p{
 margin-top:12px;
 font-size:13px;
-line-height:1.6;
 opacity:0.85;
+line-height:1.5;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
 <div class="menu">☰</div>
 <div class="logo">SYNTHIA</div>
 <div class="search">⌕</div>
 </header>
 
-<!-- TOPICS -->
 <div class="topics">
-<a href="film.html">FILM</a>
-<a href="fashion.html">FASHION</a>
-<a href="visual.html">VISUAL</a>
-<a href="editorial.html">EDITORIAL</a>
+<a href="#">FILM</a>
+<a href="#">FASHION</a>
+<a href="#">VISUAL</a>
+<a href="#">EDITORIAL</a>
 </div>
 
-<!-- FEATURED STORY -->
-<div class="featured">
+<div class="feature">
 
-<a class="card" href="leviticus.html">
+<a href="leviticus.html">
 
 <img src="leviticus-cover.jpg" alt="Leviticus">
 
-<div class="desc">
-A queer horror narrative exploring desire, identity, and fear — following Stacey Clausen and Joe Bird as their reality begins to fracture after a press cycle appearance that blurs fiction and performance.
-</div>
+<p>
+Leviticus unfolds in the space between performance and possession — where visibility becomes unstable and identity begins to fracture under observation.
+</p>
 
 </a>
 
